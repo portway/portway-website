@@ -1,0 +1,8 @@
+node_modules/
+.eslintrc
+.prettierrc
+coverage
+(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$
+**/__mocks__
+**/example.env
+**/.env
