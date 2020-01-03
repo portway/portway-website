@@ -1,3 +1,5 @@
+@import 'inc/color';
+
 body {
-  background: red;
+  background: var(--theme-surface);
 }

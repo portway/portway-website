@@ -1,8 +1,13 @@
-<nav class="navigation">
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/features">Features</a></li>
-    <li><a href="/pricing">Pricing</a></li>
-    <li><a href="/support">Support</a></li>
-  </ul>
-</nav>
+<header class="masthead">
+  <a href="/"><img class="masthead__logo" src="../img/logo-horizontal.svg" alt="Portway Logo" width="161" height="40" /></a>
+  <nav class="navigation">
+    <ul>
+      <li><a href="/features" class="{{#if (eq active 'features')}}active{{/if}}">Features</a></li>
+      <li><a href="/pricing" class="{{#if (eq active 'pricing')}}active{{/if}}">Pricing</a></li>
+      <li><a href="/support" class="{{#if (eq active 'support')}}active{{/if}}">Support</a></li>
+    </ul>
+  </nav>
+  <div class="masthead__info">
+    <b><a href="{{ htmlWebpackPlugin.options.constants.LINK_LOGIN }}">Log in</a></b> or <a class="btn" href="{{ htmlWebpackPlugin.options.constants.LINK_SIGNUP }}">Try for free</a>
+  </div>
+</header>
