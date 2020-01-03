@@ -39,7 +39,7 @@ module.exports = {
         test: /\.hbs$/,
         loader: 'handlebars-loader',
         options: {
-          partialDirs: [__dirname + './src/partials']
+          runtime: path.join(__dirname, './src/helpers/handlebars')
         }
       },
       {
