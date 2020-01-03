@@ -8,4 +8,145 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport"
         content="width=device-width,user-scalable=0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    /* domine-regular - latin */
+    @font-face {
+      font-family: 'Domine';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Domine'), local('Domine-Regular'),
+           url('/css/fonts/domine-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+           url('/css/fonts/domine-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* domine-700 - latin */
+    @font-face {
+      font-family: 'Domine';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Domine Bold'), local('Domine-Bold'),
+           url('/css/fonts/domine-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+           url('/css/fonts/domine-v7-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    html, body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 62.5%;
+      margin: 0;
+      padding: 0;
+    }
+    /* theme default */
+    body.theme-default {
+      background-color: hsl(17, 93%, 65%);
+    }
+    body.theme-default .masthead {
+      background-color: hsl(16, 80%, 59%);
+      border-top: .6rem solid hsl(16, 68%, 51%);
+      border-bottom: thin solid hsl(16, 68%, 51%);
+    }
+    body.theme-default .navigation a.active {
+      border-bottom: 4px solid hsl(16, 68%, 51%);
+    }
+    /* theme features */
+    body.theme-features {
+      background-color: hsl(17, 100%, 76%);
+    }
+    body.theme-features .masthead {
+      background-color: hsl(17, 93%, 65%);
+      border-top: .6rem solid hsl(16, 80%, 59%);
+      border-bottom: thin solid hsl(16, 80%, 59%);
+    }
+    body.theme-features .navigation a.active {
+      border-bottom: 4px solid hsl(16, 80%, 59%);
+    }
+    /* theme pricing */
+    body.theme-pricing {
+      background-color: hsl(34, 98%, 64%);
+    }
+    body.theme-pricing .masthead {
+      background-color: hsl(32, 89%, 57%);
+      border-top: .6rem solid hsl(32, 89%, 47%);
+      border-bottom: thin solid hsl(32, 89%, 47%);
+    }
+    body.theme-pricing .navigation a.active {
+      border-bottom: 4px solid hsl(32, 89%, 47%);
+    }
+    /* theme support */
+    body.theme-support {
+      background-color: hsl(230, 59%, 61%);
+    }
+    body.theme-support .masthead {
+      background-color: hsl(230, 56%, 56%);
+      border-top: .6rem solid hsl(230, 56%, 46%);
+      border-bottom: thin solid hsl(230, 56%, 46%);
+    }
+    body.theme-support .navigation a.active {
+      border-bottom: 4px solid hsl(230, 56%, 46%);
+    }
+    .masthead {
+      align-items: center;
+      color: #fff;
+      display: flex;
+      font-size: 1.5rem;
+      justify-content: space-between;
+      padding: 0 1.7rem 0 1.6rem;
+    }
+    .masthead a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .masthead__info .btn {
+      margin-left: 1rem;
+    }
+    .navigation {
+      flex: 1;
+    }
+    .navigation ul {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .navigation li {
+      margin-right: 1.6rem;
+    }
+    .navigation li:last-child {
+      margin-right: 0;
+    }
+    .navigation a {
+      border-bottom: 4px solid transparent;
+      display: block;
+      padding: 2.1rem .9rem;
+      text-decoration: none;
+    }
+    .navigation a.active {
+      border-bottom: 4px solid hsl(16, 68%, 51%);
+    }
+    .btn {
+      background-color: hsl(117, 49%, 59%);
+      border-radius: .4rem .4rem;
+      color: #fff;
+      line-height: 2.4rem;
+      letter-spacing: -.2px;
+      padding: .8rem 1.5rem;
+      text-decoration: none;
+    }
+    .btn:hover, .btn:focus {
+      background-color: hsl(125, 45%, 50%);
+    }
+    .btn:active {
+      background-color: hsl(125, 45%, 40%);
+    }
+    @media screen and (max-width: 675px) {
+      .masthead {
+        height: 7rem;
+      }
+      .navigation {
+        display: none;
+      }
+    }
+  </style>
 </head>

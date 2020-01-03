@@ -1,4 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const constants = require('./constants')
+const path = require('path')
 
 module.exports = {
 
@@ -19,29 +22,43 @@ module.exports = {
       title: 'Portway',
       inject: true,
       chunks: ['index'],
-      filename: 'index.html'
+      filename: 'index.html',
+      constants: constants
     }),
     new HtmlWebpackPlugin({
       template: './src/features.hbs',
       title: 'Features – Portway',
       inject: true,
       chunks: ['index'],
-      filename: 'features/index.html'
+      filename: 'features/index.html',
+      constants: constants
     }),
     new HtmlWebpackPlugin({
       template: './src/pricing.hbs',
       title: 'Pricing – Portway',
       inject: true,
       chunks: ['index'],
-      filename: 'pricing/index.html'
+      filename: 'pricing/index.html',
+      constants: constants
     }),
     new HtmlWebpackPlugin({
       template: './src/support.hbs',
       title: 'Pricing – Support',
       inject: true,
       chunks: ['index'],
-      filename: 'support/index.html'
+      filename: 'support/index.html',
+      constants: constants
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, './src/img'),
+        to: 'img'
+      },
+      {
+        from: path.resolve(__dirname, './src/css/fonts'),
+        to: 'css/fonts'
+      },
+    ])
   ],
 
   module: {
@@ -51,15 +68,21 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-            presets: ['@babel/preset-env']
+          presets: ['@babel/preset-env']
         }
       },
       {
         test: /\.hbs$/,
         loader: 'handlebars-loader',
         options: {
-          partialDirs: [__dirname + './src/partials']
+          runtime: path.join(__dirname, './src/helpers/handlebars')
         }
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
       },
       {
         test: /\.s[ac]ss$/i,
