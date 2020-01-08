@@ -1,13 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-const constants = require('./constants')
+const entrypoints = require('./webpack.entrypoints')
+const htmlFiles = require('./webpack.htmlFiles')
 const buildPath = path.resolve(__dirname, 'dist')
 
 module.exports = {
@@ -16,9 +16,7 @@ module.exports = {
   // https://webpack.js.org/configuration/devtool/
   devtool: 'source-map',
 
-  entry: {
-    index: './src/js/index.js',
-  },
+  entry: entrypoints,
 
   output: {
     filename: '[name].[hash:20].js',
@@ -73,38 +71,7 @@ module.exports = {
         to: 'css/fonts'
       },
     ]),
-    new HtmlWebpackPlugin({
-      template: './src/index.hbs',
-      title: 'Portway',
-      inject: true,
-      chunks: ['index'],
-      filename: 'index.html',
-      constants: constants
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/features.hbs',
-      title: 'Features – Portway',
-      inject: true,
-      chunks: ['index'],
-      filename: 'features/index.html',
-      constants: constants
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pricing.hbs',
-      title: 'Pricing – Portway',
-      inject: true,
-      chunks: ['index'],
-      filename: 'pricing/index.html',
-      constants: constants
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/support.hbs',
-      title: 'Pricing – Support',
-      inject: true,
-      chunks: ['index'],
-      filename: 'support/index.html',
-      constants: constants
-    }),
+    ...htmlFiles,
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
       chunkFilename: '[id].[contenthash].css'

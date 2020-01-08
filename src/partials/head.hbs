@@ -85,11 +85,8 @@
       border-bottom: 4px solid hsl(230, 56%, 46%);
     }
     .masthead {
-      align-items: center;
       color: #fff;
-      display: flex;
       font-size: 1.5rem;
-      justify-content: space-between;
       padding: 0 1.7rem 0 1.6rem;
     }
     .masthead a {
@@ -98,6 +95,12 @@
     }
     .masthead__info .btn {
       margin-left: 1rem;
+    }
+    .header {
+      align-items: center;
+      display: flex;
+      height: 6.4rem;
+      justify-content: space-between;
     }
     .navigation {
       flex: 1;
@@ -119,31 +122,43 @@
     .navigation a {
       border-bottom: 4px solid transparent;
       display: block;
+      height: 6.4rem;
       padding: 2.1rem .9rem;
+      position: relative;
       text-decoration: none;
+    }
+    .navigation span {
+      display: inline-block;
+      position: relative;
     }
     .navigation a.active {
       border-bottom: 4px solid hsl(16, 68%, 51%);
     }
     .btn {
+      appearance: none;
       background-color: hsl(117, 49%, 59%);
       border-radius: .4rem .4rem;
+      border: none;
       color: #fff;
+      cursor: pointer;
       line-height: 2.4rem;
       letter-spacing: -.2px;
       padding: .8rem 1.5rem;
       text-decoration: none;
+      -webkit-appearance: none;
     }
-    .btn:hover, .btn:focus {
+    .btn:focus {
       background-color: hsl(125, 45%, 50%);
     }
     .btn:active {
       background-color: hsl(125, 45%, 40%);
     }
-    @media screen and (max-width: 675px) {
-      .masthead {
-        height: 7rem;
+    @media (hover: hover) {
+      .btn:hover {
+        background-color: hsl(125, 45%, 50%);
       }
+    }
+    @media screen and (max-width: 890px) {
       .navigation {
         display: none;
       }
