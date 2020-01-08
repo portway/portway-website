@@ -1,6 +1,49 @@
 {{> partials/head }}
 <body class="theme-pricing">
   {{> partials/navigation active="pricing" }}
-  <h1 class="page-title">Pricing</h1>
+  <div aria-hidden="true" hidden>
+    <h1>Pricing</h1>
+  </div>
+  <div class="container pricing">
+    <div class="intro">
+      <h2 class="intro__title">The right price for just you or a team of you.</h2>
+      <p class="intro__subtitle">TBD</p>
+    </div>
+    <div class="plans">
+      <div class="plan card">
+        <h3 class="plan__title">Solo plan</h3>
+        <div>
+          <span class="plan__cost">$10</span>
+          <span class="plan__period">/mo.</span>
+        </div>
+        <p class="plan__notes">&nbsp;</p>
+        <ul class="feature-list">
+          <li class="feature-list__item feature-list__item--yes">Unlimited projects</li>
+          <li class="feature-list__item feature-list__item--yes">Unlimited documents</li>
+          <li class="feature-list__item feature-list__item--yes">100GB Storage</li>
+        </ul>
+      </div>
+      {{!-- /plan --}}
+      <div class="plan card">
+        <h3 class="plan__title">Team plan</h3>
+        <div>
+          <span class="plan__cost">$50</span>
+          <span class="plan__period">/mo.</span>
+        </div>
+        <p class="plan__notes">5 users included, $10/user after</p>
+        <ul class="feature-list">
+          <li class="feature-list__item feature-list__item--yes">Unlimited projects</li>
+          <li class="feature-list__item feature-list__item--yes">Unlimited documents</li>
+          <li class="feature-list__item feature-list__item--yes">10GB Storage</li>
+          <li class="feature-list__item feature-list__item--yes">Multiple teams and users (5 included)</li>
+          <li class="feature-list__item feature-list__item--yes">Audit log</li>
+        </ul>
+      </div>
+      {{!-- /plan --}}
+    </div>
+    {{!-- /cards --}}
+    {{> partials/sign-up }}
+  </div>
+  {{!-- /container --}}
 </body>
 </html>
