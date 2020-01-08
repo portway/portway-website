@@ -4,7 +4,7 @@
 }
 
 body {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .centered {
@@ -19,20 +19,20 @@ h3, h4, h5, h6 {
   font-family: var(--type-sans-serif);
 }
 
-h1 {
-  font-size: 4.2rem;
-  font-weight: bold;
-  letter-spacing: -0.3px;
-  line-height: 5.6rem;
-  margin-bottom: 1.4rem;
-}
-
-h2 {
+.intro-title {
   font-size: 3rem;
   font-weight: bold;
   letter-spacing: -0.2px;
   line-height: 4rem;
-  margin-bottom: 1.4rem;
+  margin: 0 0 1.4rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  line-height: 4.4rem;
+  margin: 0 0 1.2rem;
 }
 
 h3 {
@@ -40,16 +40,28 @@ h3 {
   font-weight: 500;
   letter-spacing: -0.3px;
   line-height: 2.7rem;
-  margin-bottom: 1.3rem;
+  margin: 0 0 1.3rem;
+  &.normal {
+    font-weight: 300;
+  }
 }
 
-p, div {
+h4 {
+  font-size: 1.7rem;
+  font-weight: normal;
+  letter-spacing: -0.3px;
+  line-height: 2.7rem;
+  margin: 0 0 1.3rem;
+}
+
+p, div, li {
   font-size: 1.5rem;
+  font-weight: 300;
   letter-spacing: -0.2px;
   line-height: 2.4rem;
 }
 
 p {
-  margin-bottom: 1.2rem;
+  margin: 0 0 1.2rem;
 }
 

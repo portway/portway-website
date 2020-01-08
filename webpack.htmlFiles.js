@@ -14,7 +14,7 @@ module.exports = [
     template: './src/features.hbs',
     title: 'Features – Portway',
     inject: true,
-    chunks: ['home'],
+    chunks: ['features'],
     filename: 'features/index.html',
     constants: constants
   }),
