@@ -22,7 +22,7 @@ module.exports = [
     template: './src/pricing.hbs',
     title: 'Pricing – Portway',
     inject: true,
-    chunks: ['home'],
+    chunks: ['pricing'],
     filename: 'pricing/index.html',
     constants: constants
   }),

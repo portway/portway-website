@@ -7,7 +7,7 @@
   margin: auto;
   max-width: 1024px;
   width: 86.328125%;
-  &.home, &.features {
+  &.home, &.features, &.pricing {
     max-width: 924px;
     padding: 7rem 0;
   }
@@ -20,12 +20,29 @@
 
 .intro {
   text-align: center;
+
+  &__title {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: -0.2px;
+    line-height: 4rem;
+    margin: 0 0 1.4rem;
+  }
+
+  &__subtitle {
+    font-family: var(--type-serif);
+    font-size: 2rem;
+    letter-spacing: -0.2px;
+    line-height: 3.1rem;
+    margin-bottom: 1.2rem;
+  }
+
 }
 
 .card {
   background: #FFFFFF;
   box-shadow: 0 2px 6px 0 rgba(102,102,102,0.40);
-  border-radius: 6px;
+  border-radius: 2px;
   color: #333333;
   padding: 2.7rem 1.5rem 3.7rem;
   &__title {
