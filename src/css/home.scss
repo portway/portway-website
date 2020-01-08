@@ -1,22 +1,22 @@
-@import 'inc/color';
-@import 'inc/type';
-@import 'inc/base';
 @import 'inc/include-media';
 
 .home {
   color: #fff;
-  max-width: 924px;
-  padding: 7rem 0;
-}
-
-.home__intro {
-  text-align: center;
-  p {
-    font-family: var(--type-serif);
-    font-size: 2rem;
-    letter-spacing: -0.2px;
-    line-height: 3.1rem;
-    margin-bottom: 1.2rem;
+  .intro {
+    .intro-title {
+      font-size: 4.2rem;
+      font-weight: bold;
+      letter-spacing: -0.3px;
+      line-height: 5.6rem;
+      margin-bottom: 1.4rem;
+    }
+    p {
+      font-family: var(--type-serif);
+      font-size: 2rem;
+      letter-spacing: -0.2px;
+      line-height: 3.1rem;
+      margin-bottom: 1.2rem;
+    }
   }
 }
 
@@ -87,11 +87,7 @@
   }
 
   .btn {
-    font-size: 1.7rem;
-    font-weight: 500;
-    margin-top: .5rem;
     margin-bottom: 1rem;
-    width: 100%;
   }
 
   .centered {

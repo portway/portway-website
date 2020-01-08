@@ -88,6 +88,8 @@
       color: #fff;
       font-size: 1.5rem;
       padding: 0 1.7rem 0 1.6rem;
+      position: sticky;
+      top: 0;
     }
     .masthead a {
       color: #fff;
@@ -147,16 +149,16 @@
       text-decoration: none;
       -webkit-appearance: none;
     }
+    @media (hover: hover) {
+      .btn:hover {
+        background-color: hsl(125, 45%, 50%);
+      }
+    }
     .btn:focus {
       background-color: hsl(125, 45%, 50%);
     }
     .btn:active {
       background-color: hsl(125, 45%, 40%);
-    }
-    @media (hover: hover) {
-      .btn:hover {
-        background-color: hsl(125, 45%, 50%);
-      }
     }
     @media screen and (max-width: 890px) {
       .navigation {
