@@ -1,0 +1,57 @@
+body {
+  background: var(--theme-surface);
+}
+
+.container {
+  margin: auto;
+  max-width: 1024px;
+  width: 86.328125%
+}
+
+.card {
+  background: #FFFFFF;
+  box-shadow: 0 2px 6px 0 rgba(102,102,102,0.40);
+  border-radius: 6px;
+  color: #333333;
+  padding: 1.5rem 1.5rem 3.7rem;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: normal;
+    line-height: 3.1rem;
+    letter-spacing: -0.2px;
+    margin-bottom: 1.7rem;
+    text-align: center;
+  }
+
+  a {
+    color: #333;
+  }
+
+}
+
+form {
+  label {
+    display: block;
+    font-family: var(--type-sans-serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    line-height: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  input {
+    background-color: #fff;
+    border: thin solid var(--color-gray-10);
+    border-radius: 3px 3px;
+    font-family: var(--type-sans-serif);
+    font-size: 1.5rem;
+    letter-spacing: -0.2px;
+    line-height: 2.4rem;
+    padding: 6px 6px;
+    width: 100%;
+    ::placeholder {
+      color: var(--color-gray-40);
+    }
+  }
+}
