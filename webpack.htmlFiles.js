@@ -26,12 +26,4 @@ module.exports = [
     filename: 'pricing/index.html',
     constants: constants
   }),
-  new HtmlWebpackPlugin({
-    template: './src/support.hbs',
-    title: 'Pricing – Support',
-    inject: true,
-    chunks: ['home'],
-    filename: 'support/index.html',
-    constants: constants
-  }),
 ]
