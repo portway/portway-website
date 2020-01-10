@@ -42,10 +42,17 @@ body {
 
 .home__features {
   display: flex;
+  flex-direction: column;
   list-style: none;
-  margin: 0 0 5.8rem 0;
+  margin: 0 auto 5.8rem auto;
   padding: 0;
-  width: 100%;
+  width: 90%;
+
+  @include media('>medium') {
+    flex-direction: row;
+    margin: 0 0 5.8rem 0;
+    width: 100%;
+  }
 
   @include media('>large') {
     margin: 0 5.8rem 0 0;
@@ -53,9 +60,15 @@ body {
   }
 
   li {
+    align-items: center;
+    display: flex;
     margin-right: 2rem;
     text-align: center;
-    width: 33%;
+
+    @include media('>medium') {
+      display: block;
+      width: 33%;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -69,13 +82,26 @@ body {
   display: flex;
   height: 152px;
   justify-content: center;
+  margin-right: 3rem;
   padding-bottom: 1.5rem;
-  width: 100%;
+  width: 30%;
+
+  @include media('>medium') {
+    width: 100%;
+  }
 
   img {
     display: block;
     height: auto;
     max-width: 100%;
+  }
+}
+
+.home__feature-content {
+  text-align: left;
+  flex: 1;
+  @include media('>medium') {
+    text-align: center;
   }
 }
 
