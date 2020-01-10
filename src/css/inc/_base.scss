@@ -32,6 +32,9 @@ form {
       color: var(--color-gray-40);
     }
   }
+  input[type="text"], input[type="email"], textarea {
+    appearance: none;
+  }
   input[type="checkbox"], input[type="radio"] {
     margin: 0 1rem 0 0;
     padding: 0;

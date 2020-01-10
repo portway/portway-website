@@ -4,21 +4,6 @@
 @import 'inc/base';
 @import 'inc/include-media';
 
-.container {
-  margin: auto;
-  max-width: 1024px;
-  width: 86.328125%;
-  &.home, &.features, &.pricing, &.support {
-    max-width: 924px;
-    padding: 7rem 0;
-  }
-  img {
-    display: block;
-    height: auto;
-    max-width: 100%;
-  }
-}
-
 .page-footer {
   // align-items: center;
   // display: flex;
