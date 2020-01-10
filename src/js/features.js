@@ -1,6 +1,8 @@
 import '../css/shared.scss'
 import '../css/features.scss'
 
+import './navigation'
+
 (function() {
   // Get relevant elements and collections
   const tabbed = document.querySelector('.tabbed')

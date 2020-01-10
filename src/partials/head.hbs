@@ -41,49 +41,75 @@
     body.theme-default {
       background-color: hsl(17, 93%, 65%);
     }
-    body.theme-default .masthead {
-      background-color: hsl(16, 80%, 59%);
-      border-top: .6rem solid hsl(16, 68%, 51%);
-      border-bottom: thin solid hsl(16, 68%, 51%);
-    }
-    body.theme-default .navigation a.active {
-      border-bottom: 4px solid hsl(16, 68%, 51%);
-    }
+      body.theme-default .masthead {
+        background-color: hsl(16, 80%, 59%);
+        border-top: .6rem solid hsl(16, 68%, 51%);
+        border-bottom: thin solid hsl(16, 68%, 51%);
+      }
+      body.theme-default .navigation a.active {
+        border-bottom: 4px solid hsl(16, 68%, 51%);
+      }
+      body.theme-default .menu.active {
+        background-color: hsl(16, 68%, 51%);
+      }
     /* theme features */
     body.theme-features {
       background-color: hsl(17, 100%, 76%);
     }
-    body.theme-features .masthead {
-      background-color: hsl(17, 93%, 65%);
-      border-top: .6rem solid hsl(16, 80%, 59%);
-      border-bottom: thin solid hsl(16, 80%, 59%);
-    }
-    body.theme-features .navigation a.active {
-      border-bottom: 4px solid hsl(16, 80%, 59%);
-    }
+      body.theme-features .masthead {
+        background-color: hsl(17, 93%, 65%);
+        border-top: .6rem solid hsl(16, 80%, 59%);
+        border-bottom: thin solid hsl(16, 80%, 59%);
+      }
+      body.theme-features .navigation a.active {
+        border-bottom: 4px solid hsl(16, 80%, 59%);
+      }
+      body.theme-features .menu.active {
+        background-color: hsl(16, 80%, 59%);
+      }
     /* theme pricing */
     body.theme-pricing {
       background-color: hsl(34, 98%, 64%);
     }
-    body.theme-pricing .masthead {
-      background-color: hsl(32, 89%, 57%);
-      border-top: .6rem solid hsl(32, 89%, 47%);
-      border-bottom: thin solid hsl(32, 89%, 47%);
-    }
-    body.theme-pricing .navigation a.active {
-      border-bottom: 4px solid hsl(32, 89%, 47%);
-    }
+      body.theme-pricing .masthead {
+        background-color: hsl(32, 89%, 57%);
+        border-top: .6rem solid hsl(32, 89%, 47%);
+        border-bottom: thin solid hsl(32, 89%, 47%);
+      }
+      body.theme-pricing .navigation a.active {
+        border-bottom: 4px solid hsl(32, 89%, 47%);
+      }
+      body.theme-pricing .menu.active {
+        background-color: hsl(32, 89%, 47%);
+      }
     /* theme support */
     body.theme-support {
       background-color: hsl(230, 59%, 61%);
     }
-    body.theme-support .masthead {
-      background-color: hsl(230, 56%, 56%);
-      border-top: .6rem solid hsl(230, 56%, 46%);
-      border-bottom: thin solid hsl(230, 56%, 46%);
+      body.theme-support .masthead {
+        background-color: hsl(230, 56%, 56%);
+        border-top: .6rem solid hsl(230, 56%, 46%);
+        border-bottom: thin solid hsl(230, 56%, 46%);
+      }
+      body.theme-support .navigation a.active {
+        border-bottom: 4px solid hsl(230, 56%, 46%);
+      }
+      body.theme-support .menu.active {
+        background-color: hsl(230, 56%, 46%);
+      }
+    .container {
+      margin: auto;
+      max-width: 1024px;
+      width: 86.328125%;
     }
-    body.theme-support .navigation a.active {
-      border-bottom: 4px solid hsl(230, 56%, 46%);
+    .container.home, .container.features, .container.pricing, .container.support {
+      max-width: 924px;
+      padding: 7rem 0;
+    }
+    .container img {
+      display: block;
+      height: auto;
+      max-width: 100%;
     }
     .masthead {
       color: #fff;
@@ -108,7 +134,7 @@
     .navigation {
       flex: 1;
     }
-    .navigation ul {
+    .menu {
       align-items: center;
       display: flex;
       justify-content: center;
@@ -116,13 +142,13 @@
       margin: 0;
       padding: 0;
     }
-    .navigation li {
+    .menu li {
       margin-right: 1.6rem;
     }
-    .navigation li:last-child {
+    .menu li:last-child {
       margin-right: 0;
     }
-    .navigation a {
+    .menu a {
       border-bottom: 4px solid transparent;
       display: block;
       height: 6.4rem;
@@ -130,13 +156,37 @@
       position: relative;
       text-decoration: none;
     }
-    .navigation span {
+    .menu span {
       display: inline-block;
       position: relative;
     }
-    .navigation a.active {
+    .menu a.active {
       border-bottom: 4px solid hsl(16, 68%, 51%);
     }
+    .menu-btn {
+      appearance: none;
+      background: transparent;
+      border: none;
+      display: none;
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 2.4rem 1rem;
+    }
+      .menu-btn .menu-btn__close path, .menu-btn .menu-btn__open path {
+        fill: #fff;
+      }
+      .menu-btn .menu-btn__close {
+        display: none;
+      }
+      .menu-btn .menu-btn__open {
+        display: block;
+      }
+      .menu-btn.active .menu-btn__close {
+        display: block;
+      }
+      .menu-btn.active .menu-btn__open {
+        display: none;
+      }
     .btn {
       appearance: none;
       background-color: hsl(117, 49%, 59%);
@@ -162,9 +212,55 @@
     .btn:active {
       background-color: hsl(125, 45%, 40%);
     }
-    @media screen and (max-width: 890px) {
+    @media screen and (min-width: 320px) {
+      .container {
+        width: 95%;
+      }
+      .masthead {
+        padding: 0;
+      }
+    }
+    @media screen and (max-width: 790px) {
+      .header > a { padding-left: 1rem; }
       .navigation {
-        display: none;
+        text-align: right;
+      }
+      .menu, .masthead__info { display: none; }
+      .menu-btn {
+        display: inline-block;
+      }
+      .menu li {
+        font-size: 2rem;
+        margin: 0;
+        padding: 2rem 5rem;
+        text-align: left;
+        width: 100%;
+      }
+      .menu.active {
+        align-items: flex-start;
+        background-color: rgba(0, 0, 0, .9);
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 6.5rem);
+        justify-content: flex-start;
+        left: 0;
+        padding: 5rem 0 0 0;
+        position: absolute;
+        text-align: center;
+        top: 6.5rem;
+        width: 100%;
+        z-index: 1;
+      }
+        .menu.active .active {
+          color: rgba(255, 255, 255, .4);
+        }
+      .masthead__info.active {
+        bottom: 8rem;
+        display: block;
+        left: 50%;
+        position: fixed;
+        transform: translateX(-50%);
+        z-index: 10;
       }
     }
   </style>
