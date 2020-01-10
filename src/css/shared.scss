@@ -5,15 +5,23 @@
 @import 'inc/include-media';
 
 .page-footer {
-  // align-items: center;
-  // display: flex;
-  // justify-content: space-between;
+  color: rgba(255, 255, 255, .7);
   font-size: 1.3rem;
   text-align: center;
   padding: 7rem 0 3rem 0;
+
+  &__copyright {
+    display: block;
+    @include media('>medium') {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+  }
+
   &__links {
     a { color: inherit; }
   }
+
 }
 
 // https://a11yproject.com/posts/how-to-hide-content/
@@ -99,7 +107,7 @@ a.card {
   display: flex;
   flex-direction: column;
   margin: auto;
-  width: 100%;
+  width: 75%;
 
   @include media('>medium') {
     flex-direction: row;
@@ -108,8 +116,9 @@ a.card {
   }
 
   &__content {
+    margin: 0 0 2rem 0;
     @include media('>medium') {
-      margin-right: 2rem;
+      margin: 0 2rem 0 0;
     }
   }
   &__title {
