@@ -5,6 +5,7 @@
 
 body {
   font-weight: 300;
+  color: #333;
 }
 
 .centered {
@@ -21,7 +22,7 @@ h3, h4, h5, h6 {
 
 h2 {
   font-size: 2.2rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.2px;
   line-height: 4.4rem;
   margin: 0 0 1.2rem;
@@ -29,7 +30,7 @@ h2 {
 
 h3 {
   font-size: 1.7rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.3px;
   line-height: 2.7rem;
   margin: 0 0 1.3rem;
@@ -46,9 +47,9 @@ h4 {
   margin: 0 0 1.3rem;
 }
 
-p, div, li {
+p, div, li, footer {
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.2px;
   line-height: 2.4rem;
 }

@@ -1,5 +1,6 @@
 @import 'inc/color';
 @import 'inc/type';
+@import 'inc/grid';
 @import 'inc/base';
 @import 'inc/include-media';
 
@@ -18,6 +19,18 @@
   }
 }
 
+.page-footer {
+  // align-items: center;
+  // display: flex;
+  // justify-content: space-between;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 7rem 0 3rem 0;
+  &__links {
+    a { color: inherit; }
+  }
+}
+
 // https://a11yproject.com/posts/how-to-hide-content/
 .visually-hidden:not(:focus):not(:active) {
   position: absolute !important;
@@ -29,9 +42,33 @@
   white-space: nowrap; /* added line */
 }
 
-.intro {
+.pill {
+  background: rgba(102,102,102,0.40);
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin-right: .6rem;
+  min-width: 9.9rem;
+  padding: 0 .6rem;
   text-align: center;
 
+  &--green {
+    background: var(--color-green);
+  }
+
+  &--green-light {
+    background: var(--color-green-light);
+    color: #333;
+  }
+
+  &--orange {
+    background: var(--color-orange);
+  }
+
+}
+
+.intro {
+  text-align: center;
   &__title {
     font-size: 3rem;
     font-weight: bold;
@@ -39,7 +76,6 @@
     line-height: 4rem;
     margin: 0 0 1.4rem;
   }
-
   &__subtitle {
     font-family: var(--type-serif);
     font-size: 2rem;
@@ -47,7 +83,6 @@
     line-height: 3.1rem;
     margin-bottom: 1.2rem;
   }
-
 }
 
 .card {
@@ -64,9 +99,14 @@
     margin-bottom: 1.7rem;
     text-align: center;
   }
-  a {
+  a, p, div, li {
     color: #333;
   }
+}
+
+a.card {
+  display: block;
+  text-decoration: none;
 }
 
 .signup-promo {

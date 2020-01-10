@@ -19,8 +19,10 @@ module.exports = {
   entry: entrypoints,
 
   output: {
-    filename: '[name].[hash:20].js',
-    path: buildPath
+    filename: 'js/[name].[contenthash].js',
+    chunkFilename: 'js/[name].[chunkhash].js',
+    path: buildPath,
+    publicPath: '/'
   },
 
   module: {
@@ -43,7 +45,13 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          'file-loader'
+          {
+            loader: 'file-loader',
+            options: {
+              limit: 8000, // Convert images < 8kb to base64 strings
+              name: 'img/[hash]-[name].[ext]'
+            }
+          }
         ]
       },
       {
@@ -71,10 +79,10 @@ module.exports = {
         to: 'css/fonts'
       },
     ]),
-    ...htmlFiles,
+    ...htmlFiles.production,
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-      chunkFilename: '[id].[contenthash].css'
+      filename: 'css/[name].[contenthash].css',
+      chunkFilename: 'css/[id].[chunkhash].css'
     }),
   ],
 

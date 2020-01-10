@@ -5,11 +5,11 @@
     <h1>Features</h1>
   </div>
   <section class="container features">
-    <div class="intro">
+    <section class="intro">
       <h2 class="intro__title">It’s just what you want, plus some thing you didn’t know you wanted, working really, really well.</h2>
-    </div>
+    </section>
     {{!-- /intro --}}
-    <div class="features__tabs tabbed">
+    <section class="features__tabs tabbed">
       <ul>
         <li>
           <a class="features__tab features__tab--content" href="#content" aria-label="Content">
@@ -53,19 +53,20 @@
         <p class="features__panel-body">Drag text documents right into Portway from your desktop. Or drag fields from one document to another.</p>
         <img class="features__panel-image" src="/img/features-content-image.png" srcset="/img/features-content-image.png, /img/features-content-image@2x.png 2x" width="780" height="585" alt="Portway screenshot" />
       </section>
-    </div>
+    </section>
     {{!-- /Tabbed Content --}}
     {{> partials/sign-up }}
     {{!-- /sign-up promotion --}}
   </section>
   {{!-- /container features --}}
+
   <section class="teams">
     <div class="container">
       <div class="intro">
         <h2>Teams</h2>
         <h3 class="normal">Enable teams and start with 5 users. Additional users are $10/month.</h3>
       </div>
-      <ul class="teams__list">
+      <ul class="teams__list grid row row--two">
         <li>
           <img src="/img/illo_project-teams.png" srcset="/img/illo_project-teams.png, /img/illo_project-teams@2x.png 2x" alt="Project teams" width="260" />
           <div class="teams__list-content">
@@ -83,10 +84,12 @@
       </ul>
     </div>
   </section>
+  {{!-- /teams --}}
+
   <section class="container developers">
     <div class="intro">
       <h2>Developers</h2>
-      <p>TBD</p>
+      <p>Build applications and websites. Update documents through Siri shortcuts. Do custom content auditing by parsing the structured versions of your content. Do more with your documents.</p>
     </div>
     <ul class="developers__list">
       <li class="developers__list-item">
@@ -119,6 +122,7 @@
       </li>
     </ul>
   </section>
-  {{!-- /teams --}}
+  {{!-- /developers --}}
+  {{> partials/footer }}
 </body>
 </html>

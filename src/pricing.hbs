@@ -5,12 +5,17 @@
     <h1>Pricing</h1>
   </div>
   <div class="container pricing">
-    <div class="intro">
-      <h2 class="intro__title">The right price for just you or a team of you.</h2>
-      <p class="intro__subtitle">TBD</p>
-    </div>
+    <section class="intro">
+      <h2 class="intro__title">The right price for just you, or a team of you.</h2>
+      <p class="intro__subtitle">30-day free trial – hassle free</p>
+      <p>
+        Our goal is to sell you a product for a fair price.<br />
+        We <b>do not bombard you</b> with sales calls, email, and we don't sell your data to anyone.<br />
+        We hate that.
+      </p>
+    </section>
     {{!-- /intro --}}
-    <div class="plans">
+    <section class="plans">
       <div class="plan card">
         <h3 class="plan__title">Solo plan</h3>
         <div>
@@ -21,7 +26,8 @@
         <ul class="feature-list">
           <li class="feature-list__item feature-list__item--yes">Unlimited projects</li>
           <li class="feature-list__item feature-list__item--yes">Unlimited documents</li>
-          <li class="feature-list__item feature-list__item--yes">100GB Storage</li>
+          <li class="feature-list__item feature-list__item--yes">10GB Storage</li>
+          <li class="feature-list__item feature-list__item--yes">Private &amp; Secure</li>
         </ul>
       </div>
       {{!-- /plan --}}
@@ -36,15 +42,17 @@
           <li class="feature-list__item feature-list__item--yes">Unlimited projects</li>
           <li class="feature-list__item feature-list__item--yes">Unlimited documents</li>
           <li class="feature-list__item feature-list__item--yes">10GB Storage</li>
+          <li class="feature-list__item feature-list__item--yes">Private &amp; Secure</li>
           <li class="feature-list__item feature-list__item--yes">Multiple teams and users (5 included)</li>
           <li class="feature-list__item feature-list__item--yes">Audit log</li>
         </ul>
       </div>
       {{!-- /plan --}}
-    </div>
-    {{!-- /cards --}}
+    </section>
+    {{!-- /plans --}}
     {{> partials/sign-up }}
   </div>
   {{!-- /container --}}
+  {{> partials/footer }}
 </body>
 </html>
