@@ -3,7 +3,7 @@ body {
 }
 
 form {
-  label {
+  label, .label {
     display: block;
     font-family: var(--type-sans-serif);
     font-size: 1.3rem;
@@ -11,8 +11,14 @@ form {
     letter-spacing: -0.2px;
     line-height: 2rem;
     margin-bottom: 1.2rem;
+
+    &--inline {
+      align-items: center;
+      display: flex;
+    }
+
   }
-  input {
+  input, textarea {
     background-color: #fff;
     border: thin solid var(--color-gray-10);
     border-radius: 3px 3px;
@@ -26,12 +32,21 @@ form {
       color: var(--color-gray-40);
     }
   }
-  button {
+  input[type="checkbox"], input[type="radio"] {
+    margin: 0 1rem 0 0;
+    padding: 0;
+    width: auto;
+  }
+  button, .btn {
     font-size: 1.7rem;
     font-weight: 500;
     letter-spacing: -0.3px;
     line-height: 2.7rem;
     margin-top: 1.5rem;
-    width: 100%;
+
+    &--full {
+      width: 100%;
+    }
+
   }
 }

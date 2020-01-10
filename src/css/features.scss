@@ -115,23 +115,15 @@ body {
   background-color: var(--color-brand);
   padding: 3.5rem 0 2.5rem;
   &__list {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     margin: 4rem 0;
     padding: 0;
     @include media('>medium') {
-      flex-direction: row;
+
     }
     li {
       display: block;
       margin: 0;
       width: 100%;
-      @include media('>medium') {
-        margin: 0 11.2rem 0 0;
-        max-width: 26rem;
-      }
       &:last-child {
         margin: 0;
       }

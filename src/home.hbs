@@ -5,7 +5,7 @@
     <h1>Home</h1>
   </div>
   <div class="container home">
-    <div class="intro">
+    <section class="intro">
       <h2 class="intro__title">A notes app for people who need to do more</h2>
       <p>
         We created Portway for those who love the simplicity and flexibility of Markdown, <br />
@@ -18,9 +18,9 @@
         Headless CMS’s? Too technical.  We created Portway for those who love the simplicity and
         flexibility of Markdown, and need a way to do stuff with it.
       </p>
-    </div>
+    </section>
     {{!-- /Intro --}}
-    <div class="home__footer">
+    <section class="home__footer">
       <ul class="home__features">
         <li>
           <div class="home__feature-image">
@@ -59,7 +59,9 @@
           </div>
         </form>
       </div>
-    </div>
+    </section>
+    {{!-- /home-footer --}}
   </div>
+  {{> partials/footer }}
 </body>
 </html>

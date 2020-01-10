@@ -3,11 +3,19 @@ const path = require('path')
 
 const entrypoints = require('./webpack.entrypoints')
 const htmlFiles = require('./webpack.htmlFiles')
+const buildPath = path.resolve(__dirname, 'dist')
 
 module.exports = {
 
   // https://webpack.js.org/concepts/entry-points/#multi-page-application
   entry: entrypoints,
+
+  output: {
+    path: buildPath,
+    filename: 'js/[name].bundle.js',
+    chunkFilename: 'js/[name].bundle.js',
+    publicPath: '/'
+  },
 
   // https://webpack.js.org/configuration/dev-server/
   devServer: {
@@ -16,7 +24,7 @@ module.exports = {
 
   // https://webpack.js.org/concepts/plugins/
   plugins: [
-    ...htmlFiles,
+    ...htmlFiles.development,
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, './src/img'),
@@ -49,7 +57,13 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          'file-loader'
+          {
+            loader: 'file-loader',
+            options: {
+              limit: 8000, // Convert images < 8kb to base64 strings
+              name: 'img/[hash]-[name].[ext]'
+            }
+          }
         ]
       },
       {
