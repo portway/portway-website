@@ -5,7 +5,7 @@ import './navigation'
 
 (() => {
   const params = new URLSearchParams(location.search)
-  const success = params.get('success')
+  const success = params.get('received')
   if (success === 'true') {
     const supportForm = document.querySelector('#support-form')
     supportForm.classList.add('support__form--submitted')
