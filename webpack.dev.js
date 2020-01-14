@@ -34,6 +34,10 @@ module.exports = {
         from: path.resolve(__dirname, './src/css/fonts'),
         to: 'css/fonts'
       },
+      {
+        from: path.resolve(__dirname, './src/robots.txt'),
+        to: 'robots.txt'
+      },
     ])
   ],
 
