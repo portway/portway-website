@@ -40,47 +40,54 @@
           We’d love to hear from you.
         </p>
       </div>
-      <form class="support__form" action="{{ htmlWebpackPlugin.options.constants.FORM_SUBMISSION_ACTION_URL }}" method="POST">
-        <label>
-          Name
-          <input type="text" placeholder="Your name" name="name" />
-        </label>
-        <label>
-          Email
-          <input type="email" placeholder="example@domain.com" name="email" required />
-        </label>
-        <label>
-          Company
-          <input type="text" placeholder="Acme, Inc" name="company" />
-        </label>
-        <div class="support__form-radio-buttons">
-          <span class="label">What can we help you with?</span>
-          <div class="grid row row--two">
-            <label class="label label--inline">
-              <input type="radio" name="request-type" value="feature-request" checked="checked" /> Feature request
-            </label>
-            <label class="label label--inline">
-              <input type="radio" name="request-type" value="pricing" /> Pricing
-            </label>
-            <label class="label label--inline">
-              <input type="radio" name="request-type" value="bug" /> Bug
-            </label>
-            <label class="label label--inline">
-              <input type="radio" name="request-type" value="account" /> Account / billing
-            </label>
-            <label class="label label--inline">
-              <input type="radio" name="request-type" value="question" /> Question
-            </label>
-            <label class="label label--inline">
-              <input type="radio" name="request-type" value="other" /> Other
-            </label>
-          </div>
+      <form id="support-form" class="support__form" action="{{ htmlWebpackPlugin.options.constants.FORM_SUBMISSION_ACTION_URL }}" method="POST">
+        <div class="support__form-result">
+          <svg height="24" viewBox="0 0 16 11" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m5.62977041 11.9643422-4.42661184-4.42661188c-.17356635-.17356635-.45497301-.17356635-.62853936 0s-.17356635.45497301 0 .62853936l4.74088889 4.74088892c.17356923.1735692.45498156.1735659.62854672-.0000074l9.48133338-9.48177777c.1735622-.17357042.1735556-.45497708-.0000148-.62853936-.1735704-.17356229-.4549771-.17355569-.6285393.00001473z" fill="#6aca65" fill-rule="evenodd" transform="translate(0 -2)"/></svg>
+          We’ll talk soon, thanks!
         </div>
-        <label>
-          Message
-          <textarea name="message" placeholder="Your message..."></textarea>
-        </label>
-        <button class="btn">Send</button>
+        <div class="support__form-container">
+          <label>
+            Name
+            <input type="text" placeholder="Your name" name="name" />
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="example@domain.com" name="email" required />
+          </label>
+          <label>
+            Company
+            <input type="text" placeholder="Acme, Inc" name="company" />
+          </label>
+          <div class="support__form-radio-buttons">
+            <span class="label">What can we help you with?</span>
+            <div class="grid row row--two">
+              <label class="label label--inline">
+                <input type="radio" name="subject" value="[Website] Feature request" checked="checked" /> Feature request
+              </label>
+              <label class="label label--inline">
+                <input type="radio" name="subject" value="[Website] Pricing" /> Pricing
+              </label>
+              <label class="label label--inline">
+                <input type="radio" name="subject" value="[Website] Bug report" /> Bug
+              </label>
+              <label class="label label--inline">
+                <input type="radio" name="subject" value="[Website] Account / billing" /> Account / billing
+              </label>
+              <label class="label label--inline">
+                <input type="radio" name="subject" value="[Website] Question" /> Question
+              </label>
+              <label class="label label--inline">
+                <input type="radio" name="subject" value="[Website] Other" /> Other
+              </label>
+            </div>
+          </div>
+          <label>
+            Message
+            <textarea name="message" placeholder="Your message..."></textarea>
+          </label>
+          <button class="btn">Send</button>
+        </div>
+        {{!-- /form-container --}}
       </form>
     </section>
   </div>

@@ -42,6 +42,35 @@ body {
     width: 90%;
   }
 
+  &__form {
+    &--submitted {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__form-container {
+    display: block;
+    .support__form--submitted & {
+      display: none;
+    }
+  }
+
+  &__form-result {
+    display: none;
+    .support__form--submitted & {
+      align-items: center;
+      background-color: rgba(255, 255, 255, .1);
+      border-radius: 2px 2px;
+      display: flex;
+      padding: 1rem 1.5rem;
+    }
+    svg {
+      margin-right: 1.5rem;
+    }
+  }
+
   &__form-radio-buttons {
     margin-bottom: 1.2rem;
     .grid {
