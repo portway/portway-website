@@ -40,6 +40,9 @@ form {
     padding: 0;
     width: auto;
   }
+  textarea {
+    resize: vertical;
+  }
   button, .btn {
     font-size: 1.7rem;
     font-weight: 500;
