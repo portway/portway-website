@@ -5,15 +5,6 @@ const constants = require('./constants')
 // and no need to split development / production
 module.exports = {
   development: [
-    // @todo remove splash too, we don't need it
-    new HtmlWebpackPlugin({
-      template: './src/splash.hbs',
-      title: 'Portway',
-      inject: true,
-      chunks: ['splash'],
-      filename: 'splash.html',
-      constants: constants
-    }),
     new HtmlWebpackPlugin({
       template: './src/home.hbs',
       title: 'Portway',
@@ -57,19 +48,11 @@ module.exports = {
   ],
   production: [
     new HtmlWebpackPlugin({
-      template: './src/splash.hbs',
-      title: 'Portway',
-      inject: true,
-      chunks: ['splash'],
-      filename: 'index.html',
-      constants: constants
-    }),
-    new HtmlWebpackPlugin({
       template: './src/home.hbs',
       title: 'Portway',
       inject: true,
       chunks: ['home'],
-      filename: 'dirk.html',
+      filename: 'index.html',
       constants: constants
     }),
     new HtmlWebpackPlugin({
