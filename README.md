@@ -1,5 +1,7 @@
 # Portway Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1d53eb10-f7a8-488c-975f-081a9dea385f/deploy-status)](https://app.netlify.com/sites/portway-website/deploys)
+
 Marketing site for Portway app
 
 ## Local development
@@ -11,7 +13,4 @@ Your website will be running on http://localhost:8080/
 
 ## Deployments
 
-1. `npm run build`
-1. Connect to [the server](sftp://getportway.com//var/www/getportway.com/html)
-1. Remove _everything_ in `/var/www/getportway.com/html`
-1. Upload the contents of `dist` to `/var/www/getportway.com/html`
+Deployments are automatic through Netlify.
