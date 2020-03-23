@@ -13,4 +13,6 @@ Your website will be running on http://localhost:8080/
 
 ## Deployments
 
-Deployments are automatic through Netlify.
+Deployments are through Netlify. `master` is automatically deployed when it's updated.
+
+Every pull request gets a special preview URL, so that you can test changes there.
