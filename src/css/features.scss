@@ -16,6 +16,11 @@ body {
 
 .features {
 
+  &__panel {
+    min-height: 644px;
+    position: relative;
+  }
+
   &__panel-title {
     margin-bottom: 0;
   }
@@ -29,6 +34,22 @@ body {
     height: auto;
     margin: 4rem auto 0;
     max-width: 100%;
+  }
+
+  &__panel-item {
+    position: absolute;
+    z-index: 1;
+
+    &--document {
+      bottom: 100px;
+      left: 0;
+    }
+
+    &--image {
+      right: 0;
+      top: 282px;
+    }
+
   }
 
   &__tabs {
