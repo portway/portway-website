@@ -118,9 +118,19 @@
         background-image: url('../img/features-blob-2.svg');
       }
     }
+    &--developers {
+      &[aria-selected="true"] {
+        background-image: url('../img/features-blob-4.svg');
+      }
+    }
     &--media {
       &[aria-selected="true"] {
         background-image: url('../img/features-blob-3.svg');
+      }
+    }
+    &--outline {
+      &[aria-selected="true"] {
+        background-image: url('../img/features-blob-2.svg');
       }
     }
     &--dnd {
