@@ -8,7 +8,7 @@ const Footer = () => {
         &copy; 2019 &ndash; {new Date().getFullYear()}, BonkeyBong, LLC
       </span>
       <span className="page-footer__links">
-        <Link to="/support">Contact us</Link> – <Link to="/privacy">Privacy policy</Link>
+        <Link to="/support">Contact us</Link> – <Link to="/privacy">Privacy policy</Link> – <Link to="/terms">Terms of service</Link>
       </span>
     </footer>
   )
