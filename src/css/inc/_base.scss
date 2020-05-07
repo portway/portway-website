@@ -2,6 +2,10 @@ body {
   background: var(--theme-surface);
 }
 
+a, a:visited {
+  color: var(--color-blue-dark);
+}
+
 form {
   label, .label {
     display: block;
@@ -49,6 +53,11 @@ form {
     letter-spacing: -0.3px;
     line-height: 2.7rem;
     margin-top: 1.5rem;
+    transition: opacity 0.2s ease-in-out;
+
+    &[disabled] {
+      opacity: 0.5;
+    }
 
     &--full {
       width: 100%;

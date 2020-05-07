@@ -14,8 +14,15 @@
     }
   }
 
-  &__links {
-    a { color: inherit; }
+
+  a {
+    color: inherit;
+    &:hover {
+      color: rgba(255, 255, 255, .6);
+    }
+    &:active {
+      color: rgba(255, 255, 255, .9);
+    }
   }
 
 }
