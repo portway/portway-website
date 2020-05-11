@@ -15,9 +15,13 @@
     }
   },
   "extends": [
-    "plugin:jsx-a11y/recommended"
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
   ],
-  "plugins": [],
+  "plugins": [
+    "react-hooks"
+  ],
   "settings": {
     "react": {
       "version": "detect"
@@ -79,6 +83,8 @@
     "prefer-arrow-callback": [2, { "allowNamedFunctions": true }],
     "prefer-const": 2,
     "quotes": [2, "single", { "allowTemplateLiterals": true, "avoidEscape": true }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "semi": [2, "never"],
     "space-before-blocks": 2,
     "space-before-function-paren": ["error", {

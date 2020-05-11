@@ -1,6 +1,6 @@
 @import 'inc/include-media';
 
-body {
+.theme-features {
   background-image: url('../img/features-circles.svg');
   background-position: 45% 585px;
   background-repeat: no-repeat;
@@ -87,7 +87,7 @@ body {
       width: 7rem;
     }
 
-    [role="tablist"] [aria-selected] {
+    [role="tablist"] [aria-selected="true"] {
       path {
         fill: var(--color-gray-80);
       }
@@ -109,22 +109,32 @@ body {
     background-repeat: no-repeat;
     // background-size: cover;
     &--content {
-      &[aria-selected] {
+      &[aria-selected="true"] {
         background-image: url('../img/features-blob-1.svg');
       }
     }
     &--markdown {
-      &[aria-selected] {
+      &[aria-selected="true"] {
         background-image: url('../img/features-blob-2.svg');
       }
     }
+    &--developers {
+      &[aria-selected="true"] {
+        background-image: url('../img/features-blob-4.svg');
+      }
+    }
     &--media {
-      &[aria-selected] {
+      &[aria-selected="true"] {
         background-image: url('../img/features-blob-3.svg');
       }
     }
+    &--outline {
+      &[aria-selected="true"] {
+        background-image: url('../img/features-blob-2.svg');
+      }
+    }
     &--dnd {
-      &[aria-selected] {
+      &[aria-selected="true"] {
         background-image: url('../img/features-blob-4.svg');
       }
     }

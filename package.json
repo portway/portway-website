@@ -2,51 +2,43 @@
   "name": "portway-website",
   "version": "1.0.0",
   "description": "Portway marketing website",
-  "main": "src/js/index.js",
+  "private": true,
+  "author": "BonkeyBong, LLC",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "gatsby": "^2.21.0",
+    "gatsby-image": "^2.4.0",
+    "gatsby-plugin-gosquared": "^1.0.1",
+    "gatsby-plugin-react-helmet": "^3.3.0",
+    "gatsby-plugin-sass": "^2.3.1",
+    "gatsby-source-filesystem": "^2.3.0",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "prettier": "2.0.5"
+  },
+  "license": "ISC",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js --mode development",
-    "build": "webpack --config webpack.prod.js --mode production",
-    "preview": "npm run build && http-server dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BonkeyBong/portway-website.git"
-  },
-  "author": "BonkeyBong, LLC",
-  "license": "ISC",
-  "homepage": "https://getportway.com/",
-  "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
-    "autoprefixer": "^9.7.3",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^3.4.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "file-loader": "^5.0.2",
-    "handlebars": "^4.5.3",
-    "handlebars-loader": "^1.7.1",
-    "html-webpack-plugin": "^4.0.0-beta.11",
-    "http-server": "^0.12.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.1.2",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
-  },
-  "browserslist": [
-    "last 2 version",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
-  ]
+  }
 }

@@ -1,8 +1,9 @@
 @import 'inc/include-media';
 
-body {
+.theme-pricing {
   background-image: url('../img/pricing-circles.svg');
   background-position: 0 -500px;
+  background-repeat: repeat;
 }
 
 .plans {

@@ -7,9 +7,9 @@ Marketing site for Portway app
 ## Local development
 
 1. `npm install`
-1. `npm start`
+1. `gatsby develop`
 
-Your website will be running on http://localhost:8080/
+Your website will be running on http://localhost:8000/
 
 ## Deployments
 
