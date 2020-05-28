@@ -10,7 +10,7 @@ const TermsPage = () => (
     <Helmet>
       <body className="theme-support" />
     </Helmet>
-    <Layout title="Privacy policy">
+    <Layout title="Terms of service">
       <div className="container support">
         <section className="intro">
           <h2 className="intro__title">Terms of service</h2>

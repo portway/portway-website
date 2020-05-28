@@ -33,7 +33,7 @@ const IndexPage = () => {
       <Helmet>
         <body className="theme-default" />
       </Helmet>
-      <Layout>
+      <Layout title="Your collaborative markdown writing app">
         <div className="container home">
           <section className="intro">
             <h2 className="intro__title">Your collaborative writing app</h2>
