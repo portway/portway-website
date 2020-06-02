@@ -9,13 +9,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-gosquared`,
-      options: {
-        token: 'GSN-113617-U',
-        anonymizeIP: true
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `img`,

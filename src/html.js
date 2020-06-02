@@ -1,8 +1,10 @@
+/* eslint-disable */
 import React from 'react'
 import PropTypes from 'prop-types'
 
 export default function HTML(props) {
   return (
+    // eslint-disable-next-line jsx-a11y/html-has-lang
     <html {...props.htmlAttributes}>
       <head>
         <meta charSet="UTF-8" />
@@ -13,6 +15,15 @@ export default function HTML(props) {
         <meta name="author" content="BonkeyϟBong, LLC" />
         <meta name="theme-color" content="#F2F2F2" />
         {props.headComponents}
+        <script>
+          !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+          arguments)}};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+          d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+          insertBefore(d,q)}(window,document,'script','_gs');
+
+          _gs('GSN-113617-U');
+          _gs('set', 'anonymizeIP', true);
+        </script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
