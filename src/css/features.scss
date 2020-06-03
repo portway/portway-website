@@ -72,7 +72,10 @@
     }
 
     [role="tablist"] li {
-      margin-right: 2.4rem;
+      margin-right: 1rem;
+      @include media('>medium') {
+        margin-right: 2.4rem;
+      }
       &:last-child {
         margin: 0;
       }
@@ -81,10 +84,16 @@
     [role="tablist"] a {
       align-items: center;
       display: flex;
-      height: 7rem;
+      height: 5.1rem;
       justify-content: center;
       text-decoration: none;
-      width: 7rem;
+      width: 5.1rem;
+
+      @include media('>medium') {
+        height: 7rem;
+        width: 7rem;
+      }
+
     }
 
     [role="tablist"] [aria-selected="true"] {
@@ -107,7 +116,7 @@
   &__tab {
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    // background-size: cover;
+    background-size: cover;
     &--content {
       &[aria-selected="true"] {
         background-image: url('../img/features-blob-1.svg');
@@ -116,6 +125,13 @@
     &--markdown {
       &[aria-selected="true"] {
         background-image: url('../img/features-blob-2.svg');
+      }
+      @include media('<medium') {
+        // Make sure icons look good at smaller size screens
+        svg {
+          height: 40px;
+          width: 40px;
+        }
       }
     }
     &--developers {
@@ -127,6 +143,13 @@
       &[aria-selected="true"] {
         background-image: url('../img/features-blob-3.svg');
       }
+      @include media('<medium') {
+        // Make sure icons look good at smaller size screens
+        svg {
+          height: 35px;
+          width: 35px;
+        }
+      }
     }
     &--outline {
       &[aria-selected="true"] {
@@ -136,6 +159,13 @@
     &--dnd {
       &[aria-selected="true"] {
         background-image: url('../img/features-blob-4.svg');
+      }
+      @include media('<medium') {
+        // Make sure icons look good at smaller size screens
+        svg {
+          height: 28px;
+          width: 28px;
+        }
       }
     }
   }
