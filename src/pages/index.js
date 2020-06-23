@@ -6,8 +6,8 @@ import { LINK_LOGIN, LINK_REGISTRATION_FORM } from '../constants'
 
 import Layout from '../layouts/layout'
 
-import homeHero from '../img/home-hero.png'
-import homeHero2x from '../img/home-hero@2x.png'
+import homeHero from '../img/illo_hero.png'
+import homeHero2x from '../img/illo_hero@2x.png'
 import simpleNotes from '../img/illo_simple-notes.png'
 import simpleNotes2x from '../img/illo_simple-notes@2x.png'
 import teamImage from '../img/illo_team.png'
