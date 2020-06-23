@@ -8,7 +8,18 @@
 import './src/css/main.scss'
 import './src/css/shared.scss'
 
+const sendPageView = () => {
+  window._gs('GSN-113617-U')
+}
+
 export const onRouteUpdate = ({ location, prevLocation }) => {
   // Manually track with GoSquared
-  _gs('GSN-113617-U');
+  if (`requestAnimationFrame` in window) {
+    requestAnimationFrame(() => {
+      sendPageView()
+    })
+  } else {
+    // simulate 2 rAF calls
+    setTimeout(sendPageView, 32)
+  }
 }
