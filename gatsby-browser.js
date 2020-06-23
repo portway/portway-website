@@ -9,7 +9,7 @@ import './src/css/main.scss'
 import './src/css/shared.scss'
 
 const sendPageView = () => {
-  window._gs('GSN-113617-U')
+  window._gs('track')
 }
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
