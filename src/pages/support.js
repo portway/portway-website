@@ -46,6 +46,9 @@ const SupportPage = () => (
             <p>
               We’d love to hear from you.
             </p>
+            <p>
+              Reach us on Twitter <a href="https://twitter.com/portwayapp" target="_blank" rel="noreferrer noopener">@PortwayApp</a>
+            </p>
           </div>
           <form id="support-form" className="support__form" action={FORM_SUBMISSION_ACTION_URL} method="POST">
             <div className="support__form-result">
