@@ -53,7 +53,6 @@ const PricingPage = () => (
               <li className="feature-list__item feature-list__item--yes">Private &amp; Secure</li>
               <li className="feature-list__item feature-list__item--yes">Multiple teams and users (5 included)</li>
               <li className="feature-list__item feature-list__item--yes">Real-time document collaboration</li>
-              <li className="feature-list__item feature-list__item--yes">Audit log</li>
             </ul>
           </div>
           {/* /Plan */}
