@@ -8,11 +8,11 @@
 import './src/css/main.scss'
 import './src/css/shared.scss'
 
-const sendPageView = () => {
-  window._gs('track')
-}
+// const sendPageView = () => {
+//   window._gs('track')
+// }
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
   // Manually track with GoSquared
-  setTimeout(sendPageView, 500)
+  // setTimeout(sendPageView, 500)
 }
