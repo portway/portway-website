@@ -34,18 +34,8 @@ const IndexPage = ({ pageContext }) => {
       <Helmet>
         <body className="theme-default" />
       </Helmet>
-      <Layout title="Your collaborative markdown writing app">
+      <Layout title="Your collaborative markdown writing app" sponsor={sponsor}>
         <div className="container home">
-          {sponsor && sponsor.showBanner && sponsor.message &&
-          <section className="sponsor">
-            <span className="pill pill--black">
-              {sponsor.logo &&
-                <img className="sponsor__image" src={sponsor.logo} width={48} height={48} alt={`${sponsor.name} logo`} />
-              }
-              {sponsor.message}
-            </span>
-          </section>
-          }
           <section className="intro">
             <h2 className="intro__title">Your collaborative writing app</h2>
             <p>
