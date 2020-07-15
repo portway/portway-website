@@ -7,10 +7,17 @@ module.exports = {
     sponsors: [
       {
         logo: '/sponsors/ror-podcast.jpg',
-        message: 'Welcome Ruby on Rails podcast listeners!',
+        message: 'Welcome, Ruby on Rails podcast listeners!',
         name: 'Ruby on Rails podcast',
         showBanner: true,
         slug: 'ror',
+      },
+      {
+        logo: '/sponsors/remote-tools.png',
+        message: 'Welcome, Remote Tools fans!',
+        name: 'Remote Tools',
+        showBanner: true,
+        slug: 'remote-tools',
       },
     ],
   },
