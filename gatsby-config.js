@@ -4,6 +4,15 @@ module.exports = {
     description: `Beautiful notes, powering your projects`,
     keywords: `Notes, Collaborative, Writing, Markdown, API, REST, CMS, Content management system, Developers`,
     author: `@portwayapp`,
+    sponsors: [
+      {
+        logo: '/sponsors/ror-podcast.jpg',
+        message: 'Welcome Ruby on Rails podcast listeners!',
+        name: 'Ruby on Rails podcast',
+        showBanner: true,
+        slug: 'ror',
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-sass`,

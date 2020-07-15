@@ -1,5 +1,25 @@
 @import 'inc/include-media';
 
+.sponsor {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: -2rem 0 4rem 0;
+
+  .pill {
+    align-items: center;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    display: flex;
+    font-weight: 500;
+    padding: .6rem 1.2rem .6rem .6rem;
+  }
+
+  &__image {
+    margin-right: .6rem;
+  }
+
+}
+
 .page-footer {
   color: rgba(255, 255, 255, .7);
   font-size: 1.3rem;
@@ -63,6 +83,10 @@
 
   &--orange {
     background: var(--color-orange);
+  }
+
+  &--black {
+    background: var(--color-gray-70);
   }
 
 }
