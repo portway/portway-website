@@ -17,8 +17,9 @@ import queryImage2x from '../img/illo_query@2x.png'
 
 import '../css/home.scss'
 
-const IndexPage = () => {
+const IndexPage = ({ pageContext }) => {
   const signupRef = useRef()
+  const sponsor = pageContext && pageContext.sponsor
 
   function tosCheckHandler(e) {
     if (e.target.checked) {
@@ -33,7 +34,7 @@ const IndexPage = () => {
       <Helmet>
         <body className="theme-default" />
       </Helmet>
-      <Layout title="Your collaborative markdown writing app">
+      <Layout title="Your collaborative markdown writing app" sponsor={sponsor}>
         <div className="container home">
           <section className="intro">
             <h2 className="intro__title">Your collaborative writing app</h2>

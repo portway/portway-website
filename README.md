@@ -4,6 +4,9 @@
 
 Marketing site for Portway app
 
+* [Deployments](#deployments)
+* [Adding a sponsor](#adding-a-sponsor)
+
 ## Local development
 
 1. `npm install`
@@ -16,3 +19,12 @@ Your website will be running on http://localhost:8000/
 Deployments are through Netlify. `master` is automatically deployed when it's updated.
 
 Every pull request gets a special preview URL, so that you can test changes there.
+
+---
+
+## Adding a sponsor
+
+Sponsors URLs are read from the Gatsby siteMetadata, located in `gatsby-config.js`.
+
+* Sponsors will get a unique URL at /${sponsor.slug}
+* An optional banner with a message (required) and logo (optional) can be displayed

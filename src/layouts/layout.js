@@ -5,11 +5,19 @@ import SEO from '../components/seo'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
-const Layout = ({ children, description, title }) => {
+const Layout = ({ children, description, sponsor, title }) => {
   return (
     <>
       <SEO title={title} description={description} />
       <Header siteTitle={title} />
+      {sponsor && sponsor.showBanner && sponsor.message &&
+      <section className="sponsor">
+        {sponsor.logo &&
+          <img className="sponsor__image" src={sponsor.logo} width={36} height={36} alt={`${sponsor.name} logo`} />
+        }
+        {sponsor.message}
+      </section>
+      }
       <main>
         {children}
       </main>
@@ -21,6 +29,7 @@ const Layout = ({ children, description, title }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   description: PropTypes.string,
+  sponsor: PropTypes.object,
   title: PropTypes.string,
 }
 

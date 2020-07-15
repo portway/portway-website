@@ -1,5 +1,21 @@
 @import 'inc/include-media';
 
+.sponsor {
+  align-items: center;
+  background-color: rgba(0, 0, 0, .1);
+  border-bottom: thin solid rgba(0, 0, 0, .05);
+  // color: var(--color-orange);
+  display: flex;
+  font-weight: 200;
+  justify-content: center;
+  padding: .6rem 0;
+
+  &__image {
+    margin-right: 1.2rem;
+  }
+
+}
+
 .page-footer {
   color: rgba(255, 255, 255, .7);
   font-size: 1.3rem;
@@ -63,6 +79,10 @@
 
   &--orange {
     background: var(--color-orange);
+  }
+
+  &--black {
+    background: rgba(0, 0, 0, .05);
   }
 
 }
