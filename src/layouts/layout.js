@@ -5,6 +5,10 @@ import SEO from '../components/seo'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
+function createMarkup(message) {
+  return {__html: message}
+}
+
 const Layout = ({ children, description, sponsor, title }) => {
   return (
     <>
@@ -15,7 +19,7 @@ const Layout = ({ children, description, sponsor, title }) => {
         {sponsor.logo &&
           <img className="sponsor__image" src={sponsor.logo} width={36} height={36} alt={`${sponsor.name} logo`} />
         }
-        {sponsor.message}
+        <div dangerouslySetInnerHTML={createMarkup(sponsor.message)} />
       </section>
       }
       <main>
