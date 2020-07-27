@@ -19,6 +19,13 @@ module.exports = {
         showBanner: true,
         slug: 'remote-tools',
       },
+      {
+        logo: '/sponsors/macstories.svg',
+        message: 'Welcome, MacStories fans! Check out our <a href="https://docs.portway.app/guides/creating-an-ios-shortcut" target="_blank" rel="noreferrer noopener">iOS shortcut guide</a>',
+        name: 'MacStories',
+        showBanner: true,
+        slug: 'macstories',
+      },
     ],
   },
   plugins: [
