@@ -16,9 +16,18 @@
 
 .features {
 
+  // override
+  .signup-promo {
+    padding :0;
+  }
+
   &__panel {
-    min-height: 644px;
     position: relative;
+
+    @include media('>medium') {
+      min-height: 644px;
+    }
+
   }
 
   &__panel-title {
@@ -56,7 +65,7 @@
     margin: 7.2rem 0 8.7rem 0;
 
     @include media('>medium') {
-      margin: 7.2rem 0 13.6rem 0;
+      margin: 7.2rem 0 4.6rem 0;
     }
 
     [role="tablist"] {
@@ -171,6 +180,83 @@
   }
 
 } // features
+
+.and-more {
+  padding: 0 0 13.6rem;
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__features {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: auto;
+    width: auto;
+
+    @include media('>large') {
+      flex-direction: row;
+      width: 80%;
+    }
+
+  }
+
+  &__list {
+    flex: 1;
+    list-style: none;
+    padding: 1rem 1.5rem;
+    width: 400px;
+
+    @include media('>large') {
+      width: auto;
+    }
+
+  }
+
+  &__list-item {
+    // display: inline-block;
+    font-weight: 500;
+    margin-bottom: 1rem;
+
+    &:before {
+      content: "•";
+      color: var(--color-brand-darker);
+      display: inline-block;
+      margin-right: 0.7em;
+    }
+
+    &--coming-soon {
+      &:after {
+        background-color: var(--color-purple);
+        border-radius: 4px 4px;
+        color: rgba(255, 255, 255, .9);
+        content: 'In Progress!';
+        display: inline-block;
+        font-size: 1rem;
+        margin: 0 .6rem;
+        padding: 0 4px;
+        text-transform: uppercase;
+      }
+    }
+
+    &--new {
+      &:after {
+        background-color: var(--color-green);
+        border-radius: 4px 4px;
+        color: rgba(255, 255, 255, .9);
+        content: 'New!';
+        display: inline-block;
+        font-size: 1rem;
+        margin: 0 .6rem;
+        padding: 0 4px;
+        text-transform: uppercase;
+      }
+    }
+
+  }
+}
 
 .teams {
   background-color: var(--color-brand);

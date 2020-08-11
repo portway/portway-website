@@ -114,6 +114,22 @@ const Features = () => {
             {/* /Tabbed Content */}
           </section>
           {/* /Tabs */}
+          <div className="and-more">
+            <h2 className="and-more__heading">and more...</h2>
+            <div className="and-more__features">
+              <ul className="and-more__list">
+                <li className="and-more__list-item and-more__list-item--new">Export your content and assets easily</li>
+                <li className="and-more__list-item">Responsive - Mobile, tablet, and desktop</li>
+                <li className="and-more__list-item">Personal and team-wide projects</li>
+              </ul>
+              <ul className="and-more__list">
+                <li className="and-more__list-item and-more__list-item--coming-soon">Native Mac, iPhone, and iPad app</li>
+                <li className="and-more__list-item">Dark and light modes</li>
+                <li className="and-more__list-item">Version publishing and unpublishing</li>
+              </ul>
+            </div>
+          </div>
+          {/* /AndMore */}
           <SignUp />
           {/* /Sign up promo */}
         </div>
