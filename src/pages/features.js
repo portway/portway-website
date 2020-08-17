@@ -52,7 +52,7 @@ const Features = () => {
       <Layout title="Features">
         <div className="container features">
           <section className="intro">
-            <h2 className="intro__title">A developer-friendly, collaborative notes app<br />for flexible, distraction free writing</h2>
+            <h2 className="intro__title">A developer-friendly, collaborative writing app<br />for flexible, distraction free writing</h2>
           </section>
           {/* /Intro */}
           <section className="features__tabs">

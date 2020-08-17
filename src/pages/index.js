@@ -39,7 +39,7 @@ const IndexPage = ({ pageContext }) => {
           <section className="intro">
             <h2 className="intro__title">Your collaborative writing app</h2>
             <p>
-              Beautiful notes, <br /><span id="use-cases">powering your projects</span>
+              Beautiful documents, <br /><span id="use-cases">powering your projects</span>
             </p>
             <img className="home__hero" src={homeHero} srcSet={`${homeHero}, ${homeHero2x} 2x`} alt="" width="924" height="560" />
             <p>
@@ -52,9 +52,9 @@ const IndexPage = ({ pageContext }) => {
             <ul className="home__features">
               <li>
                 <div className="home__feature-image">
-                  <img src={simpleNotes} srcSet={`${simpleNotes}, ${simpleNotes2x} 2x`} alt="Simple notes" width="123" height="118" />
+                  <img src={simpleNotes} srcSet={`${simpleNotes}, ${simpleNotes2x} 2x`} alt="Simple documents" width="123" height="118" />
                 </div>
-                <div className="home__feature-content">A frictionless notes app. No overhead. Get in there and write.</div>
+                <div className="home__feature-content">A frictionless writing app. No overhead. Get in there and write.</div>
               </li>
               <li>
                 <div className="home__feature-image">
