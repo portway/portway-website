@@ -97,3 +97,12 @@
   }
 
 }
+
+.bonkCaptCanvas {
+  display: block;
+  padding: .5rem 0 .75rem;
+}
+
+input.error {
+  border: 2px solid var(--color-red);
+}
