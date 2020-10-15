@@ -40,7 +40,7 @@ const SupportPage = () => {
             $captchaInputElement.classList.add('error')
             if (numberOfTries === 3) {
               // maximum attempts handle, e.g. disable form
-              location.href = 'https://www.youtube.com/watch?v=c5fts7bj-so'
+              location.href = 'https://xkcd.com/2228/'
             }
           }
           validationRef.current = false
