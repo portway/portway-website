@@ -14,7 +14,8 @@ const SupportPage = () => {
   const jCaptchaRef = useRef()
   const captchaRef = useRef()
 
-  const params = Object.fromEntries(new URLSearchParams(location.search))
+  const isBrowser = typeof window !== `undefined`
+  const params = isBrowser ? Object.fromEntries(new URLSearchParams(location.search)) : {}
   const formClasses = cx({
     'support__form': true,
     'support__form--submitted': params.received
