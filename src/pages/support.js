@@ -10,6 +10,7 @@ import Layout from '../layouts/layout'
 import '../css/support.scss'
 
 const SupportPage = () => {
+  const formRef = useRef()
   const validationRef = useRef()
   const jCaptchaRef = useRef()
   const captchaRef = useRef()
@@ -27,6 +28,11 @@ const SupportPage = () => {
 
   useEffect(() => {
     if (captchaRef.current) {
+      // Add the form action via javascript, so that bots have to use the captcha
+      if (formRef.current) {
+        formRef.current.setAttribute('action', FORM_SUBMISSION_ACTION_URL)
+        formRef.current.style.display = 'block'
+      }
       jCaptchaRef.current = new jCaptcha({
         el: '.bonkcapt',
         requiredValue: '',
@@ -113,13 +119,17 @@ const SupportPage = () => {
               <p>
                 Reach us on Twitter <a href="https://twitter.com/portwayapp" target="_blank" rel="noreferrer noopener">@PortwayApp</a>
               </p>
+              <noscript>
+                <p>Or email us at <a href="mailto:support@portway.app">support@portway.app</a></p>
+              </noscript>
             </div>
             <form
               id="support-form"
               className={formClasses}
-              action={FORM_SUBMISSION_ACTION_URL}
               method="POST"
               onSubmit={formSubmitHandler}
+              ref={formRef}
+              style={{ display: 'none' }}
             >
               <div className={submitClasses}>
                 <svg height="24" viewBox="0 0 16 11" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m5.62977041 11.9643422-4.42661184-4.42661188c-.17356635-.17356635-.45497301-.17356635-.62853936 0s-.17356635.45497301 0 .62853936l4.74088889 4.74088892c.17356923.1735692.45498156.1735659.62854672-.0000074l9.48133338-9.48177777c.1735622-.17357042.1735556-.45497708-.0000148-.62853936-.1735704-.17356229-.4549771-.17355569-.6285393.00001473z" fill="#6aca65" fillRule="evenodd" transform="translate(0 -2)"/></svg>
