@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet'
+import cx from 'classnames'
 import jCaptcha from 'js-captcha'
 
 import { FORM_SUBMISSION_ACTION_URL } from '../constants'
@@ -9,12 +10,29 @@ import Layout from '../layouts/layout'
 import '../css/support.scss'
 
 const SupportPage = () => {
+  const formRef = useRef()
   const validationRef = useRef()
   const jCaptchaRef = useRef()
   const captchaRef = useRef()
 
+  const isBrowser = typeof window !== `undefined`
+  const params = isBrowser ? Object.fromEntries(new URLSearchParams(location.search)) : {}
+  const formClasses = cx({
+    'support__form': true,
+    'support__form--submitted': params.received
+  })
+  const submitClasses = cx({
+    'support__form-result': true,
+    'support__form-result--submitted': params.received
+  })
+
   useEffect(() => {
     if (captchaRef.current) {
+      // Add the form action via javascript, so that bots have to use the captcha
+      if (formRef.current) {
+        formRef.current.setAttribute('action', FORM_SUBMISSION_ACTION_URL)
+        formRef.current.style.display = 'block'
+      }
       jCaptchaRef.current = new jCaptcha({
         el: '.bonkcapt',
         requiredValue: '',
@@ -30,12 +48,12 @@ const SupportPage = () => {
         },
         // set callback function for success and error messages:
         callback: ( response, $captchaInputElement, numberOfTries ) => {
-          if ( response == 'success' ) {
+          if ( response === 'success' ) {
             // success handle, e.g. continue with form submit
             validationRef.current = true
             return
           }
-          if ( response == 'error' ) {
+          if ( response === 'error' ) {
             // error handle, e.g. add error class to captcha input
             $captchaInputElement.classList.add('error')
             if (numberOfTries === 3) {
@@ -101,15 +119,19 @@ const SupportPage = () => {
               <p>
                 Reach us on Twitter <a href="https://twitter.com/portwayapp" target="_blank" rel="noreferrer noopener">@PortwayApp</a>
               </p>
+              <noscript>
+                <p>Or email us at <a href="mailto:support@portway.app">support@portway.app</a></p>
+              </noscript>
             </div>
             <form
               id="support-form"
-              className="support__form"
-              action={FORM_SUBMISSION_ACTION_URL}
+              className={formClasses}
               method="POST"
               onSubmit={formSubmitHandler}
+              ref={formRef}
+              style={{ display: 'none' }}
             >
-              <div className="support__form-result">
+              <div className={submitClasses}>
                 <svg height="24" viewBox="0 0 16 11" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m5.62977041 11.9643422-4.42661184-4.42661188c-.17356635-.17356635-.45497301-.17356635-.62853936 0s-.17356635.45497301 0 .62853936l4.74088889 4.74088892c.17356923.1735692.45498156.1735659.62854672-.0000074l9.48133338-9.48177777c.1735622-.17357042.1735556-.45497708-.0000148-.62853936-.1735704-.17356229-.4549771-.17355569-.6285393.00001473z" fill="#6aca65" fillRule="evenodd" transform="translate(0 -2)"/></svg>
                 We’ll talk soon, thanks!
               </div>
