@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import SEO from '../components/seo'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import SEO from '../components/base/seo'
+import Header from '../components/base/header'
+import Footer from '../components/base/footer'
 
 function createMarkup(message) {
-  return {__html: message}
+  return { __html: message }
 }
 
 const Layout = ({ children, description, sponsor, title }) => {
   return (
-    <>
+    <div className="application">
       <SEO title={title} description={description} />
       <Header siteTitle={title} />
       {sponsor && sponsor.showBanner && sponsor.message &&
@@ -26,12 +26,12 @@ const Layout = ({ children, description, sponsor, title }) => {
         {children}
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   description: PropTypes.string,
   sponsor: PropTypes.object,
   title: PropTypes.string,

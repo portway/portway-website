@@ -10,23 +10,6 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import collabImage from '../img/collaborative-documents.png'
-import collabImage2x from '../img/collaborative-documents@2x.png'
-import markdownImage from '../img/markdown.png'
-import markdownImage2x from '../img/markdown@2x.png'
-import projectKeyImage from '../img/project-keys.png'
-import projectKeyImage2x from '../img/project-keys@2x.png'
-import mediaImage from '../img/media-and-fields.png'
-import mediaImage2x from '../img/media-and-fields@2x.png'
-import outlineImage from '../img/document-outline.png'
-import outlineImage2x from '../img/document-outline@2x.png'
-import dndImage from '../img/drag-and-drop.png'
-import dndImage2x from '../img/drag-and-drop@2x.png'
-import documentImage from '../img/drag-document.png'
-import documentImage2x from '../img/drag-document@2x.png'
-import dragImage from '../img/drag-image.png'
-import dragImage2x from '../img/drag-image@2x.png'
-
 function SEO({ description, keywords, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
@@ -77,11 +60,6 @@ function SEO({ description, keywords, lang, meta, title }) {
       <link rel="apple-touch-icon" sizes="72x72" href="https://getportway.com/img/social/apple-touch-icon_72.png" />
       <link rel="apple-touch-icon" href="https://getportway.com/img/social/apple-touch-icon_57.png" />
       <link rel="mask-icon" href="https://getportway.com/img/social/mask-icon.svg" color="black" />
-
-      {/* Preload */}
-      <link rel="preload" as="image" href={collabImage} />
-      <link rel="preload" as="image" href={collabImage2x} />
-
     </Helmet>
   )
 }

@@ -7,8 +7,6 @@ import { FORM_SUBMISSION_ACTION_URL } from '../constants'
 
 import Layout from '../layouts/layout'
 
-import '../css/support.scss'
-
 const SupportPage = () => {
   const formRef = useRef()
   const validationRef = useRef()
