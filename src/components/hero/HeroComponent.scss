@@ -1,0 +1,42 @@
+@import '../../css/inc/include-media';
+
+.hero {
+  padding: 60px 0 32px 0;
+}
+
+.hero__content {}
+
+.hero__title {
+  font-size: 3.2rem;
+  text-align: center;
+  line-height: 4.2rem;
+}
+
+.hero__description {
+  font-size: 2.2rem;
+  text-align: center;
+  line-height: 3rem;
+  margin-top: 12px;
+}
+
+.hero__image {}
+
+.hero__signup {
+  display: block;
+  text-align: center;
+
+  a {
+    display: block;
+  }
+
+  @include media('<large') {
+    &--large {
+      display: none;
+    }
+  }
+  @include media('>=large') {
+    &--small {
+      display: none;
+    }
+  }
+}

@@ -5,13 +5,18 @@ import PropTypes from 'prop-types'
 // import { LINK_LOGIN, LINK_REGISTRATION_FORM } from '../constants'
 
 import Layout from '../layouts/layout'
+import HeroComponent from '../components/hero/HeroComponent'
 
 const IndexPage = ({ pageContext }) => {
   const sponsor = pageContext && pageContext.sponsor
 
   return (
     <Layout title="Your collaborative markdown writing app" sponsor={sponsor}>
-      <h2>A Content Platform Built on Collaborative Markdown Documents</h2>
+      <HeroComponent
+        title="A Content Platform Built on Collaborative Markdown Documents"
+        description="Manage and collaborate on all your content, from meeting notes to website copy, on any device."
+        showSignup={true}
+      />
     </Layout>
   )
 }
