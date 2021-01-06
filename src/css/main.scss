@@ -107,22 +107,26 @@ main {
   flex-direction: column;
   padding-bottom: 32px;
   width: 100%;
-  @include media('>medium') {
+  @include media('>=medium') {
     flex-direction: row;
+    justify-content: space-between;
     padding-bottom: 64px;
   }
 }
 
 .footer__content-left {
   margin-bottom: 64px;
-  @include media('>medium') {
+  @include media('>=medium') {
     margin-bottom: 0;
     width: 50%;
   }
+  @include media('>large') {
+    display: flex;
+  }
 }
 .footer__content-right {
-  @include media('>medium') {
-    width: 50%;
+  @include media('>=medium') {
+    width: 30.55555556%;
   }
 }
 
@@ -133,8 +137,9 @@ main {
   height: 90px;
   margin: 0 auto 32px auto;
   width: 126px;
-  @include media('>medium') {
+  @include media('>=medium') {
     background-image: url('/img/logo-white-horizontal.svg');
+    flex: 1 0 180px;
     height: 39px;
     justify-content: space-between;
     margin: 0 0 32px 0;
@@ -145,23 +150,30 @@ main {
 .footer__links {
   align-items: flex-start;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
-  @include media('>medium') {
-    margin-right: 69px;
+  @include media('>=medium') {
+    justify-content: flex-start;
+  }
+
+  @include media('>large') {
+    padding-left: 80px;
   }
 
   ul, ol {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 39px 0 0;
     &:last-child {
-      padding-right: 16px;
+      padding-right: 0;
+    }
+    @include media('>=medium') {
+      padding: 0 67px 0 0;
     }
   }
   li {
     margin-bottom: 1rem;
-    @include media('>medium') {
+    @include media('>=medium') {
       margin-bottom: 1.2rem;
     }
   }
@@ -170,7 +182,7 @@ main {
     font-size: 1.8rem;
     line-height: 2.6rem;
     text-decoration: none;
-    @include media('>medium') {
+    @include media('>=medium') {
       font-size: 2.2rem;
       line-height: 3rem;
     }
@@ -204,7 +216,7 @@ main {
 
 .footer__info {
   text-align: center;
-  @include media('>medium') {
+  @include media('>=medium') {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -215,20 +227,20 @@ main {
   color: var(--theme-overlay-dark);
   margin-bottom: 32px;
   text-align: center;
-  @include media('>medium') {
+  @include media('>=medium') {
     margin-bottom: 0;
   }
   img {
     display: block;
     margin: 0 auto 12px auto;
-    @include media('>medium') {
+    @include media('>=medium') {
       margin: 0 0 0 12px;
     }
   }
   a {
     color: var(--theme-overlay-dark);
     text-decoration: none;
-    @include media('>medium') {
+    @include media('>=medium') {
       align-items: center;
       display: flex;
       flex-direction: row-reverse;
