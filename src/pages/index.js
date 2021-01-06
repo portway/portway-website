@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'gatsby'
-
-// import { LINK_LOGIN, LINK_REGISTRATION_FORM } from '../constants'
 
 import Layout from '../layouts/layout'
 import HeroComponent from '../components/hero/HeroComponent'
+
+import heroImage from '../img/fpo_hero.png'
+import heroImage2x from '../img/fpo_hero@2x.png'
 
 const IndexPage = ({ pageContext }) => {
   const sponsor = pageContext && pageContext.sponsor
@@ -16,7 +16,13 @@ const IndexPage = ({ pageContext }) => {
         title="A Content Platform Built on Collaborative Markdown Documents"
         description="Manage and collaborate on all your content, from meeting notes to website copy, on any device."
         showSignup={true}
-      />
+      >
+        <picture>
+          <source srcSet={heroImage} media="(max-width: 767px)" />
+          <source srcSet={heroImage2x} media="(min-width: 768px)" />
+          <img src={heroImage} width="631" height="478" alt="" />
+        </picture>
+      </HeroComponent>
     </Layout>
   )
 }

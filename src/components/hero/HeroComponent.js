@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { LINK_SIGNUP } from '../../constants'
 import './HeroComponent.scss'
 
-const HeroComponent = ({ description, image, showSignup, signupLanguage, title }) => {
+const HeroComponent = ({ children, description, showSignup, signupLanguage, title }) => {
   function renderSignupSnippet(modifier) {
     return (
       <div className={`hero__signup hero__signup--${modifier}`}>
@@ -22,9 +22,9 @@ const HeroComponent = ({ description, image, showSignup, signupLanguage, title }
           {description && <p className="hero__description">{description}</p>}
           {showSignup && renderSignupSnippet('large') }
         </div>
-        {image &&
-        <div className="hero__image">
-          <img src={image} width="642" height="498" alt={title} />
+        {children &&
+        <div className="hero__children">
+          {children}
         </div>
         }
         {showSignup && renderSignupSnippet('small') }
@@ -34,8 +34,8 @@ const HeroComponent = ({ description, image, showSignup, signupLanguage, title }
 }
 
 HeroComponent.propTypes = {
+  children: PropTypes.node,
   description: PropTypes.string,
-  image: PropTypes.string,
   showSignup: PropTypes.bool,
   signupLanguage: PropTypes.string,
   title: PropTypes.string,

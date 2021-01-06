@@ -2,40 +2,74 @@
 
 .hero {
   padding: 60px 0 32px 0;
+  @include media('>small') {
+    padding: 60px 0 64px 0;
+  }
+
+  .container {
+    @include media('>medium') {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
 }
 
-.hero__content {}
+.hero__content {
+  text-align: center;
+  @include media('>medium') {
+    padding-right: 70px;
+    text-align: left;
+  }
+}
 
 .hero__title {
   font-size: 3.2rem;
-  text-align: center;
   line-height: 4.2rem;
 }
 
 .hero__description {
   font-size: 2.2rem;
-  text-align: center;
   line-height: 3rem;
-  margin-top: 12px;
+  margin: 12px 0 70px 0;
 }
 
-.hero__image {}
+.hero__children {
+  picture {
+    display: block;
+  }
+  img {
+    display: block;
+    height: auto;
+    margin: 32px auto;
+    max-width: 100%;
+    @include media('>small') {
+      width: 75.26041667%;
+    }
+    @include media('>medium') {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
 
 .hero__signup {
   display: block;
   text-align: center;
 
-  a {
-    display: block;
-  }
+  a { display: block; }
 
-  @include media('<large') {
-    &--large {
+  &--small {
+    margin: auto;
+    max-width: 322px;
+    @include media('>=xl') {
       display: none;
     }
   }
-  @include media('>=large') {
-    &--small {
+  &--large {
+    margin: 0;
+    max-width: 322px;
+    @include media('<xl') {
       display: none;
     }
   }
