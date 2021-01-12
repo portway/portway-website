@@ -19,7 +19,9 @@ const ImageTextComponent = ({ accent, align, children, image, title }) => {
   return (
     <div className={`image-text image-text--${align} container`}>
       {image &&
-      <Img className="image-text__image" fluid={image} alt={title} />
+      <div className="image-text__image-container">
+        <Img className="image-text__image" fluid={image} alt={title} />
+      </div>
       }
       <div className="image-text__content">
         {title &&

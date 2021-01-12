@@ -17,8 +17,11 @@
 
 }
 
-.image-text__image {
-  margin: 0 0 2.8rem 0;
+.image-text__image-container {
+  margin: 0 auto 2.8rem auto;
+  max-width: 578px;
+  min-width: 288px;
+  width: 100%;
   @include media('>=medium') {
     flex: 1 0 50%;
     margin: 0 1.6rem 0 0;
@@ -33,6 +36,15 @@
     @include media('>=large') {
       margin: 0 0 0 6.7rem;
     }
+  }
+}
+
+.image-text__content {
+  margin: auto;
+  width: 80%;
+  @include media('>=medium') {
+    margin: 0;
+    width: auto;
   }
 }
 
@@ -63,6 +75,7 @@
   &--stroke {
     &:after {
       background-image: url('/img/accent_stroke.png');
+      background-size: 142px 11px;
     }
   }
 

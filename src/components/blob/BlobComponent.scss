@@ -3,7 +3,6 @@
 .blob {
   margin: 64px 0;
   max-width: var(--container-width);
-  overflow: hidden;
   padding: 7.8rem var(--container-padding) 6.4rem var(--container-padding);
   position: relative;
   @include media('>=medium') {
@@ -71,10 +70,10 @@
 
 .blob__artwork {
   min-height: 655px;
-  left: -12vw;
+  left: -30vw;
   position: absolute;
   top: 0;
-  width: 120%;
+  width: 150%;
   z-index: 1;
 
   @include media('>=medium') {
