@@ -1,0 +1,69 @@
+@import '../../css/inc/include-media';
+
+.image-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 1142px;
+  padding: var(--container-padding);
+
+  @include media('>=medium') {
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 64px;
+    &--right {
+      flex-direction: row-reverse;
+    }
+  }
+
+}
+
+.image-text__image {
+  margin: 0 0 2.8rem 0;
+  @include media('>=medium') {
+    flex: 1 0 50%;
+    margin: 0 1.6rem 0 0;
+  }
+  @include media('>=large') {
+    margin: 0 6.7rem 0 0;
+  }
+  .image-text--right & {
+    @include media('>=medium') {
+      margin: 0 0 0 1.6rem;
+    }
+    @include media('>=large') {
+      margin: 0 0 0 6.7rem;
+    }
+  }
+}
+
+.image-text__title {
+  font-size: 2.8rem;
+  line-height: 3.8rem;
+  @include media('>=medium') {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  &:after {
+    background-repeat: no-repeat;
+    background-size: 156px 26px;
+    content: '';
+    display: block;
+    height: 26px;
+     margin: 1.2rem 0 0 0;
+    width: 156px;
+  }
+
+  &--squiggle {
+    &:after {
+      background-image: url('/img/accent_squiggle.png');
+    }
+  }
+
+  &--stroke {
+    &:after {
+      background-image: url('/img/accent_stroke.png');
+    }
+  }
+
+}

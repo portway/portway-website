@@ -23,11 +23,16 @@ main {
 // Header
 .masthead {
   background-color: var(--theme-surface);
-  padding: var(--container-padding) 0;
+  padding: 16px 0;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 10;
+
+  @include media('>medium') {
+    padding: 32px 0;
+  }
+
   .container {
     align-items: center;
     display: flex;

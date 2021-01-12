@@ -1,26 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../layouts/layout'
 import HeroComponent from '../components/hero/HeroComponent'
 import ImageTextComponent from '../components/text/ImageTextComponent'
 
-import heroImage from '../img/fpo_hero.png'
-import heroImage2x from '../img/fpo_hero@2x.png'
-// Text-Media
-import integrationsImage from '../img/fpo_integrations.png'
-import integrationsImage2x from '../img/fpo_integrations@2x.png'
-
-const integrationImage = {
-  alt: 'Publishing illustration',
-  height: 372,
-  src: integrationsImage,
-  src2x: integrationsImage2x,
-  width: 557,
-}
-
-const IndexPage = ({ pageContext }) => {
+const IndexPage = ({ data, pageContext }) => {
   const sponsor = pageContext && pageContext.sponsor
+
+  console.log(data)
 
   return (
     <Layout title="Your collaborative markdown writing app" sponsor={sponsor}>
@@ -29,21 +19,53 @@ const IndexPage = ({ pageContext }) => {
         description="Manage and collaborate on all your content, from meeting notes to website copy, on any device."
         showSignup={true}
       >
-        <picture>
-          <source srcSet={heroImage} media="(max-width: 767px)" />
-          <source srcSet={heroImage2x} media="(min-width: 768px)" />
-          <img src={heroImage} width="631" height="478" alt="" />
-        </picture>
+        <Img
+          alt="Content platform illustration"
+          loading={true}
+          fluid={data.heroImage.childImageSharp.fluid}
+        />
       </HeroComponent>
-      <ImageTextComponent align="left" image={integrationImage} title="Integrations and a powerful API">
+      <ImageTextComponent accent="squiggle" align="left" image={data.integrationImage.childImageSharp.fluid} title="Integrations and a powerful API">
         <p>Share and publish your content, wherever you need it.</p>
+      </ImageTextComponent>
+      <ImageTextComponent accent="stroke" align="right" image={data.markdownImage.childImageSharp.fluid} title="Write in Markdown, but don’t stop there">
+        <p>Write in Markdown just like you do in your favorite notes app. Then when you need to add media or additional data, insert fields to structure your document.</p>
+        <p>Named fields are then available in the API so you can output your document wherever you need, and display it however you desire.</p>
       </ImageTextComponent>
     </Layout>
   )
 }
 
 IndexPage.propTypes = {
+  data: PropTypes.object,
   pageContext: PropTypes.object
 }
 
 export default IndexPage
+
+// Image queries
+export const pageQuery = graphql`
+  query HomepageImageQuery {
+    heroImage: file(relativePath: { eq: "fpo_hero.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 642) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    integrationImage: file(relativePath: { eq: "fpo_integrations.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 557) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    markdownImage: file(relativePath: { eq: "fpo_markdown.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 556) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`

@@ -5,6 +5,9 @@
   @include media('>medium') {
     --container-padding: 32px;
   }
+  @include media('>large') {
+    --container-padding: 64px;
+  }
 }
 
 * {

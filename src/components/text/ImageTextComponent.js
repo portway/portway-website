@@ -1,26 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Img from 'gatsby-image'
 
-const UNDERLINE_STYLES = {
+import './ImageTextComponent.scss'
+
+const ACCENT_STYLES = {
   SQUIGGLE: 'squiggle',
-  STRAIGHT: 'straight',
+  STROKE: 'stroke',
 }
 
-const ImageTextComponent = ({ align, children, image, title, underline }) => {
+const ImageTextComponent = ({ accent, align, children, image, title }) => {
   const titleClasses = cx({
     'image-text__title': true,
-    'image-text__title--squiggle': underline === UNDERLINE_STYLES.SQUIGGLE,
-    'image-text__title--straqight': underline === UNDERLINE_STYLES.STRAIGHT,
+    'image-text__title--squiggle': accent === ACCENT_STYLES.SQUIGGLE,
+    'image-text__title--stroke': accent === ACCENT_STYLES.STROKE,
   })
   return (
-    <div className={`image-text image-text--${align}`}>
+    <div className={`image-text image-text--${align} container`}>
       {image &&
-      <picture>
-        <source srcSet={image.src} media="(max-width: 767px)" />
-        <source srcSet={image.src2x} media="(min-width: 768px)" />
-        <img src={image.src} width={image.width} height={image.height} alt={image.alt} />
-      </picture>
+      <Img className="image-text__image" fluid={image} alt={title} />
       }
       <div className="image-text__content">
         {title &&
@@ -33,22 +32,16 @@ const ImageTextComponent = ({ align, children, image, title, underline }) => {
 }
 
 ImageTextComponent.propTypes = {
+  accent: PropTypes.oneOf(Object.values(ACCENT_STYLES)),
   align: PropTypes.oneOf(['left', 'right']),
   children: PropTypes.node,
-  image: PropTypes.shape({
-    alt: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
-    src: PropTypes.string.isRequired,
-    src2x: PropTypes.string,
-    width: PropTypes.number.isRequired,
-  }),
+  image: PropTypes.object,
   title: PropTypes.string,
-  underline: PropTypes.oneOf(Object.values(UNDERLINE_STYLES))
 }
 
 ImageTextComponent.defaultProps = {
+  accent: ACCENT_STYLES.STROKE,
   align: 'left',
-  underline: UNDERLINE_STYLES.STRAIGHT,
 }
 
 export default ImageTextComponent
