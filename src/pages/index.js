@@ -3,9 +3,21 @@ import PropTypes from 'prop-types'
 
 import Layout from '../layouts/layout'
 import HeroComponent from '../components/hero/HeroComponent'
+import ImageTextComponent from '../components/text/ImageTextComponent'
 
 import heroImage from '../img/fpo_hero.png'
 import heroImage2x from '../img/fpo_hero@2x.png'
+// Text-Media
+import integrationsImage from '../img/fpo_integrations.png'
+import integrationsImage2x from '../img/fpo_integrations@2x.png'
+
+const integrationImage = {
+  alt: 'Publishing illustration',
+  height: 372,
+  src: integrationsImage,
+  src2x: integrationsImage2x,
+  width: 557,
+}
 
 const IndexPage = ({ pageContext }) => {
   const sponsor = pageContext && pageContext.sponsor
@@ -23,6 +35,9 @@ const IndexPage = ({ pageContext }) => {
           <img src={heroImage} width="631" height="478" alt="" />
         </picture>
       </HeroComponent>
+      <ImageTextComponent align="left" image={integrationImage} title="Integrations and a powerful API">
+        <p>Share and publish your content, wherever you need it.</p>
+      </ImageTextComponent>
     </Layout>
   )
 }
