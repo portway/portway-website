@@ -15,7 +15,7 @@ main {
 }
 
 .container {
-  margin: auto;
+  margin: 0 auto;
   max-width: 1400px;
   padding: 0 var(--container-padding);
 }
@@ -99,6 +99,21 @@ main {
     }
   }
 }
+
+.sponsor {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: var(--container-padding) var(--container-padding) 0;
+  @include media('>=medium') {
+    padding: 16px 0 0 0;
+  }
+}
+
+.sponsor__image {
+  padding-right: 1rem;
+}
+
 
 // Footer
 .footer {

@@ -6,11 +6,18 @@ import Img from 'gatsby-image'
 import Layout from '../layouts/layout'
 import HeroComponent from '../components/hero/HeroComponent'
 import ImageTextComponent from '../components/text/ImageTextComponent'
+import BlobComponent from '../components/blob/BlobComponent'
 
 const IndexPage = ({ data, pageContext }) => {
   const sponsor = pageContext && pageContext.sponsor
 
-  console.log(data)
+  const screenshotSources = [
+    data.mobileScreenshot.childImageSharp.fluid,
+    {
+      ...data.desktopScreenshot.childImageSharp.fluid,
+      media: `(min-width: 768px)`,
+    },
+  ]
 
   return (
     <Layout title="Your collaborative markdown writing app" sponsor={sponsor}>
@@ -29,9 +36,26 @@ const IndexPage = ({ data, pageContext }) => {
         <p>Share and publish your content, wherever you need it.</p>
       </ImageTextComponent>
       <ImageTextComponent accent="stroke" align="right" image={data.markdownImage.childImageSharp.fluid} title="Write in Markdown, but don’t stop there">
-        <p>Write in Markdown just like you do in your favorite notes app. Then when you need to add media or additional data, insert fields to structure your document.</p>
-        <p>Named fields are then available in the API so you can output your document wherever you need, and display it however you desire.</p>
+        <p>
+          Write in Markdown just like you do in your favorite notes app. Then when you need to add media
+          or additional data, insert fields to structure your document.
+        </p>
+        <p>
+          Named fields are then available in the API so you can output your document wherever you need,
+          and display it however you desire.
+        </p>
       </ImageTextComponent>
+      <BlobComponent
+        blobImage={data.blobImage.childImageSharp.fluid}
+        blobPixels={data.blobPixels.childImageSharp.fixed}
+        blobScreenshot={screenshotSources}
+      >
+        <h2>Collaborate with teammates</h2>
+        <p>
+          Work with a team? Bring them along and see real time updates to documents as you work together.
+          Conflict notices keep you from stepping on each others toes.
+        </p>
+      </BlobComponent>
     </Layout>
   )
 }
@@ -63,6 +87,34 @@ export const pageQuery = graphql`
     markdownImage: file(relativePath: { eq: "fpo_markdown.png" }) {
       childImageSharp {
         fluid(maxWidth: 556) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    blobImage: file(relativePath: { eq: "blob-background-art.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 707) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    blobPixels: file(relativePath: { eq: "blob-pixels.png" }) {
+      childImageSharp {
+        fixed(width: 4, height: 80) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    mobileScreenshot: file(relativePath: { eq: "screenshot_small.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    desktopScreenshot: file(relativePath: { eq: "screenshot_large.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1060) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

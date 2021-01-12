@@ -1,0 +1,89 @@
+@import '../../css/inc/include-media';
+
+.blob {
+  margin: 64px 0;
+  max-width: var(--container-width);
+  overflow: hidden;
+  padding: 7.8rem var(--container-padding) 6.4rem var(--container-padding);
+  position: relative;
+  @include media('>=medium') {
+    margin: 0 auto;
+    min-height: 895px;
+    padding: 12rem 0 6.4rem var(--container-padding);
+  }
+}
+
+.blob__container {
+  @include media('>=medium') {
+    display: flex;
+  }
+}
+
+.blob__content {
+  display: flex;
+  max-width: 450px;
+  position: relative;
+  z-index: 2;
+
+  @include media('>=medium') {
+    width: 250px;
+  }
+
+  @include media('>=xl') {
+    padding-left: var(--container-padding);
+    width: 435px;
+  }
+}
+
+.blob__children {
+  color: var(--theme-surface);
+  padding: 0 0 0 2.8rem;
+}
+
+.blob__screenshot {
+  background: var(--theme-surface);
+  border-radius: 4px;
+  border: thin solid #E5E5E5;
+  box-shadow: 0 2px 26px 0 rgba(102,102,102,0.40);
+  min-height: 512px;
+  margin: 4.2rem 0 0 0;
+  position: relative;
+  z-index: 2;
+
+  @include media('>=medium') {
+    height: 620px;
+    left: 310px;
+    margin: 4.2rem 0 0 0;
+    position: absolute;
+    width: 1060px;
+  }
+
+  @include media('>=large') {
+    left: 375px;
+  }
+
+  @include media('>=xl') {
+    height: 620px;
+    left: 522px;
+    margin: 4.2rem 0 0 0;
+  }
+}
+
+.blob__artwork {
+  min-height: 655px;
+  left: -12vw;
+  position: absolute;
+  top: 0;
+  width: 120%;
+  z-index: 1;
+
+  @include media('>=medium') {
+    left: -112px;
+    width: 707px;
+  }
+
+  @include media('>=xl') {
+    left: 24px;
+  }
+
+}
