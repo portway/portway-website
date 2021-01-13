@@ -6,7 +6,7 @@ import './BlobComponent.scss'
 
 const BlobComponent = ({ blobImage, blobPixels, blobScreenshot, children }) => {
   return (
-    <div className="blob">
+    <section className="blob">
       <div className="blob__container">
         <div className="blob__content">
           <Img className="blob__pixels" fixed={blobPixels} />
@@ -21,7 +21,7 @@ const BlobComponent = ({ blobImage, blobPixels, blobScreenshot, children }) => {
       <div className="blob__artwork">
         <Img className="blob__artwork-image" fluid={blobImage} alt="Blob artwork" />
       </div>
-    </div>
+    </section>
   )
 }
 

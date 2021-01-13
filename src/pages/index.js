@@ -40,7 +40,13 @@ const IndexPage = ({ data, pageContext }) => {
       <ImageTextComponent accent="squiggle" align="left" image={data.integrationImage.childImageSharp.fluid} title="Integrations and a powerful API">
         <p>Share and publish your content, wherever you need it.</p>
       </ImageTextComponent>
-      <ImageTextComponent accent="stroke" align="right" image={data.markdownImage.childImageSharp.fluid} title="Write in Markdown, but don’t stop there">
+      <ImageTextComponent
+        accent="stroke"
+        align="right"
+        image={data.markdownImage.childImageSharp.fluid}
+        title="Write in Markdown, but don’t stop there"
+        offset={true}
+      >
         <p>
           Write in Markdown just like you do in your favorite notes app. Then when you need to add media
           or additional data, insert fields to structure your document.

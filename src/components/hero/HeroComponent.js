@@ -15,7 +15,7 @@ const HeroComponent = ({ children, description, showSignup, signupLanguage, titl
   }
 
   return (
-    <div className="hero">
+    <section className="hero">
       <div className="container">
         <div className="hero__content">
           {title && <h1 className="hero__title">{title}</h1>}
@@ -29,7 +29,7 @@ const HeroComponent = ({ children, description, showSignup, signupLanguage, titl
         }
         {showSignup && renderSignupSnippet('small') }
       </div>
-    </div>
+    </section>
   )
 }
 

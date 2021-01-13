@@ -10,17 +10,21 @@ const ACCENT_STYLES = {
   STROKE: 'stroke',
 }
 
-const ImageTextComponent = ({ accent, align, children, image, title }) => {
+const ImageTextComponent = ({ accent, align, children, image, offset, title }) => {
   const titleClasses = cx({
     'image-text__title': true,
     'image-text__title--squiggle': accent === ACCENT_STYLES.SQUIGGLE,
     'image-text__title--stroke': accent === ACCENT_STYLES.STROKE,
   })
+  const imageClasses = cx({
+    'image-text__image': true,
+    'image-text__image--offset': offset,
+  })
   return (
-    <div className={`image-text image-text--${align} container`}>
+    <section className={`image-text image-text--${align} container`}>
       {image &&
       <div className="image-text__image-container">
-        <Img className="image-text__image" fluid={image} alt={title} />
+        <Img className={imageClasses} fluid={image} alt={title} />
       </div>
       }
       <div className="image-text__content">
@@ -29,7 +33,7 @@ const ImageTextComponent = ({ accent, align, children, image, title }) => {
         }
         {children}
       </div>
-    </div>
+    </section>
   )
 }
 
@@ -38,12 +42,14 @@ ImageTextComponent.propTypes = {
   align: PropTypes.oneOf(['left', 'right']),
   children: PropTypes.node,
   image: PropTypes.object,
+  offset: PropTypes.bool,
   title: PropTypes.string,
 }
 
 ImageTextComponent.defaultProps = {
   accent: ACCENT_STYLES.STROKE,
   align: 'left',
+  offset: false,
 }
 
 export default ImageTextComponent
