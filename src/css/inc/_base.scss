@@ -3,10 +3,10 @@
 :root {
   --container-width: 1400px;
   --container-padding: 16px;
-  @include media('>medium') {
+  @include media('>=medium') {
     --container-padding: 32px;
   }
-  @include media('>large') {
+  @include media('>=large') {
     --container-padding: 64px;
   }
 }

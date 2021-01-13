@@ -4,10 +4,10 @@
   background-color: var(--theme-overlay-light);
   padding: 32px 0 64px 0;
   @include media('>=medium') {
-    padding: 50px calc(57px - var(--container-padding));
+    padding: 50px 0;
   }
   @include media('>=large') {
-    padding: 64px calc(64px - var(--container-padding));
+    padding: 64px 0;
   }
 }
 

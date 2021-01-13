@@ -1,0 +1,10 @@
+@import '../../css/inc/include-media';
+
+.content-scroller {
+  background-color: var(--color-blue-medium);
+  color: var(--color-white);
+  padding: 32px 0;
+  @include media('>=medium') {
+    padding: 64px 0;
+  }
+}

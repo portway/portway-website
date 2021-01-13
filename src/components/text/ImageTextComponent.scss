@@ -3,14 +3,15 @@
 .image-text {
   display: flex;
   flex-direction: column;
-  // max-width: 1142px;
   padding-bottom: 32px;
   padding-top: 32px;
 
   @include media('>=medium') {
     align-items: center;
     flex-direction: row;
-    padding: 64px 64px;
+    justify-content: space-between;
+    padding-bottom: 64px;
+    padding-top: 64px;
     &--right {
       flex-direction: row-reverse;
     }
