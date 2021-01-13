@@ -3,7 +3,7 @@
 .blob {
   margin: 64px 0;
   max-width: var(--container-width);
-  padding: 7.8rem var(--container-padding) 6.4rem var(--container-padding);
+  padding: 7.8rem var(--container-padding) 0 var(--container-padding);
   position: relative;
   @include media('>=medium') {
     margin: 0 auto;
@@ -29,14 +29,24 @@
   }
 
   @include media('>=xl') {
-    padding-left: var(--container-padding);
-    width: 435px;
+    left: -28px;
+    top: 31px;
+    width: 323px;
   }
 }
 
 .blob__children {
   color: var(--theme-surface);
   padding: 0 0 0 2.8rem;
+
+  h1, h2, h3, h4, h5 {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    @include media('>medium') {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+  }
 }
 
 .blob__screenshot {
@@ -63,8 +73,8 @@
 
   @include media('>=xl') {
     height: 620px;
-    left: 522px;
-    margin: 4.2rem 0 0 0;
+    left: 414px;
+    margin: 0;
   }
 }
 
@@ -82,7 +92,7 @@
   }
 
   @include media('>=xl') {
-    left: 24px;
+    left: -96px;
   }
 
 }

@@ -3,13 +3,14 @@
 .image-text {
   display: flex;
   flex-direction: column;
-  max-width: 1142px;
-  padding: 32px var(--container-padding);
+  // max-width: 1142px;
+  padding-bottom: 32px;
+  padding-top: 32px;
 
   @include media('>=medium') {
     align-items: flex-start;
     flex-direction: row;
-    padding: 64px;
+    padding: 64px 64px;
     &--right {
       flex-direction: row-reverse;
     }
@@ -36,15 +37,6 @@
     @include media('>=large') {
       margin: 0 0 0 6.7rem;
     }
-  }
-}
-
-.image-text__content {
-  margin: auto;
-  width: 80%;
-  @include media('>=medium') {
-    margin: 0;
-    width: auto;
   }
 }
 
