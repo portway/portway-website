@@ -66,7 +66,13 @@ const ContentScrollerComponent = ({ className, items, title }) => {
         <div className="container">
           <h2 className="content-scroller__title">{title}</h2>
         </div>
-        <div className="content-scroller__scroller" role="tablist" aria-label="Content tabs" ref={listRef}>
+        <div
+          className="content-scroller__scroller"
+          role="tablist"
+          aria-label="Content tabs"
+          ref={listRef}
+          tabIndex={0}
+        >
           <ol className="content-scroller__list">
             {itemsWithId.map((item, index) => {
               return (

@@ -13,6 +13,7 @@
 }
 
 .content-scroller__scroller {
+  outline: none;
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
