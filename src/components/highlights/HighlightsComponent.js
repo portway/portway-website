@@ -41,6 +41,6 @@ export const Highlight = ({ children, icon, title }) => {
 
 Highlight.propTypes = {
   children: PropTypes.node,
-  icon: PropTypes.object,
+  icon: PropTypes.string,
   title: PropTypes.string,
 }

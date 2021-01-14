@@ -1,0 +1,40 @@
+{
+  "title": "Do more with your documents",
+  "items": [
+    {
+      "title": "Collaborative documents",
+      "description": "Write your latest garden journal entry, or create a new blog entry for your website.",
+      "image": "../img/feature-scroller/screenshot-export.png"
+    },
+    {
+      "title": "Markdown",
+      "description": "Portway is a Markdown writing app packed with advanced features.",
+      "image": "../img/feature-scroller/screenshot-export.png"
+    },
+    {
+      "title": "Developer APIs",
+      "description": "Manage developer access to create custom applications and workflows using your Portway projects.",
+      "image": "../img/feature-scroller/screenshot-export.png"
+    },
+    {
+      "title": "Document outline",
+      "description": "Writing doesn’t start at the beginning. Arrange your documents however you like!",
+      "image": "../img/feature-scroller/screenshot-export.png"
+    },
+    {
+      "title": "Drag and drop",
+      "description": "Drag text documents right into Portway from your desktop. Reorder your document’s content easily.",
+      "image": "../img/feature-scroller/screenshot-export.png"
+    },
+    {
+      "title": "Media & fields",
+      "description": "Add custom fields to your documents such as images, PDFs, or events.",
+      "image": "../img/feature-scroller/screenshot-export.png"
+    },
+    {
+      "title": "Export projects",
+      "description": "Optional description",
+      "image": "../img/feature-scroller/screenshot-export.png"
+    }
+  ]
+}

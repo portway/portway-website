@@ -28,7 +28,7 @@ const BlobComponent = ({ blobImage, blobPixels, blobScreenshot, children }) => {
 BlobComponent.propTypes = {
   blobImage: PropTypes.object.isRequired,
   blobPixels: PropTypes.object.isRequired,
-  blobScreenshot: PropTypes.object.isRequired,
+  blobScreenshot: PropTypes.array.isRequired,
   children: PropTypes.node,
 }
 

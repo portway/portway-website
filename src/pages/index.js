@@ -8,7 +8,8 @@ import HeroComponent from '../components/hero/HeroComponent'
 import ImageTextComponent from '../components/text/ImageTextComponent'
 import BlobComponent from '../components/blob/BlobComponent'
 import { HighlightsComponent, Highlight } from '../components/highlights/HighlightsComponent'
-import ContentScrollerComponent from '../components/content-scroller/ContentScrollerComponent'
+
+import FeatureScrollerComponent from '../chunks/FeatureScroller/FeatureScrollerComponent'
 
 import securityIcon from '../img/icon-security.svg'
 import globalIcon from '../img/icon-global.svg'
@@ -34,7 +35,7 @@ const IndexPage = ({ data, pageContext }) => {
       >
         <Img
           alt="Content platform illustration"
-          loading={true}
+          loading="eager"
           fluid={data.heroImage.childImageSharp.fluid}
         />
       </HeroComponent>
@@ -88,9 +89,7 @@ const IndexPage = ({ data, pageContext }) => {
           </p>
         </Highlight>
       </HighlightsComponent>
-      <ContentScrollerComponent title="Do more with your documents">
-
-      </ContentScrollerComponent>
+      <FeatureScrollerComponent />
     </Layout>
   )
 }
