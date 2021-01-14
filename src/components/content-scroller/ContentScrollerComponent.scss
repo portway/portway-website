@@ -3,12 +3,12 @@
 .content-scroller {
   background-color: var(--color-blue-medium);
   color: var(--color-white);
-  padding: 32px 0 96px 0;
+  padding: 32px 0 24vw 0;
   @include media('>=medium') {
-    padding: 64px 0;
+    padding: 64px 0 14vw;
   }
   @include media('>=large') {
-    padding: 96px 0;
+    padding: 96px 0 14vw;
   }
 }
 
