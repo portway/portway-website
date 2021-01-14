@@ -14,7 +14,7 @@ const FeatureScrollerComponent = () => {
           title
           image {
             childImageSharp {
-              fluid(maxWidth: 740) {
+              fluid(maxWidth: 1480) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
