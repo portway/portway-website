@@ -19,6 +19,12 @@ main {
   margin: 0 auto;
   max-width: 1400px;
   padding: 0 var(--container-padding);
+
+  &--with-scroller {
+    overflow-x: visible;
+    padding: 0;
+  }
+
 }
 
 // Header

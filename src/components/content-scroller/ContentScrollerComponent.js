@@ -66,40 +66,42 @@ const ContentScrollerComponent = ({ className, items, title }) => {
         <div className="container">
           <h2 className="content-scroller__title">{title}</h2>
         </div>
-        <div
-          className="content-scroller__scroller container"
-          role="tablist"
-          aria-label="Content tabs"
-          ref={listRef}
-          tabIndex={0}
-        >
-          <ol className="content-scroller__list">
-            {itemsWithId.map((item, index) => {
-              return (
-                <li key={`tab-${item.id}`}>
-                  <button
-                    aria-controls={`panel-${item.id}`}
-                    aria-selected={selectedItemId === item.id}
-                    className="content-scroller__item"
-                    id={`tab-${item.id}`}
-                    onClick={(e) => {
-                      setSelectedItemId(item.id)
-                      setSelectedItemIndex(index)
-                      listRef.current.scrollTo({
-                        top: 0,
-                        left: e.currentTarget.offsetLeft - 50,
-                        behavior: 'smooth'
-                      })
-                    }}
-                    role="tab"
-                    tabIndex={selectedItemId === item.id ? 0 : -1}
-                  >
-                    {item.title}
-                  </button>
-                </li>
-              )
-            })}
-          </ol>
+        <div className="container container--with-scroller">
+          <div
+            className="content-scroller__scroller"
+            role="tablist"
+            aria-label="Content tabs"
+            ref={listRef}
+            tabIndex={0}
+          >
+            <ol className="content-scroller__list">
+              {itemsWithId.map((item, index) => {
+                return (
+                  <li key={`tab-${item.id}`}>
+                    <button
+                      aria-controls={`panel-${item.id}`}
+                      aria-selected={selectedItemId === item.id}
+                      className="content-scroller__item"
+                      id={`tab-${item.id}`}
+                      onClick={(e) => {
+                        setSelectedItemId(item.id)
+                        setSelectedItemIndex(index)
+                        listRef.current.scrollTo({
+                          top: 0,
+                          left: e.currentTarget.offsetLeft - 50,
+                          behavior: 'smooth'
+                        })
+                      }}
+                      role="tab"
+                      tabIndex={selectedItemId === item.id ? 0 : -1}
+                    >
+                      {item.title}
+                    </button>
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
         </div>
         <div className="content-scroller__content container">
           {itemsWithId.map((item, index) => {
