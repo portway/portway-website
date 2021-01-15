@@ -5,7 +5,7 @@
   "private": true,
   "author": "BonkeyBong, LLC",
   "dependencies": {
-    "@portway/gatsby-source-portway": "^1.0.1",
+    "@portway/gatsby-source-portway": "git://github.com/portway/gatsby-source-portway.git#jc-transformer-json-conflict",
     "classnames": "^2.2.6",
     "gatsby": "^2.30.2",
     "gatsby-image": "^2.9.0",
