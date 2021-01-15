@@ -4,11 +4,13 @@
   background-color: var(--color-blue-medium);
   color: var(--color-white);
   padding: 32px 0 24vw 0;
+  position: relative;
+
   @include media('>=medium') {
-    padding: 64px 0 14vw;
+    padding: 64px 0 10vw;
   }
   @include media('>=large') {
-    padding: 96px 0 14vw;
+    padding: 96px 0 10vw;
   }
 }
 
@@ -31,10 +33,10 @@
   flex-wrap: nowrap;
   list-style: none;
   margin: 0;
-  padding: 3.2rem 0 3.2rem var(--container-padding);
+  padding: 3.2rem 0 3.2rem 0;
 
   @include media('>=medium') {
-    padding: 6.4rem 0 6.4rem var(--container-padding);
+    padding: 6.4rem 0 6.4rem 0;
   }
 }
 
@@ -48,12 +50,16 @@
   font-weight: 300;
   line-height: 2.6rem;
   margin-right: 2.8rem;
+  outline: none;
   padding: 1.1rem 0;
   white-space: nowrap;
   -webkit-appearance: none;
 
-  &:focus {
-    outline: none;
+  &:hover, &:focus {
+    filter: brightness(90%);
+  }
+  &:active {
+    filter: brightness(110%);
   }
 
   &[aria-selected="true"] {
@@ -64,6 +70,19 @@
 
 .content-scroller__content {
   position: relative;
+  &:after {
+    background-image: url('/img/accent_squiggle.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    bottom: 0;
+    content: '';
+    display: block;
+    filter: brightness(500%);
+    height: 48px;
+    left: 0;
+    position: relative;
+    width: 109px;
+  }
 }
 
 .content-scroller__panel {

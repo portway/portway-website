@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { throttle } from '../../scripts/utilities'
 
+// Polyfills
+import smoothscroll from 'smoothscroll-polyfill'
+
 import { LINK_LOGIN, LINK_SIGNUP } from '../../constants'
 
 const Header = ({ siteTitle }) => {
@@ -20,6 +23,7 @@ const Header = ({ siteTitle }) => {
   useEffect(() => {
     window.addEventListener('scroll', throttle(scrollHandler), false)
     scrollHandler()
+    smoothscroll.polyfill()
   }, [])
 
   return (

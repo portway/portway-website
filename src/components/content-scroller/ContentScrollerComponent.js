@@ -67,7 +67,7 @@ const ContentScrollerComponent = ({ className, items, title }) => {
           <h2 className="content-scroller__title">{title}</h2>
         </div>
         <div
-          className="content-scroller__scroller"
+          className="content-scroller__scroller container"
           role="tablist"
           aria-label="Content tabs"
           ref={listRef}
@@ -120,7 +120,7 @@ const ContentScrollerComponent = ({ className, items, title }) => {
                 }
                 {item.image &&
                 <div className="content-scroller__image">
-                  <Img fluid={item.image.childImageSharp.fluid} />
+                  <Img fluid={item.image.childImageSharp.fluid} loading="eager" />
                   <div className="content-scroller__background">
                     <img src={blobStrokeImage} width="554" height="546" alt="Blob artwork" />
                   </div>

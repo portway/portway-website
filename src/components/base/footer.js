@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'gatsby'
 
 import { FORM_MAILCHIMP_ACTION_URL, LINK_GUIDES } from '../../constants'
 
 const Footer = () => {
+  const formRef = useRef()
+  const isBrowser = typeof window !== `undefined`
+  const params = isBrowser ? Object.fromEntries(new URLSearchParams(location.search)) : {}
+
+  useEffect(() => {
+    if (params.received && formRef.current) {
+      formRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [params.received])
+
   return (
     <footer className="footer">
       <div className="container">
@@ -29,10 +39,20 @@ const Footer = () => {
           {/* /content-left */}
           <div className="footer__content-right">
             <h4 className="footer__form-title">Get updates and news</h4>
-            <form className="footer__form" action={FORM_MAILCHIMP_ACTION_URL} method="post">
+            {!params.received &&
+            <form
+              action={FORM_MAILCHIMP_ACTION_URL}
+              className="footer__form"
+              method="post"
+              ref={formRef}
+            >
               <input type="email" name="email" aria-label="Email address" placeholder="Enter your email address" />
               <button>Sign up</button>
             </form>
+            }
+            {params.received &&
+            <p>Thank you for subscribing!</p>
+            }
           </div>
           {/* /content-right */}
         </div>

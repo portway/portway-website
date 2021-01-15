@@ -107,28 +107,28 @@ export const pageQuery = graphql`
     heroImage: file(relativePath: { eq: "fpo_hero.png" }) {
       childImageSharp {
         fluid(maxWidth: 642) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     integrationImage: file(relativePath: { eq: "fpo_integrations.png" }) {
       childImageSharp {
         fluid(maxWidth: 557) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     markdownImage: file(relativePath: { eq: "fpo_markdown.png" }) {
       childImageSharp {
         fluid(maxWidth: 556) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     blobImage: file(relativePath: { eq: "blob-background-art.png" }) {
       childImageSharp {
         fluid(maxWidth: 707) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
@@ -142,14 +142,14 @@ export const pageQuery = graphql`
     mobileScreenshot: file(relativePath: { eq: "screenshot_small.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     desktopScreenshot: file(relativePath: { eq: "screenshot_large.png" }) {
       childImageSharp {
         fluid(maxWidth: 1060) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
