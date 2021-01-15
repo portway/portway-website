@@ -10,6 +10,7 @@ import BlobComponent from '../components/blob/BlobComponent'
 import { HighlightsComponent, Highlight } from '../components/highlights/HighlightsComponent'
 
 import FeatureScrollerComponent from '../chunks/FeatureScroller/FeatureScrollerComponent'
+import GuidesScrollerComponent from '../chunks/GuidesScroller/GuidesScrollerComponent'
 
 import securityIcon from '../img/icon-security.svg'
 import globalIcon from '../img/icon-global.svg'
@@ -90,6 +91,7 @@ const IndexPage = ({ data, pageContext }) => {
         </Highlight>
       </HighlightsComponent>
       <FeatureScrollerComponent />
+      <GuidesScrollerComponent />
     </Layout>
   )
 }

@@ -34,6 +34,14 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-minify`,
+    `gatsby-transformer-json`,
+    {
+      resolve: '@portway/gatsby-source-portway',
+      options: {
+        token: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjUsIm9yZ0lkIjoxLCJpYXQiOjE2MTA3Mzg1MjcsImlzcyI6ImJvbmtleWJvbmcifQ.5JPC-k67JVvOPLJKg9r1LQlmHSHkJ8orpfP2gO8zjlg`,
+        projectId: 44
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -41,7 +49,6 @@ module.exports = {
         path: `${__dirname}/src/img`,
       },
     },
-    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -6,7 +6,7 @@ import ContentScrollerComponent from '../../components/content-scroller/ContentS
 
 const FeatureScrollerComponent = () => {
   const items = useStaticQuery(graphql`
-  query {
+  query FeaturesQuery {
     allContentJson {
       nodes {
         items {

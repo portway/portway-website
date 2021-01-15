@@ -16,6 +16,7 @@
   --color-warning: #F3D041;
   --color-error: #F55961;
   // Light theme
+  --theme-card-color: #fff;
   --theme-text-color: #333333;                 // darker text color
   --theme-overlay-light: #FAFAFA;              // 1 top layer modal/menu
   --theme-overlay-dark: #CCD1D7;               // 2 overlay layer
@@ -23,6 +24,7 @@
   --theme-base: var(--color-white);              // 4 base layer
   @media (prefers-color-scheme: dark) {
     // Dark theme
+    --theme-card-color: hsl(218, 7%, 24%);
     --theme-text-color: rgba(255, 255, 255, 85%);   // darker text color
     --theme-overlay-light: hsl(218, 7%, 24%);       // 1 top layer modal/menu
     --theme-overlay-dark: hsl(223, 7%, 19%);        // 2 overlay layer
