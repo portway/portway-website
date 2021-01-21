@@ -79,6 +79,10 @@
   flex-direction: column;
   overflow: hidden;
 
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.815);
+  }
+
   @include media('>=medium') {
     max-width: 320px;
   }
@@ -104,7 +108,7 @@
 
 .card__price {
   font-size: 3.2rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-right: .6rem;
 }
 
@@ -136,5 +140,70 @@
   img {
     margin-right: .6rem;
   }
+}
+
+.form {
+  background: var(--theme-overlay-light);
+  margin: 3.2rem 0;
+  padding: 1.6rem;
+  text-align: left;
+
+  @include media('>=medium') {
+    margin: 6.4rem 0;
+  }
+
+  &--submitted {
+    .form__container {
+      display: none;
+    }
+  }
+
+  h2, h3, h4, h5, h6 {
+    margin-bottom: .6rem;
+  }
+
+  input[type="text"], input[type="email"], textarea {
+    border: none;
+    color: var(--theme-text-color);
+    font-family: var(--type-sans-serif);
+    margin-bottom: 1.6rem;
+    width: 100%;
+
+    &:focus {
+      outline: thin solid var(--color-blue-light);
+    }
+    &:focus:not(:focus-visible) {
+      outline: 0;
+    }
+    &:focus-visible {
+      outline: thin solid var(--color-blue-light);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--theme-overlay-dark);
+    }
+  }
+
+}
+
+.form__result {
+  display: none;
+
+  &--submitted {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.form__container {
+  padding-bottom: 3.2rem;
+
+  label {
+    display: block;
+  }
+}
+
+.form__options {
+  padding: 1.6rem 0;
 }
 

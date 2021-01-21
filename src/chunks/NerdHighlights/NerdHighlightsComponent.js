@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import { HighlightsComponent, Highlight } from '../../components/highlights/HighlightsComponent'
 
@@ -12,7 +13,7 @@ const NerdHighlightsComponent = () => {
       <Highlight title="Security" icon={securityIcon}>
         <p>
           Your content is yours alone. We ensure it’s encrypted in transit, and in our database.
-          Read more about our security practices and promises
+          Read about our <Link to="/security">security practices and promises</Link>
         </p>
       </Highlight>
       <Highlight title="Global Media CDN" icon={globalIcon}>

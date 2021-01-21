@@ -90,6 +90,13 @@
     filter: brightness(110%);
   }
 
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.815);
+    &:hover, &:focus, &:visited {
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.815);
+    }
+  }
+
 }
 
 .card-scroller__image {

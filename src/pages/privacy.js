@@ -17,9 +17,8 @@ const PrivacyPage = () => (
         <h2>We are dedicated to your privacy</h2>
         <p className={styles.heading__underlined}>We’ve made this as easy as possible</p>
       </div>
-      {/* /Intro */}
-      <div className={[styles.page__content, styles.page__contentLeftAligned].join(' ')}>
 
+      <div className={[styles.page__content, styles.page__contentLeftAligned].join(' ')}>
         <div>
           <h3>Personal information:</h3>
           <p>We collect the following personal information:</p>

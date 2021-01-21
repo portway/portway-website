@@ -23,12 +23,13 @@ const Footer = () => {
             <div className="footer__links">
               <ul>
                 <li><Link to="/pricing">Pricing</Link></li>
-                <li><a href={LINK_GUIDES} target="_blank" rel="noopener noreferrer">Guides</a></li>
+                <li><Link to="/security">Security</Link></li>
+                <li><Link to="/support">Support</Link></li>
+                <li><Link to="/press">Press</Link></li>
               </ul>
               <ul>
                 <li><a href={LINK_GUIDES} target="_blank" rel="noopener noreferrer">API</a></li>
-                <li><Link to="/security">Security</Link></li>
-                <li><Link to="/support">Support</Link></li>
+                <li><a href={LINK_GUIDES} target="_blank" rel="noopener noreferrer">Guides</a></li>
               </ul>
               <ul>
                 <li><Link to="/privacy">Privacy</Link></li>

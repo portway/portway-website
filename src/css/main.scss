@@ -93,6 +93,12 @@ main {
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
       background-image: url('/img/logo-type@2x.png');
     }
+    @media (prefers-color-scheme: dark) {
+      background-image: url('/img/logo-type--white.png');
+    }
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (prefers-color-scheme: dark) {
+      background-image: url('/img/logo-type--white@2x.png');
+    }
   }
 
   &.visible {
@@ -124,7 +130,6 @@ main {
 .sponsor__image {
   padding-right: 1rem;
 }
-
 
 // Footer
 .footer {
@@ -255,7 +260,7 @@ main {
 }
 
 .footer__social {
-  color: var(--theme-overlay-dark);
+  color: var(--theme-text-color);
   margin-bottom: 32px;
   text-align: center;
   @include media('>=medium') {
@@ -269,7 +274,7 @@ main {
     }
   }
   a {
-    color: var(--theme-overlay-dark);
+    color: var(--theme-text-color);
     text-decoration: none;
     @include media('>=medium') {
       align-items: center;
