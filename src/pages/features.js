@@ -24,7 +24,7 @@ const FeaturesPage = () => {
             image {
               childImageSharp {
                 fluid(maxWidth: 1480) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
