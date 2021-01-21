@@ -13,8 +13,6 @@ const pageClasses = cx({
   'container': true
 })
 
-console.log(styles)
-
 const SupportPage = () => {
   const formRef = useRef()
   const validationRef = useRef()

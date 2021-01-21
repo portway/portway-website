@@ -21,7 +21,7 @@ const ImageTextComponent = ({ accent, align, children, image, offset, title }) =
     'image-text__image--offset': offset,
   })
   return (
-    <section className={`image-text image-text--${align} container`}>
+    <div className={`image-text image-text--${align} container`}>
       {image &&
       <div className="image-text__image-container">
         <Img className={imageClasses} fluid={image} alt={title} />
@@ -33,7 +33,7 @@ const ImageTextComponent = ({ accent, align, children, image, offset, title }) =
         }
         {children}
       </div>
-    </section>
+    </div>
   )
 }
 

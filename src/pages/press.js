@@ -14,16 +14,16 @@ const pageClasses = cx({
 
 const PressPage = () => {
   const items = useStaticQuery(graphql`
-  query FullFeatures {
-    allContentJson {
-      nodes {
-        items {
-          title
-          description
+    query {
+      allContentJson {
+        nodes {
+          items {
+            title
+            description
+          }
         }
       }
     }
-  }
   `)
 
   return <Layout title="Press">
