@@ -96,8 +96,9 @@ main {
     @media (prefers-color-scheme: dark) {
       background-image: url('/img/logo-type--white.png');
     }
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (prefers-color-scheme: dark) {
-      background-image: url('/img/logo-type--white@2x.png');
+    @media (-webkit-min-device-pixel-ratio: 2) and (prefers-color-scheme: dark),
+           (min-resolution: 192dpi) and (prefers-color-scheme: dark) {
+              background-image: url('/img/logo-type--white@2x.png');
     }
   }
 
