@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer__content">
           <div className="footer__content-left">
-            <div className="footer__logo" />
+            <Link to="/" className="footer__logo" aria-label="Home" />
             <div className="footer__links">
               <ul>
                 <li><Link to="/pricing">Pricing</Link></li>
