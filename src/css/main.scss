@@ -261,9 +261,12 @@ main {
 }
 
 .footer__social {
-  color: var(--theme-text-color);
+  color: #FAFAFA;
   margin-bottom: 32px;
   text-align: center;
+  @media (prefers-color-scheme: dark) {
+    color: var(--theme-text-color);
+  }
   @include media('>=medium') {
     margin-bottom: 0;
   }
@@ -275,8 +278,11 @@ main {
     }
   }
   a {
-    color: var(--theme-text-color);
+    color: #FAFAFA;
     text-decoration: none;
+    @media (prefers-color-scheme: dark) {
+      color: var(--theme-text-color);
+    }
     @include media('>=medium') {
       align-items: center;
       display: flex;
