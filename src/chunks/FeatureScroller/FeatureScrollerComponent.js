@@ -6,11 +6,12 @@ import ContentScrollerComponent from '../../components/content-scroller/ContentS
 
 const FeatureScrollerComponent = () => {
   const items = useStaticQuery(graphql`
-  query FeaturesQuery {
+  query FeaturedFeatures {
     allContentJson {
       nodes {
         items {
           description
+          featured
           title
           image {
             childImageSharp {
@@ -28,7 +29,7 @@ const FeatureScrollerComponent = () => {
     <ContentScrollerComponent
       className="feature-scroller"
       title="Do more with your documents"
-      items={items.allContentJson.nodes[0].items}
+      items={items.allContentJson.nodes[0].items.filter(item => item.featured)}
     />
   )
 }
