@@ -38,6 +38,7 @@ const FeaturesPage = () => {
       <section className={pageClasses}>
         <div className={styles.page__heading}>
           <h2>Features</h2>
+          <p className={styles.heading__underlined}>The full list</p>
         </div>
         <div>
           <ul className={styles.blankList}>
