@@ -88,6 +88,9 @@ form button, .button {
   &--blue {
     background: var(--color-blue-light);
   }
+  &--green {
+    background: var(--color-success);
+  }
   &--clear {
     background: transparent;
     border: thin solid var(--color-orange);
@@ -95,5 +98,15 @@ form button, .button {
     &:hover, &:focus, &:visited {
       color: var(--color-orange);
     }
+  }
+}
+
+hr {
+  border: none;
+  border-top: thin solid var(--theme-overlay-light);
+  margin: 1.8rem 0;
+
+  @include media('>=medium') {
+    margin: 3.2rem 0;
   }
 }

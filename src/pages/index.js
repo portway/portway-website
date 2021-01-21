@@ -7,14 +7,10 @@ import Layout from '../layouts/layout'
 import HeroComponent from '../components/hero/HeroComponent'
 import ImageTextComponent from '../components/text/ImageTextComponent'
 import BlobComponent from '../components/blob/BlobComponent'
-import { HighlightsComponent, Highlight } from '../components/highlights/HighlightsComponent'
 
 import FeatureScrollerComponent from '../chunks/FeatureScroller/FeatureScrollerComponent'
 import GuidesScrollerComponent from '../chunks/GuidesScroller/GuidesScrollerComponent'
-
-import securityIcon from '../img/icon-security.svg'
-import globalIcon from '../img/icon-global.svg'
-import permissionsIcon from '../img/icon-permissions.svg'
+import NerdHighlightsComponent from '../chunks/NerdHighlights/NerdHighlightsComponent'
 
 const IndexPage = ({ data, pageContext }) => {
   const sponsor = pageContext && pageContext.sponsor
@@ -70,26 +66,7 @@ const IndexPage = ({ data, pageContext }) => {
           Conflict notices keep you from stepping on each others toes.
         </p>
       </BlobComponent>
-      <HighlightsComponent>
-        <Highlight title="Security" icon={securityIcon}>
-          <p>
-            Your content is yours alone. We ensure it’s encrypted in transit, and in our database.
-            Read more about our security practices and promises
-          </p>
-        </Highlight>
-        <Highlight title="Global Media CDN" icon={globalIcon}>
-          <p>
-            Images, videos, and other assets you upload are available on a global CDN, ready to be
-            embedded anywhere
-          </p>
-        </Highlight>
-        <Highlight title="Permissions" icon={permissionsIcon}>
-          <p>
-            Control which projects are accessible to everyone on your team, and add members to
-            specific private projects.
-          </p>
-        </Highlight>
-      </HighlightsComponent>
+      <NerdHighlightsComponent />
       <FeatureScrollerComponent />
       <GuidesScrollerComponent />
     </Layout>

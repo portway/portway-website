@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="footer__logo" />
             <div className="footer__links">
               <ul>
-                <li><Link to="/support">Pricing</Link></li>
+                <li><Link to="/pricing">Pricing</Link></li>
                 <li><a href={LINK_GUIDES} target="_blank" rel="noopener noreferrer">Guides</a></li>
               </ul>
               <ul>
