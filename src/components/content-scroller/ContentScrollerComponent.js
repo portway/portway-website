@@ -64,7 +64,14 @@ const ContentScrollerComponent = ({ className, items, title }) => {
       {title &&
       <>
         <div className="container">
+          {typeof title === 'string' &&
           <h2 className="content-scroller__title">{title}</h2>
+          }
+          {typeof title !== 'string' &&
+          <div className="content-scroller__title">
+            {title}
+          </div>
+          }
         </div>
         <div className="container container--with-scroller">
           <div
@@ -141,7 +148,7 @@ const ContentScrollerComponent = ({ className, items, title }) => {
 ContentScrollerComponent.propTypes = {
   className: PropTypes.string,
   items: PropTypes.array.isRequired,
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 }
 
 export default ContentScrollerComponent

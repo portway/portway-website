@@ -36,15 +36,15 @@ const PressPage = () => {
         <p>Portway is a markdown-based, collaborative document app. It’s backed by an API that allows integrating content from Portway anywhere on the web.</p>
         <p>The collaborative editor allows multiple people to edit a single document in real time. Documents can optionally be published, and if an integration is set up using webhooks, the document can trigger a static site generator build. This allows Portway to play the role of a Content Management System (CMS) when desired.</p>
         <p>Documents are contained in projects, and each project can fulfill different functions for your team. For example, one project may act as a CMS and allow a team to publish their content to a Gatsby site. Another project may contain internal documentation that’s searchable, readable, and editable, all from within the Portway app.</p>
-        <h2 id="features">Features</h2>
+        <h3 id="features">Features</h3>
         <ul className={styles.blankList}>
           {items.allContentJson.nodes[0].items.map((feature) => {
             return <li key={uuid()}><strong>{feature.title}</strong> {feature.description}</li>
           })}
         </ul>
-        <h2 id="pricing">Pricing</h2>
+        <h3 id="pricing">Pricing</h3>
         <p>A Portway subscription is $10/month per user. Add and remove users or cancel your subscription at any time.</p>
-        <h2 id="about-us">About Us</h2>
+        <h3 id="about-us">About Us</h3>
         <p>Portway is a creation of <a href="https://bonkeybong.com">BonkeyBong</a>, an independent software development shop. We love using and creating beautiful, efficient apps.</p>
       </div>
     </section>

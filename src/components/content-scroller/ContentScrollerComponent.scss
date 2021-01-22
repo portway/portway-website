@@ -11,6 +11,18 @@
   }
 }
 
+.content-scroller__title {
+  a, a:visited {
+    align-items: center;
+    color: var(--color-blue-light);
+    display: inline-flex;
+    text-decoration: none;
+    img {
+      margin-right: .6rem;
+    }
+  }
+}
+
 .content-scroller__scroller {
   outline: none;
   overflow: auto;
