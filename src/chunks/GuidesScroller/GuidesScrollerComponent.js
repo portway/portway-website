@@ -18,7 +18,7 @@ const GuidesScrollerComponent = () => {
               publicURL
               extension
               childImageSharp {
-                fluid(maxWidth: 320) {
+                fluid(maxWidth: 200) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
