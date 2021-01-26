@@ -8,25 +8,33 @@ const GuidesScrollerComponent = () => {
     query {
       allPortwayDocument {
         nodes {
-          id
           name
           slug
           updatedAt
           childrenPortwayField {
             value
             name
+            remoteImage {
+              publicURL
+              extension
+              childImageSharp {
+                fluid(maxWidth: 320) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
         }
       }
     }
   `)
   const items = query.allPortwayDocument.nodes.map((node) => {
-    const cardImage = node.childrenPortwayField.find(field => field.name === 'card-image')
+    const cardImageItem = node.childrenPortwayField.find(field => field.name === 'card-image')
     const cardDescription = node.childrenPortwayField.find(field => field.name === 'description').value
     return {
       title: node.name,
       description: cardDescription,
-      image: cardImage,
+      image: cardImageItem.remoteImage.extension !== 'svg' ? cardImageItem.remoteImage.childImageSharp.fluid : cardImageItem.remoteImage.publicURL,
       url: `https://docs.portway.app/guides/${node.slug}`
     }
   })

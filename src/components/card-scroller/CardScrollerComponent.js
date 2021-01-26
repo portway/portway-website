@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import Img from 'gatsby-image'
 
 import { uuid } from '../../scripts/utilities'
 
@@ -27,7 +28,12 @@ const CardScrollerComponent = ({ className, items, title }) => {
                 <li key={key} className="card-scroller__list-item">
                   <a className="card-scroller__item" href={item.url} target="_blank" rel="noreferrer">
                     <div className="card-scroller__image">
-                      <img src={item.image.value} width="200" height="150" alt={item.image.name} />
+                      {typeof item.image === 'object' &&
+                      <Img fluid={item.image} alt={item.image.name} />
+                      }
+                      {typeof item.image === 'string' &&
+                      <img src={item.image} width="320" height="402" alt={item.image.name} />
+                      }
                     </div>
                     <div className="card-scroller__content">
                       <h3 className="card-scroller__item-title">{item.title}</h3>

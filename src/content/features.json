@@ -4,13 +4,15 @@
     {
       "title": "Real-time Collaboration",
       "description": "See everyone in the current document, and which field they are currently editing.",
-      "image": "../img/feature-scroller/screenshot-export.png",
+      "imageLight": "../img/feature-scroller/feature-real-time--light.png",
+      "imageDark": "../img/feature-scroller/feature-real-time--dark.png",
       "featured": true
     },
     {
       "title": "Organize documents with fields",
       "description": "Text fields offer full markdown support, while other types like images, files, and dates allow additional control and features.",
-      "image": "../img/feature-scroller/screenshot-export.png",
+      "imageLight": "../img/feature-scroller/feature-fields--light.png",
+      "imageDark": "../img/feature-scroller/feature-fields--dark.png",
       "featured": true
     },
     {
@@ -22,85 +24,86 @@
     {
       "title": "Customizable access",
       "description": "Choose the people you need on your project. Grant them appropriate access roles (reader, contributor, admin)",
-      "image": "../img/feature-scroller/screenshot-export.png",
+      "imageLight": "../img/feature-scroller/feature-team-settings--light.png",
+      "imageDark": "../img/feature-scroller/feature-team-settings--dark.png",
       "featured": true
     },
     {
       "title": "Full API",
       "description": "Portway grants you access to the API which allows you to do anything with your content.",
-      "image": "../img/feature-scroller/screenshot-export.png",
+      "imageLight": "../img/feature-scroller/feature-api--light.png",
+      "imageDark": "../img/feature-scroller/feature-api--dark.png",
       "featured": true
     },
     {
       "title": "Structured text data",
       "description": "Markdown text can be consumed raw from the API, or you can use the pre-parsed structured text that turns text into a JSON structure for simple programmatic consumption.",
-      "image": "../img/feature-scroller/screenshot-export.png",
-      "featured": false
+      "imageLight": "../img/feature-scroller/feature-structured-data--light.png",
+      "imageDark": "../img/feature-scroller/feature-structured-data--dark.png",
+      "featured": true
     },
     {
       "title": "Document outline",
       "description": "Name and reorder fields within your document in one efficient outline panel.",
       "image": "../img/feature-scroller/screenshot-export.png",
+      "imageLight": "../img/feature-scroller/feature-document-outline--light.png",
+      "imageDark": "../img/feature-scroller/feature-document-outline--dark.png",
       "featured": true
     },
     {
       "title": "Inspired by notes apps",
       "description": "At its core, Portway is designed to be fast and simple. Create a document and start writing.",
-      "image": "../img/feature-scroller/screenshot-export.png",
       "featured": false
     },
     {
       "title": "Project export",
       "description": "Need to move your content or want a project in plain text files? Download a zip of your project.",
-      "image": "../img/feature-scroller/screenshot-export.png",
+      "imageLight": "../img/feature-scroller/feature-export--light.png",
+      "imageDark": "../img/feature-scroller/feature-export--dark.png",
       "featured": true
     },
     {
       "title": "API keys",
       "description": "API access is controlled by project. Create a read-only key for a your website project so a static site generator gets read access. Create writeable keys to add content to a Portway project.",
-      "image": "../img/feature-scroller/screenshot-export.png",
       "featured": false
     },
     {
       "title": "Search",
       "description": "Quickly find documents in a project using search.",
-      "image": "../img/feature-scroller/screenshot-export.png",
       "featured": false
     },
     {
       "title": "Drag and drop import",
       "description": "Add content from outside sources by dragging it into a Portway project. It’s really that simple.",
-      "image": "../img/feature-scroller/screenshot-export.png",
+      "imageLight": "../img/feature-scroller/feature-drag--light.png",
+      "imageDark": "../img/feature-scroller/feature-drag--dark.png",
       "featured": true
     },
     {
       "title": "Webhooks",
       "description": "Notify other services when a Portway document is published. Trigger static site builds, post a document to Slack, or perform any other operation compatible with webhooks.",
-      "image": "../img/feature-scroller/screenshot-export.png",
+      "imageLight": "../img/feature-scroller/feature-webhooks--light.png",
+      "imageDark": "../img/feature-scroller/feature-webhooks--dark.png",
       "featured": true
     },
     {
       "title": "Global CDN",
       "description": "Any media you add to Portway is accessible via CDN, so you don’t need a separate asset hosting solution.",
-      "image": "../img/feature-scroller/screenshot-export.png",
       "featured": false
     },
     {
       "title": "Security and Privacy",
       "description": "Your data belongs to you. We encrypt your data across the web and in our databases. We do not and will never sell your data, period. We minimize data sharing with third party services to those required to run and operate Portway. No one has access to your content except you and the Portway application.",
-      "image": "../img/feature-scroller/screenshot-export.png",
-      "featured": true
+      "featured": false
     },
     {
       "title": "Accessible on all devices",
       "description": "Portway works on your phone, tablet or computer.",
-      "image": "../img/feature-scroller/screenshot-export.png",
       "featured": false
     },
     {
       "title": "Dark mode",
       "description": "Portway looks great whether you’re in dark or light mode.",
-      "image": "../img/feature-scroller/screenshot-export.png",
       "featured": false
     }
   ]

@@ -112,6 +112,16 @@ const ContentScrollerComponent = ({ className, items, title }) => {
         </div>
         <div className="content-scroller__content container">
           {itemsWithId.map((item, index) => {
+            let sources = []
+            if (item.imageLight && item.imageDark) {
+              sources = [
+                item.imageLight.childImageSharp.fluid,
+                {
+                  ...item.imageDark.childImageSharp.fluid,
+                  media: `(prefers-color-scheme: dark)`
+                }
+              ]
+            }
             return (
               <div
                 aria-labelledby={`tab-${item.id}`}
@@ -127,9 +137,9 @@ const ContentScrollerComponent = ({ className, items, title }) => {
                   {item.description}
                 </div>
                 }
-                {item.image &&
+                {sources.length > 0 &&
                 <div className="content-scroller__image">
-                  <Img fluid={item.image.childImageSharp.fluid} loading="eager" />
+                  <Img fluid={sources} loading="eager" />
                   <div className="content-scroller__background">
                     <img src={blobStrokeImage} width="554" height="546" alt="Blob artwork" />
                   </div>

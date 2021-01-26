@@ -14,7 +14,14 @@ const FeatureScrollerComponent = () => {
           description
           featured
           title
-          image {
+          imageLight {
+            childImageSharp {
+              fluid(maxWidth: 1480) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+          imageDark {
             childImageSharp {
               fluid(maxWidth: 1480) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
