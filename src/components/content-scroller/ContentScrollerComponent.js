@@ -93,11 +93,13 @@ const ContentScrollerComponent = ({ className, items, title }) => {
                       onClick={(e) => {
                         setSelectedItemId(item.id)
                         setSelectedItemIndex(index)
+                        const offset = e.currentTarget.offsetLeft > 400 ? -30 : -70
                         listRef.current.scrollTo({
                           top: 0,
-                          left: e.currentTarget.offsetLeft - 50,
+                          left: e.currentTarget.offsetLeft + offset,
                           behavior: 'smooth'
                         })
+                        console.log('Move', offset, e.currentTarget.offsetLeft + offset)
                       }}
                       role="tab"
                       tabIndex={selectedItemId === item.id ? 0 : -1}

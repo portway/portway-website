@@ -16,11 +16,19 @@ const IndexPage = ({ data, pageContext }) => {
   const sponsor = pageContext && pageContext.sponsor
 
   const screenshotSources = [
-    data.mobileScreenshot.childImageSharp.fluid,
+    data.mobileScreenshotLight.childImageSharp.fluid,
     {
-      ...data.desktopScreenshot.childImageSharp.fluid,
-      media: `(min-width: 768px)`,
+      ...data.mobileScreenshotDark.childImageSharp.fluid,
+      media: `(max-width: 767px) and (prefers-color-scheme: dark)`
     },
+    {
+      ...data.desktopScreenshotLight.childImageSharp.fluid,
+      media: `(min-width: 768px) and (prefers-color-scheme: light)`,
+    },
+    {
+      ...data.desktopScreenshotDark.childImageSharp.fluid,
+      media: `(min-width: 768px) and (prefers-color-scheme: dark)`,
+    }
   ]
 
   return (
@@ -118,14 +126,28 @@ export const pageQuery = graphql`
         }
       }
     }
-    mobileScreenshot: file(relativePath: { eq: "screenshot_small.png" }) {
+    mobileScreenshotLight: file(relativePath: { eq: "collab-mobile--light.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
-    desktopScreenshot: file(relativePath: { eq: "screenshot_large.png" }) {
+    mobileScreenshotDark: file(relativePath: { eq: "collab-mobile--dark.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    desktopScreenshotLight: file(relativePath: { eq: "collab-desktop--light.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1060) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    desktopScreenshotDark: file(relativePath: { eq: "collab-desktop--dark.png" }) {
       childImageSharp {
         fluid(maxWidth: 1060) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG

@@ -7,7 +7,7 @@ import { uuid } from '../../scripts/utilities'
 
 import './CardScrollerComponent.scss'
 
-const CardScrollerComponent = ({ className, items, title }) => {
+const CardScrollerComponent = ({ className, imageWidth, imageHeight, items, title }) => {
   const cardScrollerClasses = cx({
     'card-scroller': true,
     [className]: className,
@@ -32,7 +32,7 @@ const CardScrollerComponent = ({ className, items, title }) => {
                       <Img fluid={item.image} alt={item.image.name} />
                       }
                       {typeof item.image === 'string' &&
-                      <img src={item.image} width="320" height="402" alt={item.image.name} />
+                      <img src={item.image} width={imageWidth} height={imageHeight} alt={item.image.name} />
                       }
                     </div>
                     <div className="card-scroller__content">
@@ -54,13 +54,20 @@ const CardScrollerComponent = ({ className, items, title }) => {
 
 CardScrollerComponent.propTypes = {
   className: PropTypes.string,
+  imageWidth: PropTypes.number,
+  imageHeight: PropTypes.number,
   items: PropTypes.arrayOf(PropTypes.shape({
     description: PropTypes.string,
-    image: PropTypes.object.isRequired,
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
   })),
   title: PropTypes.string,
+}
+
+CardScrollerComponent.defaultProps = {
+  imageWidth: 200,
+  imageHeight: 150,
 }
 
 export default CardScrollerComponent

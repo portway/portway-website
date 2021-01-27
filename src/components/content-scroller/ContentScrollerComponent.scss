@@ -35,6 +35,9 @@
     width: 0;
     height: 0;
   }
+  @include media('>1400px') {
+    overflow: visible;
+  }
 }
 
 .content-scroller__list {
@@ -114,11 +117,15 @@
 }
 
 .content-scroller__image {
+  background-color: #fdfdfd;
   border-radius: 1.56px;
   box-shadow: 0 3px 15px #000;
   position: relative;
   .gatsby-image-wrapper {
     z-index: 2;
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: #24282c;
   }
   @include media('>=medium') {
     flex: 1 0 65.14084507%;
@@ -126,6 +133,8 @@
   }
   @include media('>=large') {
     margin-left: 7.3rem;
+    // min-width: 560px;
+    // min-width: 829px;
   }
 }
 

@@ -56,8 +56,14 @@
   box-shadow: 0 2px 26px 0 rgba(102,102,102,0.40);
   min-height: 512px;
   margin: 4.2rem 0 0 0;
+  overflow: hidden;
   position: relative;
   z-index: 2;
+
+  @media (prefers-color-scheme: dark) {
+    border: thin solid var(--theme-base);
+    box-shadow: 0 2px 26px 0 rgba(0,0,0,0.40);
+  }
 
   @include media('>=medium') {
     height: 620px;
