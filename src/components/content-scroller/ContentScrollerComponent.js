@@ -99,7 +99,6 @@ const ContentScrollerComponent = ({ className, items, title }) => {
                           left: e.currentTarget.offsetLeft + offset,
                           behavior: 'smooth'
                         })
-                        console.log('Move', offset, e.currentTarget.offsetLeft + offset)
                       }}
                       role="tab"
                       tabIndex={selectedItemId === item.id ? 0 : -1}
