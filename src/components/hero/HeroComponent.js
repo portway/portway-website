@@ -8,7 +8,7 @@ const HeroComponent = ({ children, description, showSignup, signupLanguage, titl
   function renderSignupSnippet(modifier) {
     return (
       <div className={`hero__signup hero__signup--${modifier}`}>
-        <a href={LINK_SIGNUP} className="button button--large button--orange">{signupLanguage}</a>
+        <a href={LINK_SIGNUP} rel="external" className="button button--large button--orange">{signupLanguage}</a>
         <small>No credit card required</small>
       </div>
     )

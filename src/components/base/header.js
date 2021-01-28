@@ -34,7 +34,7 @@ const Header = ({ siteTitle }) => {
             <h1>Portway</h1>
           </Link>
           <div className="masthead__info">
-            <b><a href={LINK_LOGIN} className="text-link">Log in</a></b> or <a className="button button--clear" href={LINK_SIGNUP}>Try for free</a>
+            <b><a href={LINK_LOGIN} rel="external" className="text-link">Log in</a></b> or <a href={LINK_SIGNUP} rel="external" className="button button--clear">Try for free</a>
           </div>
         </div>
       </header>
