@@ -10,7 +10,7 @@
     },
     {
       "title": "Organize documents with fields",
-      "description": "Text fields offer full markdown support, while other types like images, files, and dates allow additional control and features.",
+      "description": "Text fields offer full markdown support, while other field types like images, files, and dates allow additional control and features.",
       "imageLight": "../img/feature-scroller/feature-fields--light.png",
       "imageDark": "../img/feature-scroller/feature-fields--dark.png",
       "featured": true
@@ -30,14 +30,14 @@
     },
     {
       "title": "Full API",
-      "description": "Portway grants you access to the API which allows you to do anything with your content.",
+      "description": "Portway provides a complete API which allows full interaction with your content.",
       "imageLight": "../img/feature-scroller/feature-api--light.png",
       "imageDark": "../img/feature-scroller/feature-api--dark.png",
       "featured": true
     },
     {
       "title": "Structured text data",
-      "description": "Markdown text can be consumed raw from the API, or you can use the pre-parsed structured text that turns text into a JSON structure for simple programmatic consumption.",
+      "description": "Markdown text can be consumed raw from the API, or you can use the pre-parsed structured text that turns text into a JSON structure for programmatic consumption.",
       "imageLight": "../img/feature-scroller/feature-structured-data--light.png",
       "imageDark": "../img/feature-scroller/feature-structured-data--dark.png",
       "featured": true
