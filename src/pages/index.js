@@ -91,21 +91,21 @@ export default IndexPage
 // Image queries
 export const pageQuery = graphql`
   query HomepageImageQuery {
-    heroImage: file(relativePath: { eq: "fpo_hero.png" }) {
+    heroImage: file(relativePath: { eq: "hero@2x.png" }) {
       childImageSharp {
         fluid(maxWidth: 642) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
-    integrationImage: file(relativePath: { eq: "fpo_integrations.png" }) {
+    integrationImage: file(relativePath: { eq: "integrations@2x.png" }) {
       childImageSharp {
         fluid(maxWidth: 557) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
-    markdownImage: file(relativePath: { eq: "fpo_markdown.png" }) {
+    markdownImage: file(relativePath: { eq: "markdown@2x.png" }) {
       childImageSharp {
         fluid(maxWidth: 556) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
