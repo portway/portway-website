@@ -75,7 +75,7 @@ const ContentScrollerComponent = ({ className, items, title }) => {
         </div>
         <div className="container container--with-scroller">
           <div
-            className="content-scroller__scroller"
+            className="content-scroller__scroller scroller-component"
             role="tablist"
             aria-label="Content tabs"
             ref={listRef}

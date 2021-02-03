@@ -86,7 +86,7 @@ const PressPage = ({ data }) => {
         <h3 id="branding">Logos</h3>
         <figure>
           <a href="/portway-logos.zip" download>
-            <img src={portwayLogo} alt="Portway logo" width="428" height="90" />
+            <img src={portwayLogo} alt="Portway logo" width="214" height="45" />
             <figcaption>Download zip (8KB)</figcaption>
           </a>
         </figure>
@@ -98,7 +98,7 @@ const PressPage = ({ data }) => {
             <figcaption>Download Desktop</figcaption>
           </a>
         </figure>
-        <figure style={{ width: 400 }}>
+        <figure style={{ width: 320 }}>
           <a href={pageQuery.mobileScreenshot.childImageSharp.original.src} target="_blank" rel="noreferrer">
             <Img fluid={pageQuery.mobileScreenshot.childImageSharp.fluid} alt="Mobile Portway screenshot" />
             <figcaption>Download Mobile</figcaption>

@@ -20,7 +20,7 @@ const CardScrollerComponent = ({ className, imageWidth, imageHeight, items, titl
       </div>
       }
       <div className="container container--with-scroller">
-        <div className="card-scroller__scroller">
+        <div className="card-scroller__scroller scroller-component">
           <ol className="card-scroller__list">
             {items.map((item) => {
               const key = `card-${uuid()}`
