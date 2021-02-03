@@ -33,7 +33,7 @@ const Layout = ({ children, description, sponsor, title }) => {
       })
       slider.addEventListener('mouseup', () => {
         isDown = false
-        const anchors = slider.querySelectorAll('a')
+        const anchors = slider.querySelectorAll('a, button')
         if (isDragged) {
           anchors.forEach((anchor) => {
             anchor.addEventListener('click', preventClick, { passive: false })
