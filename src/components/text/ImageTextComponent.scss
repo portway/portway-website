@@ -71,20 +71,25 @@
     content: '';
     display: block;
     height: 26px;
-     margin: 1.2rem 0 0 0;
+    margin: 1.2rem 0;
     width: 156px;
   }
 
   &--squiggle {
     &:after {
-      background-image: url('/img/accent_squiggle.png');
+      background-image: url('/img/accent_squiggle@2x.png');
+      @media (prefers-color-scheme: dark) {
+        background-image: url('/img/accent_squiggle--dark@2x.png');
+      }
     }
   }
 
   &--stroke {
     &:after {
-      background-image: url('/img/accent_stroke.png');
-      background-size: 142px 11px;
+      background-image: url('/img/accent_stroke@2x.png');
+      @media (prefers-color-scheme: dark) {
+        background-image: url('/img/accent_stroke--dark@2x.png');
+      }
     }
   }
 

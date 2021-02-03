@@ -83,17 +83,21 @@
 .content-scroller__content {
   position: relative;
   &:after {
-    background-image: url('/img/accent_squiggle.png');
+    background-image: url('/img/accent_squiggle2@2x.png');
     background-repeat: no-repeat;
     background-size: 100%;
     bottom: 0;
     content: '';
     display: block;
     filter: brightness(500%);
-    height: 48px;
+    height: 26px;
     left: 0;
     position: relative;
-    width: 109px;
+    width: 156px;
+    @media (prefers-color-scheme: dark) {
+      background-image: url('/img/accent_squiggle2--dark@2x.png');
+      filter: brightness(100%);
+    }
   }
 }
 

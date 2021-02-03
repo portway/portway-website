@@ -100,7 +100,10 @@
 }
 
 .card-scroller__image {
-  background-color: var(--color-blue-light);
+  border-bottom: thin solid rgba(#CCD1D7, .5);
+  @media (prefers-color-scheme: dark) {
+    border-bottom: thin solid rgba(#000000, .5);
+  }
   img {
     height: auto;
     max-width: 100%;
