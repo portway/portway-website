@@ -1,10 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import cx from 'classnames'
 
 import { uuid } from '../scripts/utilities'
 import Layout from '../layouts/layout'
 
+import portwayLogo from '../img/portway-logo-horizontal.svg'
 import styles from '../css/page.module.scss'
 
 const pageClasses = cx({
@@ -12,14 +15,34 @@ const pageClasses = cx({
   'container': true
 })
 
-const PressPage = () => {
-  const items = useStaticQuery(graphql`
+const PressPage = ({ data }) => {
+  const pageQuery = useStaticQuery(graphql`
     query {
       allContentJson {
         nodes {
           items {
             title
             description
+          }
+        }
+      }
+      desktopScreenshot: file(relativePath: { eq: "press-screenshot--desktop.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 642) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+          original {
+            src
+          }
+        }
+      }
+      mobileScreenshot: file(relativePath: { eq: "press-screenshot--mobile.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+          original {
+            src
           }
         }
       }
@@ -44,7 +67,7 @@ const PressPage = () => {
         </p>
         <h3 id="features">Features</h3>
         <ul className={styles.blankList}>
-          {items.allContentJson.nodes[0].items.map((feature) => {
+          {pageQuery.allContentJson.nodes[0].items.map((feature) => {
             return <li key={uuid()}><strong>{feature.title}</strong> {feature.description}</li>
           })}
         </ul>
@@ -59,12 +82,35 @@ const PressPage = () => {
         </p>
         <h3 id="about-us">About Us</h3>
         <p>Portway is a creation of <a href="https://bonkeybong.com">BonkeyBong</a>, an independent software development shop. We love using and creating beautiful, efficient apps.</p>
+        <hr />
+        <h3 id="branding">Logos</h3>
+        <figure>
+          <a href="/portway-logos.zip" download>
+            <img src={portwayLogo} alt="Portway logo" width="428" height="90" />
+            <figcaption>Download zip (8KB)</figcaption>
+          </a>
+        </figure>
+        <hr />
+        <h3 id="screenshots">Screenshots</h3>
+        <figure>
+          <a href={pageQuery.desktopScreenshot.childImageSharp.original.src} target="_blank" rel="noreferrer">
+            <Img fluid={pageQuery.desktopScreenshot.childImageSharp.fluid} alt="Desktop Portway screenshot" />
+            <figcaption>Download Desktop</figcaption>
+          </a>
+        </figure>
+        <figure style={{ width: 400 }}>
+          <a href={pageQuery.mobileScreenshot.childImageSharp.original.src} target="_blank" rel="noreferrer">
+            <Img fluid={pageQuery.mobileScreenshot.childImageSharp.fluid} alt="Mobile Portway screenshot" />
+            <figcaption>Download Mobile</figcaption>
+          </a>
+        </figure>
       </div>
     </section>
   </Layout>
 }
 
 PressPage.propTypes = {
+  data: PropTypes.object,
 }
 
 export default PressPage

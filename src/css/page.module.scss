@@ -58,6 +58,20 @@ dd {
   }
 }
 
+figure {
+  margin: 0 auto 2.4rem auto;
+  padding: 0;
+  a {
+    display: block;
+    text-align: center;
+  }
+}
+figcaption {
+  font-weight: bold;
+  padding: .6rem 0;
+  text-align: center;
+}
+
 // Pills
 .pill {
   background-color: var(--color-blue-light);
