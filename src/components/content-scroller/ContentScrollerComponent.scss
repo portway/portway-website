@@ -9,6 +9,10 @@
   @include media('>=medium') {
     padding: 64px 0 10vw;
   }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--theme-surface);
+  }
 }
 
 .content-scroller__title {

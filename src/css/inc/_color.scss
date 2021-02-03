@@ -24,11 +24,11 @@
   --theme-base: var(--color-white);              // 4 base layer
   @media (prefers-color-scheme: dark) {
     // Dark theme
-    --theme-card-color: #113849;
+    --theme-card-color: #1B242E;
     --theme-text-color: rgba(255, 255, 255, 85%);   // darker text color
-    --theme-overlay-light: #193C4B;       // 1 top layer modal/menu
+    --theme-overlay-light: #131E2B;       // 1 top layer modal/menu
     --theme-overlay-dark: #0A2F3F;        // 2 overlay layer
-    --theme-surface: #042533;             // 3 background color
+    --theme-surface: #1B242E;             // 3 background color
     --theme-base: #02141C;                // 4 base layer
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import SEO from '../components/base/seo'
@@ -10,20 +10,20 @@ function createMarkup(message) {
 }
 
 const Layout = ({ children, description, sponsor, title }) => {
-  useEffect(() => {
-    // Save the queryParams so we can attach them to any external link
-    if (typeof window !== `undefined` && window.location.search !== '') {
-      window.portwayParams = window.location.search
-    }
-    const externaLinks = document.querySelectorAll('[rel="external"]')
-    if (window.portwayParams) {
-      externaLinks.forEach((link) => {
-        if (!link.href.includes('?')) {
-          link.href = link.href + `${window.portwayParams}`
-        }
-      })
-    }
-  })
+  // useEffect(() => {
+  //   // Save the queryParams so we can attach them to any external link
+  //   if (typeof window !== `undefined` && window.location.search !== '') {
+  //     window.portwayParams = window.location.search
+  //   }
+  //   const externaLinks = document.querySelectorAll('[rel="external"]')
+  //   if (window.portwayParams) {
+  //     externaLinks.forEach((link) => {
+  //       if (!link.href.includes('?')) {
+  //         link.href = link.href + `${window.portwayParams}`
+  //       }
+  //     })
+  //   }
+  // })
   return (
     <div className="application">
       <SEO title={title} description={description} />

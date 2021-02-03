@@ -137,6 +137,9 @@ main {
   background-color: var(--color-blue-dark);
   color: var(--color-white);
   padding: 32px 0;
+  @media (prefers-color-scheme: dark) {
+    background-color: #091019;
+  }
 }
 
 .footer__content {

@@ -102,6 +102,7 @@
 .card-scroller__image {
   border-bottom: thin solid rgba(#CCD1D7, .5);
   @media (prefers-color-scheme: dark) {
+    background-color: #27323D;
     border-bottom: thin solid rgba(#000000, .5);
   }
   img {

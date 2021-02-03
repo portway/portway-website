@@ -64,7 +64,7 @@
     },
     {
       "title": "API keys",
-      "description": "API access is controlled by project. Create a read-only key for a your website project so a static site generator gets read access. Create writeable keys to add content to a Portway project.",
+      "description": "API access is controlled by project. Create a read-only key for your website project so a static site generator gets read access. Create writeable keys to add content to a Portway project.",
       "featured": false
     },
     {
