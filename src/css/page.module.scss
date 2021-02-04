@@ -1,0 +1,236 @@
+@import 'inc/include-media';
+
+// Generic page
+.page {
+  padding: var(--container-padding) var(--container-padding) 0;
+}
+
+.page__heading {
+  @include media('>=medium') {
+    text-align: center;
+  }
+}
+
+.page__content {
+  padding: 3.2rem 0;
+  margin: auto;
+
+  @include media('>=medium') {
+    padding: 6.4rem 0;
+    text-align: left;
+    width: 55ch;
+  }
+
+  &--left-aligned {
+    text-align: left;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 2.4rem 0 1.2rem 0;
+    &.card__title {
+      margin: 0;
+    }
+  }
+
+}
+
+.heading__underlined {
+  border-bottom: 4px solid var(--color-blue-light);
+  border-radius: 1px;
+  display: inline-block;
+  font-weight: 500;
+  padding-bottom: 1.1rem;
+}
+
+dt {
+  font-weight: 700;
+}
+dd {
+  margin: 0 0 1.6rem 0;
+}
+
+.blank-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin-bottom: .6rem;
+  }
+}
+
+figure {
+  margin: 0 0 2.4rem 0;
+  padding: 0;
+  a {
+    display: block;
+  }
+}
+figcaption {
+  font-weight: bold;
+  padding: .6rem 0;
+}
+
+// Pills
+.pill {
+  background-color: var(--color-blue-light);
+  border-radius: 4px;
+  color: var(--color-white);
+  display: inline-flex;
+  font-weight: 500;
+  margin-right: .6rem;
+  padding: .25rem .5rem;
+
+  &--green {
+    background-color: var(--color-success);
+  }
+
+}
+
+// Cards
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3.2rem 0;
+
+  @include media('>=medium') {
+    flex-direction: row;
+  }
+}
+.card {
+  background: var(--theme-card-color);
+  box-shadow: 0 2px 6px 0 rgba(102,102,102,0.40);
+  border-radius: 6px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.815);
+  }
+
+  @include media('>=medium') {
+    max-width: 320px;
+  }
+}
+
+.card__title {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.6rem;
+}
+
+.card__content {
+  flex: 1;
+  padding: 0 1.6rem 1.6rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+.card__price {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-right: .6rem;
+}
+
+.card__action {
+  background-color: var(--theme-overlay-light);
+  text-align: center;
+  padding: 1.6rem;
+
+  > div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 1.6rem 0;
+  }
+
+  // This should always be a .button
+  a {
+    display: block;
+    width: 100%;
+  }
+}
+
+.feature__list {
+  list-style: none;
+  li {
+    align-items: center;
+    display: flex;
+  }
+  img {
+    margin-right: .6rem;
+  }
+}
+
+.form {
+  background: var(--theme-overlay-light);
+  margin: 3.2rem 0;
+  padding: 1.6rem;
+  text-align: left;
+
+  @include media('>=medium') {
+    margin: 6.4rem 0;
+  }
+
+  &--submitted {
+    .form__container {
+      display: none;
+    }
+  }
+
+  h2, h3, h4, h5, h6 {
+    margin-bottom: .6rem;
+  }
+
+  input[type="text"], input[type="email"], textarea {
+    border: none;
+    color: var(--theme-text-color);
+    font-family: var(--type-sans-serif);
+    margin-bottom: 1.6rem;
+    width: 100%;
+
+    &:focus {
+      outline: thin solid var(--color-blue-light);
+    }
+    &:focus:not(:focus-visible) {
+      outline: 0;
+    }
+    &:focus-visible {
+      outline: thin solid var(--color-blue-light);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--theme-overlay-dark);
+    }
+  }
+
+}
+
+.form__result {
+  display: none;
+
+  &--submitted {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.form__container {
+  padding-bottom: 3.2rem;
+
+  label {
+    display: block;
+  }
+}
+
+.form__options {
+  padding: 1.6rem 0;
+}
+

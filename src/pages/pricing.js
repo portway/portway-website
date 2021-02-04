@@ -1,68 +1,69 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+import cx from 'classnames'
 
+import { LINK_SIGNUP } from '../constants'
 import Layout from '../layouts/layout'
-import SignUp from '../components/sign-up'
 
-import '../css/pricing.scss'
+import FeatureScrollerComponent from '../chunks/FeatureScroller/FeatureScrollerComponent'
+import NerdHighlightsComponent from '../chunks/NerdHighlights/NerdHighlightsComponent'
 
-const PricingPage = () => (
-  <>
-    <Helmet>
-      <body className="theme-pricing" />
-    </Helmet>
+import checkmark from '../img/icon-checkmark.svg'
+import styles from '../css/page.module.scss'
+
+const pageClasses = cx({
+  [styles.page]: true,
+  'container': true
+})
+
+const cardFeatureList = [
+  'Unlimited projects',
+  'Unlimited documents',
+  '10GB Storage',
+  'Private &amp; Secure',
+  'Multiple teams and users',
+  'Real-time document collaboration',
+]
+
+const PricingPage = () => {
+  return (
     <Layout title="Pricing">
-      <div className="container pricing">
-        <section className="intro">
-          <h2 className="intro__title">The right price for just you, or your whole team.</h2>
-          <p className="intro__subtitle">30-day free trial – hassle free</p>
+      <section className={pageClasses}>
+        <div className={styles.page__heading}>
+          <h2>The right price for just you,<br />or your whole team.</h2>
+          <p className={styles.heading__underlined}>30-day free trial – hassle free</p>
+        </div>
+        <div className={styles.page__content}>
           <p>
             Give Portway a try with no obligations. Your data is yours, and we don’t sell your information
             to anyone. Do nothing and your trial will expire with no further action. Like what you see?
             Enter your payment info and pick a plan to support independent software.
           </p>
-        </section>
-        {/* /Intro */}
-        <section className="plans">
-          <div className="plan card">
-            <h3 className="plan__title">Solo plan</h3>
-            <div>
-              <span className="plan__cost">$10</span>
-              <span className="plan__period">/mo.</span>
+          <div className={styles.cards}>
+            <div className={styles.card}>
+              <h3 className={styles.card__title}>
+                One price
+              </h3>
+              <div className={styles.card__content}>
+                <ul className={styles.feature__list}>
+                  {cardFeatureList.map((feature, index) => {
+                    return <li key={`feature-${index}`}><img src={checkmark} width="16" height="16" alt="Included" /> {feature}</li>
+                  })}
+                </ul>
+              </div>
+              <div className={styles.card__action}>
+                <div>
+                  <div className={styles.card__price}>$10</div> per user / month
+                </div>
+                <a href={LINK_SIGNUP} rel="external" className="button button--green">Try for free</a>
+              </div>
             </div>
-            <p className="plan__notes">&nbsp;</p>
-            <ul className="feature-list">
-              <li className="feature-list__item feature-list__item--yes">Unlimited projects</li>
-              <li className="feature-list__item feature-list__item--yes">Unlimited documents</li>
-              <li className="feature-list__item feature-list__item--yes">10GB Storage</li>
-              <li className="feature-list__item feature-list__item--yes">Private &amp; Secure</li>
-            </ul>
           </div>
-          {/* Plan */}
-          <div className="plan card">
-            <h3 className="plan__title">Team plan</h3>
-            <div>
-              <span className="plan__cost">$50</span>
-              <span className="plan__period">/mo.</span>
-            </div>
-            <p className="plan__notes">5 users included, $10/user after</p>
-            <ul className="feature-list">
-              <li className="feature-list__item feature-list__item--yes">Unlimited projects</li>
-              <li className="feature-list__item feature-list__item--yes">Unlimited documents</li>
-              <li className="feature-list__item feature-list__item--yes">10GB Storage</li>
-              <li className="feature-list__item feature-list__item--yes">Private &amp; Secure</li>
-              <li className="feature-list__item feature-list__item--yes">Multiple teams and users (5 included)</li>
-              <li className="feature-list__item feature-list__item--yes">Real-time document collaboration</li>
-            </ul>
-          </div>
-          {/* /Plan */}
-        </section>
-        {/* /Plans */}
-        <SignUp />
-      </div>
-      {/* /container */}
+        </div>
+      </section>
+      <NerdHighlightsComponent />
+      <FeatureScrollerComponent />
     </Layout>
-  </>
-)
+  )
+}
 
 export default PricingPage

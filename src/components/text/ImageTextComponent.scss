@@ -1,0 +1,96 @@
+@import '../../css/inc/include-media';
+
+.image-text {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 32px;
+  padding-top: 32px;
+
+  @include media('>=medium') {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 64px;
+    padding-top: 64px;
+    &--right {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.image-text__image-container {
+  margin: 0 auto 2.8rem auto;
+  max-width: 578px;
+  min-width: 288px;
+  width: 100%;
+
+  @include media('>=medium') {
+    flex: 1 0 50%;
+    margin: 0 1.6rem 0 0;
+  }
+  @include media('>=large') {
+    margin: 0 6.7rem 0 0;
+  }
+
+  .image-text--right & {
+    @include media('>=medium') {
+      margin: 0 0 0 1.6rem;
+    }
+    @include media('>=large') {
+      margin: 0 0 0 6.7rem;
+    }
+  }
+}
+
+.image-text__image {
+  &--offset {
+    @include media('>=medium') {
+      top: 48px;
+    }
+    @include media('>=large') {
+      top: 0;
+    }
+  }
+}
+
+.image-text__content {
+  max-width: 518px;
+}
+
+.image-text__title {
+  font-size: 2.8rem;
+  line-height: 3.8rem;
+  @include media('>=medium') {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  &:after {
+    background-repeat: no-repeat;
+    background-size: 156px 26px;
+    content: '';
+    display: block;
+    height: 26px;
+    margin: 1.2rem 0;
+    width: 156px;
+  }
+
+  &--squiggle {
+    &:after {
+      background-image: url('/img/accent_squiggle@2x.png');
+      @media (prefers-color-scheme: dark) {
+        background-image: url('/img/accent_squiggle--dark@2x.png');
+      }
+    }
+  }
+
+  &--stroke {
+    &:after {
+      background-image: url('/img/accent_stroke@2x.png');
+      @media (prefers-color-scheme: dark) {
+        background-image: url('/img/accent_stroke--dark@2x.png');
+      }
+    }
+  }
+
+}

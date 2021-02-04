@@ -1,106 +1,158 @@
-import React, { useRef } from 'react'
-import { Helmet } from 'react-helmet'
-import { Link } from 'gatsby'
-
-import { LINK_LOGIN, LINK_REGISTRATION_FORM } from '../constants'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../layouts/layout'
+import HeroComponent from '../components/hero/HeroComponent'
+import ImageTextComponent from '../components/text/ImageTextComponent'
+import BlobComponent from '../components/blob/BlobComponent'
 
-import homeHero from '../img/illo_hero.png'
-import homeHero2x from '../img/illo_hero@2x.png'
-import simpleNotes from '../img/illo_simple-notes.png'
-import simpleNotes2x from '../img/illo_simple-notes@2x.png'
-import teamImage from '../img/illo_team.png'
-import teamImage2x from '../img/illo_team@2x.png'
-import queryImage from '../img/illo_query.png'
-import queryImage2x from '../img/illo_query@2x.png'
+import FeatureScrollerComponent from '../chunks/FeatureScroller/FeatureScrollerComponent'
+import GuidesScrollerComponent from '../chunks/GuidesScroller/GuidesScrollerComponent'
+import NerdHighlightsComponent from '../chunks/NerdHighlights/NerdHighlightsComponent'
 
-import '../css/home.scss'
-
-const IndexPage = ({ pageContext }) => {
-  const signupRef = useRef()
+const IndexPage = ({ data, pageContext }) => {
   const sponsor = pageContext && pageContext.sponsor
 
-  function tosCheckHandler(e) {
-    if (e.target.checked) {
-      signupRef.current.removeAttribute('disabled')
-    } else {
-      signupRef.current.setAttribute('disabled', true)
+  const screenshotSources = [
+    data.mobileScreenshotLight.childImageSharp.fluid,
+    {
+      ...data.mobileScreenshotDark.childImageSharp.fluid,
+      media: `(max-width: 767px) and (prefers-color-scheme: dark)`
+    },
+    {
+      ...data.desktopScreenshotLight.childImageSharp.fluid,
+      media: `(min-width: 768px) and (prefers-color-scheme: light)`,
+    },
+    {
+      ...data.desktopScreenshotDark.childImageSharp.fluid,
+      media: `(min-width: 768px) and (prefers-color-scheme: dark)`,
     }
-  }
+  ]
 
   return (
-    <>
-      <Helmet>
-        <body className="theme-default" />
-      </Helmet>
-      <Layout title="Your collaborative markdown writing app" sponsor={sponsor}>
-        <div className="container home">
-          <section className="intro">
-            <h2 className="intro__title">Your collaborative writing app</h2>
-            <p>
-              Beautiful documents, <br /><span id="use-cases">powering your projects</span>
-            </p>
-            <img className="home__hero" src={homeHero} srcSet={`${homeHero}, ${homeHero2x} 2x`} alt="" width="924" height="560" />
-            <p>
-              Create a document and begin writing. Jot down some thoughts, manage content for your projects,
-              or collaborate with your team on documentation. Write anywhere, on any device with Portway.
-            </p>
-          </section>
-          {/* /Intro */}
-          <section className="home__footer">
-            <ul className="home__features">
-              <li>
-                <div className="home__feature-image">
-                  <img src={simpleNotes} srcSet={`${simpleNotes}, ${simpleNotes2x} 2x`} alt="Simple documents" width="123" height="118" />
-                </div>
-                <div className="home__feature-content">A frictionless writing app. No overhead. Get in there and write.</div>
-              </li>
-              <li>
-                <div className="home__feature-image">
-                  <img src={teamImage} srcSet={`${teamImage}, ${teamImage2x} 2x`} alt="Collaborate" width="138" height="132" />
-                </div>
-                <div className="home__feature-content">
-                  Collaborate with your team. Add, organize, and name fields to structure your document. See real-time updates.
-                </div>
-              </li>
-              <li>
-                <div className="home__feature-image">
-                  <img src={queryImage} srcSet={`${queryImage}, ${queryImage2x} 2x`} alt="APIs" width="138" height="152" />
-                </div>
-                <div className="home__feature-content">
-                  Content that doesn’t dictate presentation. The API’s structured content output gives you full control.
-                </div>
-              </li>
-            </ul>
-            {/* /Features */}
-            <div className="home__signup card">
-              <h2 className="card__title">Try Portway for 30 days, <br />no credit card required.<br /> We think you’ll like it.</h2>
-              <form action={LINK_REGISTRATION_FORM} method="post">
-                <label>
-                  Your full name
-                  <input type="text" name="name" placeholder="Enter your full name" required />
-                </label>
-                <label>
-                  Your email address
-                  <input type="email" name="email" placeholder="Enter your email" required />
-                </label>
-                <label>
-                  <input type="checkbox" name="tos" onClick={tosCheckHandler} />
-                  I agree to the <Link to="/terms">terms of service</Link>
-                </label>
-                <button className="btn btn--full" type="submit" disabled ref={signupRef}>Try for free</button>
-                <div className="centered">
-                  Already using Portway? <a href={LINK_LOGIN}>Sign in</a>
-                </div>
-              </form>
-            </div>
-          </section>
-        </div>
-        {/* /container */}
-      </Layout>
-    </>
+    <Layout title="Your collaborative markdown writing app" sponsor={sponsor}>
+      <HeroComponent
+        title="A Content Platform Built on Collaborative Markdown Documents"
+        description="Manage and collaborate on all your content, from meeting notes to website copy, on any device."
+        showSignup={true}
+      >
+        <Img
+          alt="Content platform illustration"
+          loading="eager"
+          fluid={data.heroImage.childImageSharp.fluid}
+        />
+      </HeroComponent>
+      <ImageTextComponent accent="squiggle" align="left" image={data.integrationImage.childImageSharp.fluid} title="Integrations and a powerful API">
+        <p>Share and publish your content, wherever you need it.</p>
+      </ImageTextComponent>
+      <ImageTextComponent
+        accent="stroke"
+        align="right"
+        image={data.markdownImage.childImageSharp.fluid}
+        title="Write in Markdown, but don’t stop there"
+        offset={true}
+      >
+        <p>
+          Write in Markdown just like you do in your favorite notes app. Then when you need to add media
+          or additional data, insert fields to structure your document.
+        </p>
+        <p>
+          Named fields are then available in the API so you can output your document wherever you need,
+          and display it however you desire.
+        </p>
+      </ImageTextComponent>
+      <BlobComponent
+        blobImage={data.blobImage.childImageSharp.fluid}
+        blobPixels={data.blobPixels.childImageSharp.fixed}
+        blobScreenshot={screenshotSources}
+      >
+        <h2>Collaborate with teammates</h2>
+        <p>
+          Work with a team? Bring them along and see real time updates to documents as you work together.
+          Conflict notices keep you from stepping on each others toes.
+        </p>
+      </BlobComponent>
+      <NerdHighlightsComponent />
+      <FeatureScrollerComponent />
+      <GuidesScrollerComponent />
+    </Layout>
   )
 }
 
+IndexPage.propTypes = {
+  data: PropTypes.object,
+  pageContext: PropTypes.object
+}
+
 export default IndexPage
+
+// Image queries
+export const pageQuery = graphql`
+  query HomepageImageQuery {
+    heroImage: file(relativePath: { eq: "hero@2x.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 642) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    integrationImage: file(relativePath: { eq: "integrations@2x.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 557) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    markdownImage: file(relativePath: { eq: "markdown@2x.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 556) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    blobImage: file(relativePath: { eq: "blob-background-art.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 707) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    blobPixels: file(relativePath: { eq: "blob-pixels.png" }) {
+      childImageSharp {
+        fixed(width: 4, height: 80) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    mobileScreenshotLight: file(relativePath: { eq: "collab-mobile--light.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    mobileScreenshotDark: file(relativePath: { eq: "collab-mobile--dark.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    desktopScreenshotLight: file(relativePath: { eq: "collab-desktop--light.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1060) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    desktopScreenshotDark: file(relativePath: { eq: "collab-desktop--dark.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1060) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`

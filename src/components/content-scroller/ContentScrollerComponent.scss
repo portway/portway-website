@@ -1,0 +1,162 @@
+@import '../../css/inc/include-media';
+
+.content-scroller {
+  background-color: var(--color-blue-medium);
+  color: var(--color-white);
+  padding: 32px 0 24vw 0;
+  position: relative;
+
+  @include media('>=medium') {
+    padding: 64px 0 10vw;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--theme-surface);
+  }
+}
+
+.content-scroller__title {
+  a, a:visited {
+    align-items: center;
+    color: var(--color-blue-light);
+    display: inline-flex;
+    text-decoration: none;
+    img {
+      margin-right: .6rem;
+    }
+  }
+}
+
+.content-scroller__scroller {
+  outline: none;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  @include media('>1700px') {
+    overflow: visible;
+  }
+}
+
+.content-scroller__list {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 3.2rem var(--container-padding) 3.2rem;
+
+  @include media('>=medium') {
+    padding: 6.4rem var(--container-padding) 6.4rem;
+  }
+}
+
+.content-scroller__item {
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid transparent;
+  color: rgba(255, 255, 255, .5);
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2.6rem;
+  margin-right: 2.8rem;
+  outline: none;
+  padding: .25rem 0;
+  white-space: nowrap;
+  -webkit-appearance: none;
+
+  &:hover, &:focus {
+    filter: brightness(90%);
+  }
+  &:active {
+    filter: brightness(110%);
+  }
+
+  &[aria-selected="true"] {
+    color: var(--color-white);
+    border-bottom: 4px solid var(--color-blue-light);
+  }
+} // item
+
+.content-scroller__content {
+  position: relative;
+  &:after {
+    background-image: url('/img/accent_squiggle2@2x.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    bottom: 0;
+    content: '';
+    display: block;
+    filter: brightness(500%);
+    height: 26px;
+    left: 0;
+    position: relative;
+    width: 156px;
+    @media (prefers-color-scheme: dark) {
+      background-image: url('/img/accent_squiggle2--dark@2x.png');
+      filter: brightness(100%);
+    }
+  }
+}
+
+.content-scroller__panel {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+
+  &[hidden] {
+    display: none;
+  }
+
+  @include media('>=medium') {
+    flex-direction: row;
+  }
+}
+
+.content-scroller__description {
+  font-weight: 300;
+  margin-bottom: 4.2rem;
+}
+
+.content-scroller__image {
+  background-color: #fdfdfd;
+  border-radius: 1.56px;
+  box-shadow: 0 3px 15px #000;
+  position: relative;
+  .gatsby-image-wrapper {
+    z-index: 2;
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: #24282c;
+  }
+  @include media('>=medium') {
+    flex: 1 0 65.14084507%;
+    margin-left: 3.2rem;
+  }
+  @include media('>=large') {
+    margin-left: 7.3rem;
+    // min-width: 560px;
+    // min-width: 829px;
+  }
+}
+
+.content-scroller__background {
+  left: 28.75%;
+  position: absolute;
+  top: -19px;
+  width: 84%;
+  z-index: 1;
+
+  img {
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+}

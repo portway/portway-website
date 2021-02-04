@@ -1,0 +1,76 @@
+@import '../../css/inc/include-media';
+
+.hero {
+  padding: 60px 0 32px 0;
+  @include media('>small') {
+    padding: 60px 0 64px 0;
+  }
+
+  .container {
+    @include media('>=large') {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+}
+
+.hero__content {
+  text-align: center;
+  @include media('>=medium') {
+    padding: 0 32px;
+  }
+  @include media('>=large') {
+    flex: 1 0 45.73170732%;
+    padding: 0 70px 0 0;
+    text-align: left;
+  }
+}
+
+.hero__title {
+  font-size: 3.2rem;
+  line-height: 4.2rem;
+}
+
+.hero__description {
+  font-size: 2.2rem;
+  line-height: 3rem;
+  margin: 12px 0 0 0;
+  @include media('>=large') {
+    margin: 12px 0 70px 0;
+  }
+}
+
+.hero__children {
+  margin: 32px auto;
+  @include media('>small') {
+    width: 75.26041667%;
+  }
+  @include media('>=large') {
+    margin: 0;
+    width: 48.93292683%;
+  }
+}
+
+.hero__signup {
+  display: block;
+  margin: auto;
+  max-width: 322px;
+  text-align: center;
+
+  a { display: block; }
+
+  &--small {
+    @include media('>=large') {
+      display: none;
+    }
+  }
+  &--large {
+    @include media('<large') {
+      display: none;
+    }
+    @include media('>=large') {
+      margin: 0;
+    }
+  }
+}
