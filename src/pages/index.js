@@ -32,7 +32,7 @@ const IndexPage = ({ data, pageContext }) => {
   ]
 
   return (
-    <Layout title="Your collaborative markdown writing app" sponsor={sponsor}>
+    <Layout title="A Content Platform Built on Collaborative Markdown Documents" sponsor={sponsor}>
       <HeroComponent
         title="A Content Platform Built on Collaborative Markdown Documents"
         description="Manage and collaborate on all your content, from meeting notes to website copy, on any device."
