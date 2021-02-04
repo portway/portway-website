@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { Link } from 'gatsby'
 
-import { FORM_MAILCHIMP_ACTION_URL, LINK_GUIDES } from '../../constants'
+import { FORM_MAILCHIMP_ACTION_URL, LINK_API, LINK_GUIDES } from '../../constants'
 
 const Footer = () => {
   const formRef = useRef()
@@ -28,7 +28,7 @@ const Footer = () => {
                 <li><Link to="/press">Press</Link></li>
               </ul>
               <ul>
-                <li><a href={LINK_GUIDES} target="_blank" rel="noopener noreferrer">API</a></li>
+                <li><a href={LINK_API} target="_blank" rel="noopener noreferrer">API</a></li>
                 <li><a href={LINK_GUIDES} target="_blank" rel="noopener noreferrer">Guides</a></li>
               </ul>
               <ul>
