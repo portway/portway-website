@@ -57,7 +57,7 @@
     },
     {
       "title": "Project export",
-      "description": "Need to move your content or want a project in plain text files? Download a zip of your project.",
+      "description": "Need to move your content or want a project in plain text files? Download an archive of markdown files, with your custom fields as front-matter.",
       "imageLight": "../img/feature-scroller/feature-export--light.png",
       "imageDark": "../img/feature-scroller/feature-export--dark.png",
       "featured": true

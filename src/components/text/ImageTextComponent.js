@@ -29,7 +29,7 @@ const ImageTextComponent = ({ accent, align, children, image, offset, title }) =
       }
       <div className="image-text__content">
         {title &&
-        <h2 className={titleClasses}>{title}</h2>
+        <h2 className={titleClasses} dangerouslySetInnerHTML={{ __html: title }} />
         }
         {children}
       </div>
@@ -43,7 +43,7 @@ ImageTextComponent.propTypes = {
   children: PropTypes.node,
   image: PropTypes.object,
   offset: PropTypes.bool,
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 }
 
 ImageTextComponent.defaultProps = {

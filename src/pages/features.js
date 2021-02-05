@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import cx from 'classnames'
 
@@ -34,10 +34,10 @@ const FeaturesPage = () => {
           <dl className={styles.blankList}>
             {items.allContentJson.nodes[0].items.map((feature, index) => {
               return (
-                <>
+                <Fragment key={`feat-${index}`}>
                   <dt>{feature.title}</dt>
                   <dd>{feature.description}</dd>
-                </>
+                </Fragment>
               )
             })}
           </dl>

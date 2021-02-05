@@ -32,35 +32,46 @@ const IndexPage = ({ data, pageContext }) => {
   ]
 
   return (
-    <Layout title="A Content Platform Built on Collaborative Markdown Documents" sponsor={sponsor}>
+    <Layout title="Your Collaborative Content Hub" sponsor={sponsor}>
       <HeroComponent
-        title="A Content Platform Built on Collaborative Markdown Documents"
-        description="Manage and collaborate on all your content, from meeting notes to website copy, on any device."
+        title="Your Collaborative Content Hub"
+        description={`<p>Publish an ebook. Update a website. Record your meeting notes.<br />Work on a whole range of projects with your team, on any device.</p>`}
         showSignup={true}
       >
         <Img
-          alt="Content platform illustration"
+          alt="Content Hub illustration"
           loading="eager"
           fluid={data.heroImage.childImageSharp.fluid}
         />
       </HeroComponent>
-      <ImageTextComponent accent="squiggle" align="left" image={data.integrationImage.childImageSharp.fluid} title="Integrations and a powerful API">
-        <p>Share and publish your content, wherever you need it.</p>
+      <ImageTextComponent
+        accent="squiggle"
+        align="left"
+        image={data.integrationImage.childImageSharp.fluid}
+        title={`Integrations<br />and a powerful API`}
+      >
+        <p>
+          Share and publish your content, wherever you need it. Publish websites, events, or your
+          next book. Automate the creation of documents in your workflow.
+        </p>
       </ImageTextComponent>
       <ImageTextComponent
         accent="stroke"
         align="right"
         image={data.markdownImage.childImageSharp.fluid}
-        title="Write in Markdown, but don’t stop there"
+        title={`Write in Markdown,<br />but don’t stop there`}
         offset={true}
       >
         <p>
-          Write in Markdown just like you do in your favorite notes app. Then when you need to add media
-          or additional data, insert fields to structure your document.
+          Write in Markdown just like in your favorite notes app. Add custom fields such as
+          images, dates, and files. Structure your projects and documents however you like.
         </p>
         <p>
-          Named fields are then available in the API so you can output your document wherever you need,
-          and display it however you desire.
+          Like a headless CMS, document fields allow you to render your document wherever you need,
+          and display it however you want.
+        </p>
+        <p>
+          It’s simple. Your code is on Github, your content is in Portway.
         </p>
       </ImageTextComponent>
       <BlobComponent
@@ -90,7 +101,12 @@ export default IndexPage
 
 // Image queries
 export const pageQuery = graphql`
-  query HomepageImageQuery {
+  query HomepageQuery {
+    site {
+      siteMetadata {
+        description
+      }
+    }
     heroImage: file(relativePath: { eq: "hero@2x.png" }) {
       childImageSharp {
         fluid(maxWidth: 642) {
