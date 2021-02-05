@@ -26,7 +26,7 @@ function SEO({ description, keywords, lang, meta, title }) {
     `
   )
 
-  const metaTitle = title || site.siteMetadata.title
+  const metaTitle = title || site.siteMetadata.description
   const metaDescription = description || site.siteMetadata.description
   const metaKeywords = keywords || site.siteMetadata.keywords
 
@@ -75,7 +75,7 @@ SEO.propTypes = {
   keywords: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 }
 
 export default SEO

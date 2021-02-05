@@ -101,8 +101,4 @@ Layout.propTypes = {
   title: PropTypes.string,
 }
 
-Layout.defaultProps = {
-  title: 'Home'
-}
-
 export default Layout

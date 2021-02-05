@@ -19,7 +19,7 @@ const HeroComponent = ({ children, description, showSignup, signupLanguage, titl
       <div className="container">
         <div className="hero__content">
           {title && <h1 className="hero__title">{title}</h1>}
-          {description && <p className="hero__description">{description}</p>}
+          <div className="hero__description" dangerouslySetInnerHTML={{ __html: description }} />
           {showSignup && renderSignupSnippet('large') }
         </div>
         {children &&
@@ -35,7 +35,7 @@ const HeroComponent = ({ children, description, showSignup, signupLanguage, titl
 
 HeroComponent.propTypes = {
   children: PropTypes.node,
-  description: PropTypes.string,
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   showSignup: PropTypes.bool,
   signupLanguage: PropTypes.string,
   title: PropTypes.string,
