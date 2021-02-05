@@ -44,6 +44,18 @@ const IndexPage = ({ data, pageContext }) => {
           fluid={data.heroImage.childImageSharp.fluid}
         />
       </HeroComponent>
+      <BlobComponent
+        blobImage={data.blobImage.childImageSharp.fluid}
+        blobPixels={data.blobPixels.childImageSharp.fixed}
+        blobScreenshot={screenshotSources}
+      >
+        <h2>Collaborate with teammates</h2>
+        <p>
+          Work with a team? Bring them along and see real time updates to documents as you work together.
+          Conflict notices keep you from stepping on each others toes.
+        </p>
+      </BlobComponent>
+      <FeatureScrollerComponent />
       <ImageTextComponent
         accent="squiggle"
         align="left"
@@ -74,19 +86,7 @@ const IndexPage = ({ data, pageContext }) => {
           It’s simple. Your code is on Github, your content is in Portway.
         </p>
       </ImageTextComponent>
-      <BlobComponent
-        blobImage={data.blobImage.childImageSharp.fluid}
-        blobPixels={data.blobPixels.childImageSharp.fixed}
-        blobScreenshot={screenshotSources}
-      >
-        <h2>Collaborate with teammates</h2>
-        <p>
-          Work with a team? Bring them along and see real time updates to documents as you work together.
-          Conflict notices keep you from stepping on each others toes.
-        </p>
-      </BlobComponent>
       <NerdHighlightsComponent />
-      <FeatureScrollerComponent />
       <GuidesScrollerComponent />
     </Layout>
   )
