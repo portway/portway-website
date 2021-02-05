@@ -35,7 +35,7 @@ const IndexPage = ({ data, pageContext }) => {
     <Layout title="Your Collaborative Content Hub" sponsor={sponsor}>
       <HeroComponent
         title="Your Collaborative Content Hub"
-        description={`<p>Publish an ebook. Update a website. Record your meeting notes.<br />Work on a whole range of projects with your team, on any device.</p>`}
+        description={`<p>Publish an ebook. Update a website. Record your meeting notes.<br />Work on a range of projects with your team, on any device.</p>`}
         showSignup={true}
       >
         <Img
