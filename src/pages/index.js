@@ -63,7 +63,7 @@ const IndexPage = ({ data, pageContext }) => {
         offset={true}
       >
         <p>
-          Write in Markdown just in your favorite notes app. Add custom fields such as
+          Write in Markdown just like in your favorite notes app. Add custom fields such as
           images, dates, and files. Structure your projects and documents however you like.
         </p>
         <p>
