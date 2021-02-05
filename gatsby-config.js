@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Portway`,
-    description: `Your Collaborative Content Hub`,
+    description: `Manage and collaborate on anything, from meeting notes to website copy, on any device.`,
     keywords: `Documents, Notes, Collaborative, Writing, Markdown, API, REST, CMS, Content management system, Developers`,
     author: `@portwayapp`,
     sponsors: [

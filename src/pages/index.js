@@ -32,7 +32,7 @@ const IndexPage = ({ data, pageContext }) => {
   ]
 
   return (
-    <Layout title={data.site.siteMetadata.description} sponsor={sponsor}>
+    <Layout title="Your Collaborative Content Hub" sponsor={sponsor}>
       <HeroComponent
         title="Your Collaborative Content Hub"
         description={`<p>Your code is on Github, your content is in Portway.<br />Manage and collaborate on anything, from meeting notes to website copy, on any device.</p>`}
