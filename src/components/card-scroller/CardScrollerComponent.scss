@@ -119,8 +119,9 @@
 .card-scroller__item-title {
   font-size: 2.2rem;
   line-height: 3rem;
+  margin-bottom: 1.2rem;
   @include media('>=medium') {
     font-size: 3.2rem;
-    line-height: 4.2rem;
+    line-height: 3.2rem;
   }
 }
