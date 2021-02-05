@@ -35,7 +35,7 @@ const IndexPage = ({ data, pageContext }) => {
     <Layout title="Your Collaborative Content Hub" sponsor={sponsor}>
       <HeroComponent
         title="Your Collaborative Content Hub"
-        description={`<p>Your code is on Github, your content is in Portway.<br />Manage and collaborate on anything, from meeting notes to website copy, on any device.</p>`}
+        description={`<p>Publish an ebook. Update a website. Record your meeting notes.<br />Work on a whole range of projects with your team, on any device.</p>`}
         showSignup={true}
       >
         <Img
@@ -63,12 +63,15 @@ const IndexPage = ({ data, pageContext }) => {
         offset={true}
       >
         <p>
-          Write in Markdown just like you do in your favorite notes app. Then when you need to add media
-          or additional data, insert fields to structure your document.
+          Write in Markdown just in your favorite notes app. Add custom fields such as
+          images, dates, and files. Structure your projects and documents however you like.
         </p>
         <p>
           Like a headless CMS, document fields allow you to render your document wherever you need,
-          and display it however you desire.
+          and display it however you want.
+        </p>
+        <p>
+          It’s simple. Your code is on Github, your content is in Portway.
         </p>
       </ImageTextComponent>
       <BlobComponent
