@@ -63,7 +63,7 @@ const Layout = ({ children, description, sponsor, title }) => {
   }, [initScrollDragging])
 
   useEffect(() => {
-    const source = identifySignupSource()
+    const source = identifySignupSource(sponsor)
     const signupLinkClick = () => {
       window.fathom.trackGoal('QZ29LVBW', 0)
     }

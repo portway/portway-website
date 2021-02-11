@@ -21,8 +21,13 @@ export function uuid() {
 
 // Helper function to determine where the signup source is coming from
 // e.g. google ad campaign via utm query params, or targeted landing page etc.
-export function identifySignupSource() {
-  if (typeof window !== `undefined` && window.location.search !== '') {
+export function identifySignupSource(sponsor) {
+  if (sponsor && sponsor.slug && typeof window !== 'undefined') {
+    if (window.location.toString().includes(sponsor.slug)) {
+      return sponsor.slug
+    }
+  }
+  if (typeof window !== 'undefined' && window.location.search !== '') {
     const params = new URLSearchParams(window.location.search)
     // Multiple utm params
     if (params.has('utm_source') && params.has('utm_campaign')) {
