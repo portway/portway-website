@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
+import { identifySignupSource } from '../scripts/utilities'
 import SEO from '../components/base/seo'
 import Header from '../components/base/header'
 import Footer from '../components/base/footer'
@@ -60,20 +61,32 @@ const Layout = ({ children, description, sponsor, title }) => {
   useEffect(() => {
     initScrollDragging()
   }, [initScrollDragging])
-  // useEffect(() => {
-  //   // Save the queryParams so we can attach them to any external link
-  //   if (typeof window !== `undefined` && window.location.search !== '') {
-  //     window.portwayParams = window.location.search
-  //   }
-  //   const externaLinks = document.querySelectorAll('[rel="external"]')
-  //   if (window.portwayParams) {
-  //     externaLinks.forEach((link) => {
-  //       if (!link.href.includes('?')) {
-  //         link.href = link.href + `${window.portwayParams}`
-  //       }
-  //     })
-  //   }
-  // })
+
+  useEffect(() => {
+    const source = identifySignupSource(sponsor)
+    const signupLinkClick = () => {
+      // Only track Fathom Analytics goal on getportway.com
+      if (window.location.hostname === 'getportway.com') {
+        window.fathom.trackGoal('FA6OXEDH', 0)
+      }
+    }
+    const signupLinks = document.querySelectorAll(`a[data-link="portway-signup"]`)
+    signupLinks.forEach((link) => {
+      link.addEventListener('click', signupLinkClick, { passive: false })
+      if (source) {
+        if (!link.href.includes('?')) {
+          link.href = `${link.href}?source=${source}`
+        }
+      }
+    })
+
+    return function cleanup() {
+      signupLinks.forEach((link) => {
+        link.removeEventListener('click', signupLinkClick, { passive: false })
+      })
+    }
+  })
+
   return (
     <div className="application">
       <SEO title={title} description={description} />
