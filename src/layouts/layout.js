@@ -67,7 +67,7 @@ const Layout = ({ children, description, sponsor, title }) => {
     const signupLinkClick = () => {
       // Only track Fathom Analytics goal on getportway.com
       if (window.location.hostname === 'getportway.com') {
-        window.fathom.trackGoal('QZ29LVBW', 0)
+        window.fathom.trackGoal('FA6OXEDH', 0)
       }
     }
     const signupLinks = document.querySelectorAll(`a[data-link="portway-signup"]`)
