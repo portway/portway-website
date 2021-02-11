@@ -28,3 +28,13 @@ Sponsors URLs are read from the Gatsby siteMetadata, located in `gatsby-config.j
 
 * Sponsors will get a unique URL at /${sponsor.slug}
 * An optional banner with a message (required) and logo (optional) can be displayed
+
+---
+
+## Tracking Signup Source
+
+Any links to the Portway app signup form should include an `a` tag with the following data attribute: `<a data-link="portway-signup">`. This will automatically attach a query paramter to the link indicating the signup source.
+
+To add a new signup source, in `src/scripts/utilities` edit the `identifySignupSource` function.
+
+Signup sources will be stored on the user account in Portway to track retention.

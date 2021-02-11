@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
+import { identifySignupSource } from '../scripts/utilities'
 import SEO from '../components/base/seo'
 import Header from '../components/base/header'
 import Footer from '../components/base/footer'
@@ -60,20 +61,22 @@ const Layout = ({ children, description, sponsor, title }) => {
   useEffect(() => {
     initScrollDragging()
   }, [initScrollDragging])
-  // useEffect(() => {
-  //   // Save the queryParams so we can attach them to any external link
-  //   if (typeof window !== `undefined` && window.location.search !== '') {
-  //     window.portwayParams = window.location.search
-  //   }
-  //   const externaLinks = document.querySelectorAll('[rel="external"]')
-  //   if (window.portwayParams) {
-  //     externaLinks.forEach((link) => {
-  //       if (!link.href.includes('?')) {
-  //         link.href = link.href + `${window.portwayParams}`
-  //       }
-  //     })
-  //   }
-  // })
+
+  useEffect(() => {
+    const source = identifySignupSource()
+      const signupLinks = document.querySelectorAll(`a[data-link="portway-signup"]`)
+      signupLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          window.fathom.trackGoal('QZ29LVBW', 0)
+        })
+        if (source) {
+          if (!link.href.includes('?')) {
+            link.href = `${link.href}?source=${source}`
+          }
+        }
+      })
+  })
+
   return (
     <div className="application">
       <SEO title={title} description={description} />
