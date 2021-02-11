@@ -64,17 +64,24 @@ const Layout = ({ children, description, sponsor, title }) => {
 
   useEffect(() => {
     const source = identifySignupSource()
-      const signupLinks = document.querySelectorAll(`a[data-link="portway-signup"]`)
-      signupLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-          window.fathom.trackGoal('QZ29LVBW', 0)
-        })
-        if (source) {
-          if (!link.href.includes('?')) {
-            link.href = `${link.href}?source=${source}`
-          }
+    const signupLinkClick = () => {
+      window.fathom.trackGoal('QZ29LVBW', 0)
+    }
+    const signupLinks = document.querySelectorAll(`a[data-link="portway-signup"]`)
+    signupLinks.forEach((link) => {
+      link.addEventListener('click', signupLinkClick, { passive: false })
+      if (source) {
+        if (!link.href.includes('?')) {
+          link.href = `${link.href}?source=${source}`
         }
+      }
+    })
+
+    return function cleanup() {
+      signupLinks.forEach((link) => {
+        link.removeEventListener('click', signupLinkClick, { passive: false })
       })
+    }
   })
 
   return (
