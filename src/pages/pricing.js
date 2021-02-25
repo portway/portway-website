@@ -19,7 +19,7 @@ const cardFeatureList = [
   'Unlimited projects',
   'Unlimited documents',
   '10GB Storage',
-  'Private &amp; Secure',
+  'Private & Secure',
   'Multiple teams and users',
   'Real-time document collaboration',
 ]
@@ -41,7 +41,7 @@ const PricingPage = () => {
           <div className={styles.cards}>
             <div className={styles.card}>
               <h3 className={styles.card__title}>
-                One price
+                Simple pricing
               </h3>
               <div className={styles.card__content}>
                 <ul className={styles.feature__list}>
