@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 
 import { LINK_SIGNUP } from '../../constants'
 import './HeroComponent.scss'
@@ -9,7 +10,7 @@ const HeroComponent = ({ children, description, showSignup, signupLanguage, titl
     return (
       <div className={`hero__signup hero__signup--${modifier}`}>
         <a href={LINK_SIGNUP} rel="external" data-link="portway-signup" className="button button--large button--orange">{signupLanguage}</a>
-        <small>No credit card required</small>
+        <small>No credit card required – <Link to="/pricing" className="text-link">View pricing</Link></small>
       </div>
     )
   }
